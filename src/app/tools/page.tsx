@@ -42,13 +42,16 @@ export default function Tools() {
           <div className="text-xs text-muted-foreground">3-5 minutes</div>
         </Link>
 
-        <div className="block space-y-3 sm:space-y-4 rounded-sm border border-border bg-muted/30 p-5 sm:p-6 opacity-60">
+        <Link
+          href="/exercises/journaling"
+          className="block space-y-3 sm:space-y-4 rounded-sm border border-border p-5 sm:p-6 transition-colors hover:border-primary/40"
+        >
           <h2 className="text-lg sm:text-xl tracking-wide">Journaling prompts</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Guided reflection questions to explore what matters to you.
           </p>
-          <div className="text-xs text-muted-foreground">Coming soon</div>
-        </div>
+          <div className="text-xs text-muted-foreground">10-15 minutes</div>
+        </Link>
 
         <div className="block space-y-3 sm:space-y-4 rounded-sm border border-border bg-muted/30 p-5 sm:p-6 opacity-60">
           <h2 className="text-lg sm:text-xl tracking-wide">Goal-setting framework</h2>
