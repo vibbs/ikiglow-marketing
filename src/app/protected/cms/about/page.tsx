@@ -96,11 +96,11 @@ export default function EditAboutPage() {
                 </Link>
                 <h1 className="text-2xl tracking-wide">Edit About Page</h1>
               </div>
-              {frontmatter.updatedAt && (
+              {frontmatter.updatedAt ? (
                 <p className="text-sm text-muted-foreground">
                   Last updated: {new Date(frontmatter.updatedAt as string).toLocaleDateString()}
                 </p>
-              )}
+              ) : null}
             </div>
           </div>
 

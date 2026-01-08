@@ -16,6 +16,8 @@ IkiGlow fuses **Ikigai** (Japanese concept of purpose) with **Glow** (radiance f
 - **UI Components**: shadcn/ui (New York style)
 - **Icons**: lucide-react
 - **Utilities**: clsx + tailwind-merge via `cn()` helper
+- **Content**: MDX-based content system with gray-matter frontmatter parsing
+- **CMS**: File-based content management at `/protected/cms`
 
 ## Development Commands
 
@@ -53,11 +55,36 @@ src/app/
 ├── page.tsx              # Homepage: brand story + navigation
 ├── layout.tsx            # Root layout with fonts (Geist Sans/Mono)
 ├── globals.css           # Design tokens + Tailwind v4 config
-├── blog/                 # Blog/reflections section
+├── blog/
+│   ├── page.tsx          # Blog listing (pulls from MDX)
+│   └── [slug]/           # Dynamic blog post route
+├── guides/
+│   ├── page.tsx          # Guides listing (pulls from MDX)
+│   └── [slug]/           # Dynamic guide route
+├── about/
+│   └── page.tsx          # About page (renders from MDX)
 ├── exercises/
 │   ├── breathing/        # 4-4-6-2 breathing pattern exercise
 │   └── grounding/        # 5-4-3-2-1 sensory grounding technique
-└── videos/               # Short-form video showcase
+├── protected/
+│   └── cms/              # CMS admin interface (future auth)
+│       ├── blog/         # Blog manager
+│       ├── guides/       # Guides manager
+│       └── about/        # About page editor
+└── api/
+    └── cms/              # API routes for fetching raw MDX content
+```
+
+### Content Structure
+
+```
+000-content/              # MDX content files (git-tracked)
+├── blog/
+│   └── *.mdx             # Blog posts with frontmatter
+├── guides/
+│   └── *.mdx             # Guides with frontmatter
+└── about/
+    └── about.mdx         # About page content
 ```
 
 ### Component Organization
@@ -65,10 +92,27 @@ src/app/
 ```
 src/components/
 ├── ui/                   # shadcn/ui components (Button, Card, etc.)
-├── exercises/
-│   ├── BreathingExercise.tsx  # Client component with timer state
-│   └── GroundingExercise.tsx  # Client component with multi-step form
-└── shared/               # Reusable components (future)
+├── cms/
+│   └── MDXEditor.tsx     # Reusable MDX editor with preview
+└── exercises/
+    ├── BreathingExercise.tsx  # Client component with timer state
+    └── GroundingExercise.tsx  # Client component with multi-step form
+```
+
+### Library Organization
+
+```
+src/lib/
+└── mdx/
+    ├── mdx-utils.ts          # Content utilities (getAll, getBySlug, etc.)
+    └── mdx-components.tsx    # Custom MDX components with IkiGlow styling
+```
+
+### Type Definitions
+
+```
+src/types/
+└── content.ts            # TypeScript types for content (BlogPost, Guide, etc.)
 ```
 
 ### Path Aliases
@@ -77,6 +121,7 @@ TypeScript path aliases are configured in `tsconfig.json`:
 - `@/*` → `./src/*`
 - Components: `@/components`
 - Utils: `@/lib/utils`
+- Types: `@/types`
 
 ## Interactive Exercise Architecture
 
@@ -144,8 +189,97 @@ Components will be added to `src/components/ui/`.
 - **Client vs Server**: Default to Server Components. Only add `"use client"` when state/effects needed
 - **Exports**: Use named exports for components (e.g., `export function BreathingExercise()`)
 
+## MDX Content Management
+
+### Content Structure
+
+All content is stored as MDX files in `000-content/` with YAML frontmatter. Content is rendered server-side using `next-mdx-remote/rsc`.
+
+### Frontmatter Conventions
+
+**Blog Posts** (`000-content/blog/*.mdx`):
+```yaml
+---
+title: "Post Title"
+description: "Brief summary for SEO and listings"
+category: "Mindset" | "Mental Health" | "Habits" | etc.
+publishedAt: "YYYY-MM-DD"
+slug: "url-slug"
+keywords: ["keyword1", "keyword2"]  # Optional
+relatedLinks:  # Optional
+  - href: "/path/to/link"
+    text: "Link description"
+boundaryNote: "Mental health boundary note"  # Optional
+readingTime: 5  # Auto-calculated on save
+---
+```
+
+**Guides** (`000-content/guides/*.mdx`):
+```yaml
+---
+title: "Guide Title"
+description: "Brief summary"
+publishedAt: "YYYY-MM-DD"
+slug: "url-slug"
+keywords: ["keyword1", "keyword2"]  # Optional
+readingTime: 15  # Auto-calculated on save
+---
+```
+
+**About Page** (`000-content/about/about.mdx`):
+```yaml
+---
+title: "About IkiGlow"
+description: "Meta description"
+updatedAt: "YYYY-MM-DD"  # Auto-updated on save
+---
+```
+
+### MDX Syntax
+
+MDX files support standard Markdown plus:
+- **Frontmatter**: YAML metadata at the top
+- **GitHub Flavored Markdown**: Tables, task lists, strikethrough
+- **Custom components**: Use styled components from `mdx-components.tsx`
+- **React components**: Can import and use React components (if needed)
+
+### Auto-Calculated Fields
+
+- `readingTime`: Calculated automatically on save using `reading-time` package
+- `updatedAt` (about page): Auto-set to current date on save
+
+### Content Utilities
+
+Located at `src/lib/mdx/mdx-utils.ts`:
+
+- `getAllBlogPosts()` - Get all blog posts, sorted by date
+- `getBlogPostBySlug(slug)` - Get single blog post
+- `getBlogPostsByCategory(category)` - Filter by category
+- `getAllGuides()` - Get all guides
+- `getGuideBySlug(slug)` - Get single guide
+- `getAboutPage()` - Get about page content
+- `writeContent()` - Save content (CMS only)
+- `deleteContent()` - Delete content (CMS only)
+
+### CMS Workflow
+
+1. **Accessing CMS**: Navigate to `/protected/cms` (will require auth in future)
+2. **Editing content**: Click on content to edit, toggle preview, save
+3. **Creating content**: Use "New Post" or "New Guide" buttons (future implementation)
+4. **Deleting content**: Use delete button with confirmation
+
+### Best Practices
+
+- **Slug naming**: Use kebab-case, descriptive slugs (e.g., `why-clarity-beats-motivation`)
+- **Frontmatter**: Always include required fields, validate before saving
+- **Line length**: Keep MDX content lines under 100 characters for readability
+- **Headings**: Use semantic heading hierarchy (h1 → h2 → h3)
+- **Internal links**: Use relative paths (e.g., `/blog/post-slug`)
+- **Images**: Store in `public/` and reference via `/images/filename.jpg`
+
 ## Git Workflow
 
 - Main branch: `main`
 - Commit style: Descriptive, imperative (e.g., "Add breathing exercise timer")
-- Current status shows `docs/branding/` untracked (branding assets)
+- **Content commits**: Commit MDX files in `000-content/` with clear messages
+- **CMS changes**: CMS writes directly to filesystem, commit changes separately
