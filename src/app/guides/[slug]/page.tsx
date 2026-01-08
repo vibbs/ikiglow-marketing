@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllGuides, getGuideBySlug } from "@/lib/mdx/mdx-utils";
 import { mdxComponents } from "@/lib/mdx/mdx-components";
@@ -22,6 +23,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const guide = await getGuideBySlug(slug);
 
+  if (!guide) {
+    return {
+      title: "Guide Not Found — IkiGlow",
+    };
+  }
+
   return {
     title: `${guide.frontmatter.title} — IkiGlow`,
     description: guide.frontmatter.description,
@@ -32,6 +39,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function GuidePage({ params }: PageProps) {
   const { slug } = await params;
   const guide = await getGuideBySlug(slug);
+
+  if (!guide) {
+    notFound();
+  }
 
   return (
     <main className="min-h-screen">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllBlogPosts, getBlogPostBySlug } from "@/lib/mdx/mdx-utils";
 import { mdxComponents } from "@/lib/mdx/mdx-components";
@@ -22,6 +23,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
 
+  if (!post) {
+    return {
+      title: "Post Not Found — IkiGlow",
+    };
+  }
+
   return {
     title: `${post.frontmatter.title} — IkiGlow`,
     description: post.frontmatter.description,
@@ -32,6 +39,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function BlogPost({ params }: PageProps) {
   const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
+
+  if (!post) {
+    notFound();
+  }
 
   return (
     <main className="min-h-screen">

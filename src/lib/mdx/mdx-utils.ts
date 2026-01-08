@@ -49,23 +49,29 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
   }
 }
 
-export async function getBlogPostBySlug(slug: string): Promise<BlogPost> {
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
   const filePath = path.join(CONTENT_DIR, "blog", `${slug}.mdx`);
-  const fileContent = await fs.readFile(filePath, "utf8");
-  const { data, content } = matter(fileContent);
 
-  const frontmatter = data as BlogPostFrontmatter;
+  try {
+    const fileContent = await fs.readFile(filePath, "utf8");
+    const { data, content } = matter(fileContent);
 
-  // Auto-calculate reading time if not set
-  if (!frontmatter.readingTime) {
-    frontmatter.readingTime = calculateReadingTime(content);
+    const frontmatter = data as BlogPostFrontmatter;
+
+    // Auto-calculate reading time if not set
+    if (!frontmatter.readingTime) {
+      frontmatter.readingTime = calculateReadingTime(content);
+    }
+
+    return {
+      frontmatter,
+      content,
+      slug,
+    };
+  } catch (error) {
+    console.error(`Blog post not found: ${slug}`, error);
+    return null;
   }
-
-  return {
-    frontmatter,
-    content,
-    slug,
-  };
 }
 
 export async function getBlogPostsByCategory(category: string): Promise<BlogPost[]> {
@@ -103,23 +109,29 @@ export async function getAllGuides(): Promise<Guide[]> {
   }
 }
 
-export async function getGuideBySlug(slug: string): Promise<Guide> {
+export async function getGuideBySlug(slug: string): Promise<Guide | null> {
   const filePath = path.join(CONTENT_DIR, "guides", `${slug}.mdx`);
-  const fileContent = await fs.readFile(filePath, "utf8");
-  const { data, content } = matter(fileContent);
 
-  const frontmatter = data as GuideFrontmatter;
+  try {
+    const fileContent = await fs.readFile(filePath, "utf8");
+    const { data, content } = matter(fileContent);
 
-  // Auto-calculate reading time if not set
-  if (!frontmatter.readingTime) {
-    frontmatter.readingTime = calculateReadingTime(content);
+    const frontmatter = data as GuideFrontmatter;
+
+    // Auto-calculate reading time if not set
+    if (!frontmatter.readingTime) {
+      frontmatter.readingTime = calculateReadingTime(content);
+    }
+
+    return {
+      frontmatter,
+      content,
+      slug,
+    };
+  } catch (error) {
+    console.error(`Guide not found: ${slug}`, error);
+    return null;
   }
-
-  return {
-    frontmatter,
-    content,
-    slug,
-  };
 }
 
 // About page utilities
