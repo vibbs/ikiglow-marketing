@@ -28,6 +28,26 @@ This persona acts as a bridge between ancient wisdom (Stoicism/Ikigai) and moder
 * **The "Shift":** Introduces a framework (Ikigai, Flow, etc.) as a tool to solve that specific moment.
 * **The "Micro-Action":** Ends with one thing the reader can do in under 60 seconds to feel 1% better.
 
+---
+
+### How This Becomes a System (Important)
+
+Each piece connects to at least one of the following:
+
+- A tool
+- A video
+- A newsletter issue
+- Eventually → the Ikiglow app
+
+Example:
+
+- Blog → “Overthinking”
+- Tool → Grounding exercise
+- Guide → Overthinking guide
+- Video → 60-second mental reset
+- Newsletter → Weekly reflection
+
+This is how Ikiglow becomes an ecosystem, not just a site.
 
 ---
 

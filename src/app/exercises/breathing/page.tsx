@@ -12,9 +12,9 @@ export default function BreathingPage() {
     <main className="min-h-screen">
       {/* 1. Purpose - Pattern A: Top Wash */}
       <div className="wash-top-sage">
-        <div className="mx-auto max-w-2xl space-y-8 px-6 py-16 animate-ink-flow-stagger">
-          <h1 className="text-3xl tracking-wide">Breathing exercise</h1>
-          <p className="text-base leading-relaxed">
+        <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8 px-4 sm:px-6 py-12 sm:py-16 animate-ink-flow-stagger">
+          <h1 className="text-2xl sm:text-3xl tracking-wide">Breathing exercise</h1>
+          <p className="text-sm sm:text-base leading-relaxed">
             A simple way to slow your thoughts.
           </p>
         </div>
@@ -22,15 +22,15 @@ export default function BreathingPage() {
 
       {/* 2. The Tool Itself - Pattern B: Breathing Panel (Sage Wash) */}
       <div className="panel-sage">
-        <div className="mx-auto max-w-2xl px-6 py-16">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 py-12 sm:py-16">
           <BreathingExercise />
         </div>
       </div>
 
       {/* 3. How to Use */}
-      <div className="mx-auto max-w-2xl space-y-6 px-6 py-16">
-        <h2 className="text-xl tracking-wide">How to use</h2>
-        <ol className="space-y-3 text-base leading-relaxed">
+      <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
+        <h2 className="text-lg sm:text-xl tracking-wide">How to use</h2>
+        <ol className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed">
           <li>1. Press start when you&apos;re ready.</li>
           <li>2. Follow the visual guide and breath with the rhythm.</li>
           <li>3. Complete as many cycles as you need.</li>
@@ -39,9 +39,9 @@ export default function BreathingPage() {
 
       {/* 4. Why It Helps */}
       <div className="panel-mist">
-        <div className="mx-auto max-w-2xl space-y-6 px-6 py-16">
-          <h2 className="text-xl tracking-wide">Why it helps</h2>
-          <div className="space-y-4 text-base leading-relaxed">
+        <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
+          <h2 className="text-lg sm:text-xl tracking-wide">Why it helps</h2>
+          <div className="space-y-3 sm:space-y-4 text-sm sm:text-base leading-relaxed">
             <p>
               This exercise uses a 4-4-6-2 pattern: inhale for 4 seconds, hold for
               4 seconds, exhale for 6 seconds, rest for 2 seconds.
@@ -59,9 +59,9 @@ export default function BreathingPage() {
       </div>
 
       {/* 5. Optional Next Step */}
-      <div className="mx-auto max-w-2xl space-y-6 px-6 py-16">
-        <h3 className="text-lg tracking-wide">Next steps</h3>
-        <div className="space-y-3">
+      <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
+        <h3 className="text-base sm:text-lg tracking-wide">Next steps</h3>
+        <div className="space-y-2 sm:space-y-3">
           <Link
             href="/exercises/grounding"
             className="block text-sm text-muted-foreground transition-colors hover:text-[#6F846F]"

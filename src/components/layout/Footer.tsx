@@ -3,12 +3,12 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="border-t border-[#E6E6E1]/60 bg-[#F2F4F3]">
-      <div className="mx-auto max-w-5xl space-y-12 px-6 py-16">
+      <div className="mx-auto max-w-5xl space-y-8 sm:space-y-12 px-4 sm:px-6 py-12 sm:py-16">
         {/* Navigation */}
-        <nav className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-          <div className="space-y-4">
+        <nav className="grid gap-6 sm:gap-8 grid-cols-2 md:grid-cols-3">
+          <div className="space-y-3 sm:space-y-4">
             <h3 className="text-sm tracking-wide text-foreground">Explore</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link
                   href="/"
@@ -44,9 +44,9 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <h3 className="text-sm tracking-wide text-foreground">Tools</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link
                   href="/tools"
@@ -74,9 +74,9 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4 col-span-2 md:col-span-1">
             <h3 className="text-sm tracking-wide text-foreground">Connect</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link
                   href="/newsletter"
@@ -98,7 +98,7 @@ export function Footer() {
         </nav>
 
         {/* Legal + Brand */}
-        <div className="space-y-4 border-t border-[#E6E6E1]/60 pt-8">
+        <div className="space-y-3 sm:space-y-4 border-t border-[#E6E6E1]/60 pt-6 sm:pt-8">
           <p className="text-xs text-muted-foreground">
             IkiGlow is not therapy or medical advice. If you&apos;re experiencing a mental health crisis, please seek professional help.
           </p>

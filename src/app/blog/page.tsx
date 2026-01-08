@@ -50,11 +50,11 @@ export default async function Blog({ searchParams }: PageProps) {
   return (
     <main className="min-h-screen">
       {/* Header */}
-      <div className="mx-auto max-w-2xl space-y-8 px-6 py-16">
-        <h1 className="text-3xl tracking-wide">
+      <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8 px-4 sm:px-6 py-12 sm:py-16">
+        <h1 className="text-2xl sm:text-3xl tracking-wide">
           {category === "all" ? "Reflections" : category}
         </h1>
-        <p className="text-base text-muted-foreground">
+        <p className="text-sm sm:text-base text-muted-foreground">
           {category === "all"
             ? "Thoughts on purpose, attention, and living intentionally"
             : `${posts.length} ${posts.length === 1 ? "post" : "posts"}`
@@ -64,15 +64,15 @@ export default async function Blog({ searchParams }: PageProps) {
 
       {/* Categories */}
       <div className="panel-sage">
-        <div className="mx-auto max-w-2xl px-6 py-8">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 py-6 sm:py-8">
           <CategoryFilter activeCategory={category} />
         </div>
       </div>
 
       {/* Blog posts */}
-      <div className="mx-auto max-w-2xl space-y-12 px-6 py-16">
+      <div className="mx-auto max-w-2xl space-y-8 sm:space-y-12 px-4 sm:px-6 py-12 sm:py-16">
         {posts.length === 0 ? (
-          <div className="rounded-xl border border-[#E6E6E1]/60 bg-[#EEF3EF] p-12 text-center">
+          <div className="rounded-xl border border-[#E6E6E1]/60 bg-[#EEF3EF] p-8 sm:p-12 text-center">
             <p className="text-sm text-muted-foreground">
               No posts in this category yet.
             </p>
@@ -85,12 +85,12 @@ export default async function Blog({ searchParams }: PageProps) {
           </div>
         ) : (
           posts.map((post) => (
-            <article key={post.slug} className="space-y-4 border-b border-[#E6E6E1]/60 pb-12">
-              <Link href={`/blog/${post.slug}`} className="block space-y-3">
+            <article key={post.slug} className="space-y-3 sm:space-y-4 border-b border-[#E6E6E1]/60 pb-8 sm:pb-12">
+              <Link href={`/blog/${post.slug}`} className="block space-y-2 sm:space-y-3">
                 <div className="text-xs text-muted-foreground">
                   {post.frontmatter.category} · {post.frontmatter.readingTime} min read
                 </div>
-                <h2 className="text-xl tracking-wide transition-colors hover:text-[#6F846F]">
+                <h2 className="text-lg sm:text-xl tracking-wide transition-colors hover:text-[#6F846F]">
                   {post.frontmatter.title}
                 </h2>
                 <p className="text-sm leading-relaxed text-muted-foreground">

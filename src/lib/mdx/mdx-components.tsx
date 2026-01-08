@@ -50,12 +50,12 @@ export const mdxComponents: MDXComponents = {
 
   // Lists
   ul: ({ children }) => (
-    <ul className="space-y-2 text-base leading-relaxed">{children}</ul>
+    <ul className="list-disc list-outside ml-6 space-y-2 text-base leading-relaxed">{children}</ul>
   ),
   ol: ({ children }) => (
-    <ol className="space-y-3 text-base leading-relaxed">{children}</ol>
+    <ol className="list-decimal list-outside ml-6 space-y-3 text-base leading-relaxed">{children}</ol>
   ),
-  li: ({ children }) => <li>{children}</li>,
+  li: ({ children }) => <li className="pl-2">{children}</li>,
 
   // Emphasis
   em: ({ children }) => <em className="italic">{children}</em>,

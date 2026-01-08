@@ -358,25 +358,35 @@
   background: linear-gradient(to bottom, var(--color-blush-wash, #F6EEF0) 0%, var(--color-paper, #FAFAF8) 30%);
 }
 
-/* Pattern B - Breathing Panel (tinted container) */
+/* Pattern B - Breathing Panel (tinted container) - Glassmorphic */
 .panel-sage {
-  background-color: var(--color-sage-wash, #EEF3EF);
+  background-color: rgba(238, 243, 239, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(238, 243, 239, 0.3);
 }
 
 .panel-sky {
-  background-color: var(--color-sky-wash, #EEF4F8);
+  background-color: rgba(238, 244, 248, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(238, 244, 248, 0.3);
 }
 
 .panel-blush {
-  background-color: var(--color-blush-wash, #F6EEF0);
+  background-color: rgba(246, 238, 240, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(246, 238, 240, 0.3);
 }
 
 .panel-sand {
-  background-color: var(--color-sand, #F4F1EA);
+  background-color: rgba(244, 241, 234, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(244, 241, 234, 0.3);
 }
 
 .panel-mist {
-  background-color: var(--color-mist, #F2F4F3);
+  background-color: rgba(242, 244, 243, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(242, 244, 243, 0.3);
 }
 
 /* Pattern C - Accent dot system */
@@ -421,4 +431,42 @@ textarea:focus {
 
 .hover-lift:hover {
   transform: translateY(-1px);
+}
+
+/* ============================================
+   Mobile Optimizations
+   ============================================ */
+
+/* Hide scrollbar for mobile horizontal scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
+}
+
+/* Touch-friendly tap targets */
+@media (max-width: 768px) {
+
+  button,
+  a {
+    min-height: 44px;
+    /* iOS recommended minimum */
+  }
+
+  /* Prevent background zoom on mobile */
+  body {
+    background-attachment: scroll;
+  }
+
+  /* Better text rendering on mobile */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }

@@ -11,24 +11,24 @@ export default function GroundingPage() {
   return (
     <main className="min-h-screen">
       {/* 1. Purpose */}
-      <div className="mx-auto max-w-2xl space-y-8 px-6 py-16">
-        <h1 className="text-3xl tracking-wide">Grounding practice</h1>
-        <p className="text-base leading-relaxed">
+      <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8 px-4 sm:px-6 py-12 sm:py-16">
+        <h1 className="text-2xl sm:text-3xl tracking-wide">Grounding practice</h1>
+        <p className="text-sm sm:text-base leading-relaxed">
           Return to the present moment.
         </p>
       </div>
 
       {/* 2. The Tool Itself */}
       <div className="border-t border-border bg-muted/30">
-        <div className="mx-auto max-w-2xl px-6 py-16">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 py-12 sm:py-16">
           <GroundingExercise />
         </div>
       </div>
 
       {/* 3. How to Use */}
-      <div className="mx-auto max-w-2xl space-y-6 px-6 py-16">
-        <h2 className="text-xl tracking-wide">How to use</h2>
-        <ol className="space-y-3 text-base leading-relaxed">
+      <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
+        <h2 className="text-lg sm:text-xl tracking-wide">How to use</h2>
+        <ol className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed">
           <li>1. Begin when you&apos;re ready.</li>
           <li>2. Notice what each sense brings to your awareness.</li>
           <li>3. Take your time with each step.</li>
@@ -37,9 +37,9 @@ export default function GroundingPage() {
 
       {/* 4. Why It Helps */}
       <div className="border-t border-border bg-muted/30">
-        <div className="mx-auto max-w-2xl space-y-6 px-6 py-16">
-          <h2 className="text-xl tracking-wide">Why it helps</h2>
-          <div className="space-y-4 text-base leading-relaxed">
+        <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
+          <h2 className="text-lg sm:text-xl tracking-wide">Why it helps</h2>
+          <div className="space-y-3 sm:space-y-4 text-sm sm:text-base leading-relaxed">
             <p>
               The 5-4-3-2-1 technique anchors you in the present by engaging each of
               your five senses in sequence.
@@ -57,9 +57,9 @@ export default function GroundingPage() {
       </div>
 
       {/* 5. Optional Next Step */}
-      <div className="mx-auto max-w-2xl space-y-6 px-6 py-16">
-        <h3 className="text-lg tracking-wide">Next steps</h3>
-        <div className="space-y-3">
+      <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
+        <h3 className="text-base sm:text-lg tracking-wide">Next steps</h3>
+        <div className="space-y-2 sm:space-y-3">
           <Link
             href="/exercises/breathing"
             className="block text-sm text-muted-foreground transition-colors hover:text-foreground"
