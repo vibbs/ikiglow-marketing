@@ -279,7 +279,61 @@ Located at `src/lib/mdx/mdx-utils.ts`:
 
 ## Git Workflow
 
+**IMPORTANT**: After completing any development work, always create a git commit following these conventions:
+
+### Commit Message Format
+
+Use **semantic commit messages** following conventional commits:
+
+```
+<type>: <subject>
+
+<optional body>
+```
+
+**Types:**
+- `feat`: New feature (e.g., "feat: Add CMS content creation pages")
+- `fix`: Bug fix (e.g., "fix: Handle missing content with 404 pages")
+- `refactor`: Code refactoring (e.g., "refactor: Remove static pages in favor of MDX")
+- `docs`: Documentation changes (e.g., "docs: Update CLAUDE.md with git workflow")
+- `style`: Code style/formatting (e.g., "style: Fix linting issues")
+- `test`: Add or update tests
+- `chore`: Maintenance tasks (e.g., "chore: Update dependencies")
+
+**Subject line rules:**
+- Use imperative mood ("Add feature" not "Added feature")
+- Don't capitalize first letter
+- No period at the end
+- Keep under 72 characters
+
+### Workflow
+
+1. **Review changes**: Always run `git status` and `git diff` before committing
+2. **Stage files**: Use `git add` to stage relevant files
+3. **Write commit**: Use descriptive commit message following format above
+4. **Group related changes**: Commit logically related changes together
+
+### Examples
+
+```bash
+# Good commits
+git commit -m "feat: Add new post and guide creation pages"
+git commit -m "fix: Handle missing MDX content with custom 404 pages"
+git commit -m "refactor: Remove static blog/guide pages in favor of dynamic MDX routes"
+
+# Avoid
+git commit -m "updates"
+git commit -m "Fixed stuff"
+git commit -m "WIP"
+```
+
+### Branch Strategy
+
 - Main branch: `main`
-- Commit style: Descriptive, imperative (e.g., "Add breathing exercise timer")
-- **Content commits**: Commit MDX files in `000-content/` with clear messages
-- **CMS changes**: CMS writes directly to filesystem, commit changes separately
+- Feature branches: Use descriptive names (e.g., `feature/cms-creation-pages`)
+- Always commit to main unless working on experimental features
+
+### Content Commits
+
+- **MDX content changes**: Commit with `content:` prefix (e.g., "content: Add decision fatigue guide")
+- **CMS changes**: CMS writes directly to filesystem, commit changes separately from code changes
