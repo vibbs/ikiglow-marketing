@@ -33,17 +33,19 @@ npm run start        # Run production build
 npm run lint         # Run ESLint
 ```
 
-## Design Philosophy: 余白 (Yohaku) - Meaningful Emptiness
+## Design Philosophy: Yohaku+ (余白) - Meaningful Emptiness with Atmosphere
 
-The entire codebase follows Muji-inspired minimalism. This is not just visual—it influences code architecture, component design, and interaction patterns.
+The entire codebase follows a Yohaku+ design system—an evolution of Muji-inspired minimalism that adds subtle color atmosphere and slow, meaningful motion while maintaining the core philosophy of intentional space.
+
+**Rule: Color is atmosphere, not emphasis. Motion should lower pulse, not raise attention.**
 
 **Key Design Principles:**
 - **Generous whitespace**: Components should breathe. Use `space-y-8`, `space-y-12`, `space-y-16` liberally
-- **Warm neutral palette**: OKLCH colors with warm undertones (see [globals.css](src/app/globals.css))
-- **Minimal borders**: `border-border` with subtle colors (`oklch(0.90 0.005 85)`)
-- **Soft gold accents**: Primary color is `oklch(0.72 0.08 75)` - use sparingly for "glow" moments
+- **Tinted surfaces over borders**: Use Wash backgrounds (Sage, Sky, Blush) to define sections
+- **Moss accent**: Primary accent `#6F846F` - use sparingly (<5% of screen)
+- **Soft rounded corners**: `rounded-xl` (14-18px) for interactive elements
 - **Typography**: Font-light, generous line-height (1.8), letter-spacing (0.01em-0.02em)
-- **Subtle interactions**: Hover states use `border-primary/40` or `hover:bg-primary`
+- **Slow transitions**: Use `ease-[cubic-bezier(0.2,0.8,0.2,1)]` with 220-420ms duration
 - **No hard guidance**: Allow reflection and discovery, don't force users down paths
 
 ## Architecture
@@ -143,28 +145,86 @@ Both breathing and grounding exercises follow this pattern:
 - Textarea for reflection at each step
 - State persists across steps, can navigate back/forward
 
-## Design Tokens & Styling
+## Design Tokens & Styling (Yohaku+ Color System)
 
-All colors use **OKLCH color space** for perceptually uniform brightness. Key values:
+The design system uses the "Quiet Fields" palette with HEX colors for consistency:
 
 ```css
-/* Core palette (light mode) */
---background: oklch(0.98 0.002 85)      /* Warm off-white */
---foreground: oklch(0.25 0.005 85)      /* Deep charcoal */
---primary: oklch(0.72 0.08 75)          /* Soft gold for accents */
---border: oklch(0.90 0.005 85)          /* Subtle borders */
---muted-foreground: oklch(0.45 0.005 85) /* Medium gray text */
+/* Ink (Text) */
+--color-ink-900: #1C1C1C;     /* Primary text */
+--color-ink-700: #3E3E3E;     /* Secondary text */
+--color-ink-500: #7A7A7A;     /* Muted text */
 
-/* Spacing */
---radius: 0.25rem                        /* Minimal border radius */
+/* Paper & Fields (Backgrounds) */
+--color-paper: #FAFAF8;       /* Primary background */
+--color-mist: #F2F4F3;        /* Cool neutral surface */
+--color-sand: #F4F1EA;        /* Warm neutral surface */
+
+/* Soft Tints (Background Washes) - 15-30% of screen */
+--color-sage-wash: #EEF3EF;   /* Default wash (Balance) */
+--color-sky-wash: #EEF4F8;    /* Mindset category */
+--color-blush-wash: #F6EEF0;  /* Warmth/Purpose category */
+
+/* Accents (<5% of screen) */
+--color-moss: #6F846F;        /* Primary accent (signature) */
+--color-river: #5F7C8B;       /* Secondary accent */
+--color-clay: #9A6B5A;        /* Rare/Purpose accent */
+
+/* Dividers */
+--color-divider: #E6E6E1;     /* Soft borders at 60-70% opacity */
+
+/* Motion */
+--ease-yohaku: cubic-bezier(0.2, 0.8, 0.2, 1);
+--duration-slow: 320ms;
+--duration-medium: 220ms;
+--duration-breath: 4200ms;    /* Signature breath pulse */
 ```
+
+### Color Usage Rules
+
+- **60-80%** = Paper / Mist / Sand
+- **15-30%** = One Wash (Sage OR Sky OR Blush) per screen
+- **<5%** = Accent (Moss/River/Clay)
+- Never use more than **1 accent** on a screen
+- Prefer **tinted containers** over colored buttons
+
+### Wash Patterns (CSS Classes)
+
+```css
+/* Pattern A - Top Wash (morning light gradient) */
+.wash-top-sage    /* Sage gradient fading to Paper */
+.wash-top-sky     /* Sky gradient fading to Paper */
+.wash-top-blush   /* Blush gradient fading to Paper */
+
+/* Pattern B - Breathing Panel (solid tint) */
+.panel-sage       /* Sage Wash background */
+.panel-sky        /* Sky Wash background */
+.panel-blush      /* Blush Wash background */
+.panel-sand       /* Sand background */
+.panel-mist       /* Mist background */
+```
+
+### Animation Classes
+
+```css
+.animate-breath-pulse     /* Signature 4.2s breathing animation */
+.animate-ink-flow         /* Text reveal with upward drift */
+.animate-ink-flow-stagger /* Staggered children reveal */
+.animate-wash-drift       /* Subtle background movement */
+.animate-soft-sheet       /* Modal/sheet entrance */
+```
+
+### Component Styling Guidelines
 
 When creating new components:
 - Use `font-light` for almost all text
 - Use `tracking-wide` (letter-spacing) for headings
 - Default spacing: `space-y-8` or larger for section separation
-- Borders: `border border-border` with `rounded-sm`
-- Hover states: `transition-colors hover:border-primary/40`
+- Borders: Use `border-[#E6E6E1]/60` with `rounded-xl`
+- Buttons: `rounded-xl` with Moss accent `bg-[#6F846F]`
+- Hover states: `hover:border-[#6F846F]/40` or `hover:bg-[#EEF3EF]`
+- Transitions: `duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)]`
+- Active states: `active:translate-y-[1px]` for subtle press feedback
 
 ## shadcn/ui Configuration
 

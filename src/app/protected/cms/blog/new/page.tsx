@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { saveContent } from "@/app/protected/cms/actions";
 import matter from "gray-matter";
+import { isValidCategory } from "@/types/content";
 
 const BLOG_TEMPLATE = `---
 title: "Your Post Title"
@@ -25,6 +26,16 @@ Start writing your post content here...
 ## Section Heading
 
 Your content goes here.
+
+---
+
+**Valid categories:**
+- Mindset
+- Mental Health
+- Habits
+- Focus & Productivity
+- Self-Awareness
+- Life Goals
 `;
 
 export default function NewBlogPost() {
@@ -45,6 +56,15 @@ export default function NewBlogPost() {
 
       if (!fm.title || !fm.description || !fm.category) {
         alert("Please provide all required fields: title, description, category");
+        setIsSaving(false);
+        return;
+      }
+
+      // Validate category
+      if (!isValidCategory(fm.category as string)) {
+        alert(
+          `Invalid category: "${fm.category}". Must be one of: Mindset, Mental Health, Habits, Focus & Productivity, Self-Awareness, Life Goals`
+        );
         setIsSaving(false);
         return;
       }
@@ -100,7 +120,10 @@ export default function NewBlogPost() {
             <ul className="space-y-2 text-xs text-muted-foreground">
               <li>• <strong>title</strong>: Post title (required)</li>
               <li>• <strong>description</strong>: Brief summary (required)</li>
-              <li>• <strong>category</strong>: Category name (required)</li>
+              <li>
+                • <strong>category</strong>: Must be one of: Mindset, Mental Health, Habits,
+                Focus & Productivity, Self-Awareness, Life Goals (required)
+              </li>
               <li>• <strong>publishedAt</strong>: Date in YYYY-MM-DD format (required)</li>
               <li>• <strong>slug</strong>: URL slug - must be unique (required)</li>
               <li>• <strong>keywords</strong>: Array of keywords (optional)</li>

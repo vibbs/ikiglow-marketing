@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Trash2, ArrowLeft } from "lucide-react";
 import { saveContent, removeContent } from "@/app/protected/cms/actions";
 import matter from "gray-matter";
+import { isValidCategory } from "@/types/content";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -51,6 +52,15 @@ export default function EditBlogPost({ params }: PageProps) {
     setIsSaving(true);
     try {
       const { data: fm, content: c } = matter(newContent);
+
+      // Validate category
+      if (fm.category && !isValidCategory(fm.category as string)) {
+        alert(
+          `Invalid category: "${fm.category}". Must be one of: Mindset, Mental Health, Habits, Focus & Productivity, Self-Awareness, Life Goals`
+        );
+        setIsSaving(false);
+        return;
+      }
 
       // Ensure slug matches
       fm.slug = slug;
@@ -127,7 +137,17 @@ export default function EditBlogPost({ params }: PageProps) {
                 </Link>
                 <h1 className="text-2xl tracking-wide">Edit Post</h1>
               </div>
-              <p className="text-sm text-muted-foreground">Slug: {slug}</p>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span>Slug: {slug}</span>
+                {typeof frontmatter.category === 'string' && frontmatter.category && (
+                  <>
+                    <span>·</span>
+                    <span className="rounded-sm border border-border px-2 py-0.5 text-xs">
+                      {frontmatter.category}
+                    </span>
+                  </>
+                )}
+              </div>
             </div>
             <Button
               onClick={handleDelete}
@@ -153,7 +173,10 @@ export default function EditBlogPost({ params }: PageProps) {
             <ul className="space-y-2 text-xs text-muted-foreground">
               <li>• <strong>title</strong>: Post title (required)</li>
               <li>• <strong>description</strong>: Brief summary (required)</li>
-              <li>• <strong>category</strong>: Category name (required)</li>
+              <li>
+                • <strong>category</strong>: Must be one of: Mindset, Mental Health, Habits,
+                Focus & Productivity, Self-Awareness, Life Goals (required)
+              </li>
               <li>• <strong>publishedAt</strong>: Date in YYYY-MM-DD format (required)</li>
               <li>• <strong>slug</strong>: URL slug (auto-set to match filename)</li>
               <li>• <strong>keywords</strong>: Array of keywords (optional)</li>

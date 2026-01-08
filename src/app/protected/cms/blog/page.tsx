@@ -1,16 +1,39 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getAllBlogPosts } from "@/lib/mdx/mdx-utils";
+import {
+  getAllBlogPosts,
+  getBlogPostsByCategory,
+  getBlogCategoryStats,
+} from "@/lib/mdx/mdx-utils";
 import { Plus, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CategoryFilter } from "@/components/blog/CategoryFilter";
+import { getCategoryFromSlug } from "@/types/content";
+import type { BlogCategory } from "@/types/content";
 
 export const metadata: Metadata = {
   title: "Manage Blog Posts — CMS",
   description: "Create and manage blog posts",
 };
 
-export default async function BlogCMS() {
-  const posts = await getAllBlogPosts();
+interface PageProps {
+  searchParams: Promise<{ category?: string }>;
+}
+
+export default async function BlogCMS({ searchParams }: PageProps) {
+  const { category: categorySlug } = await searchParams;
+
+  // Get filtered or all posts
+  const category = categorySlug
+    ? getCategoryFromSlug(categorySlug)
+    : null;
+  const posts = category
+    ? await getBlogPostsByCategory(category)
+    : await getAllBlogPosts();
+
+  // Get category stats for display
+  const categoryStats = await getBlogCategoryStats();
+  const activeCategory: BlogCategory | "all" = category || "all";
 
   return (
     <main className="min-h-screen">
@@ -22,6 +45,7 @@ export default async function BlogCMS() {
               <h1 className="text-3xl tracking-wide">Blog Posts</h1>
               <p className="text-sm text-muted-foreground">
                 {posts.length} {posts.length === 1 ? "post" : "posts"}
+                {category && ` in ${category}`}
               </p>
             </div>
             <Link href="/protected/cms/blog/new">
@@ -30,6 +54,15 @@ export default async function BlogCMS() {
                 New Post
               </Button>
             </Link>
+          </div>
+
+          {/* Category Filter */}
+          <div className="rounded-sm border border-border bg-muted/30 p-6">
+            <CategoryFilter
+              activeCategory={activeCategory}
+              basePath="/protected/cms/blog"
+              showAll={true}
+            />
           </div>
 
           {/* Posts List */}

@@ -46,18 +46,38 @@ export function BreathingExercise() {
     setSecondsLeft(phases[0].duration);
   };
 
+  // Yohaku+ Breath Pulse - signature animation
+  const getCircleStyles = () => {
+    if (!isActive) {
+      return "scale-75 opacity-60";
+    }
+    switch (currentPhase.phase) {
+      case "inhale":
+        return "scale-100 opacity-90";
+      case "hold":
+        return "scale-100 opacity-80";
+      case "exhale":
+        return "scale-[0.6] opacity-50";
+      case "rest":
+        return "scale-[0.6] opacity-40";
+      default:
+        return "scale-75 opacity-60";
+    }
+  };
+
   return (
     <div className="flex flex-col items-center space-y-16">
-      {/* Breathing circle */}
+      {/* Breathing circle - Yohaku+ Breath Pulse */}
       <div className="relative flex h-64 w-64 items-center justify-center md:h-80 md:w-80">
+        {/* Outer ambient ring */}
         <div
-          className={`absolute inset-0 rounded-full border-2 border-primary transition-all duration-1000 ease-in-out ${
-            isActive && currentPhase.phase === "inhale"
-              ? "scale-100 opacity-40"
-              : isActive && currentPhase.phase === "exhale"
-                ? "scale-50 opacity-20"
-                : "scale-75 opacity-30"
-          }`}
+          className={`absolute inset-0 rounded-full bg-[#6F846F]/10 transition-all duration-[1200ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] ${isActive ? getCircleStyles() : "animate-breath-pulse"
+            }`}
+        />
+        {/* Inner circle with Moss accent */}
+        <div
+          className={`absolute inset-8 rounded-full border-2 border-[#6F846F] bg-[#EEF3EF] transition-all duration-[1200ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] ${getCircleStyles()
+            }`}
         />
         <div className="relative z-10 text-center">
           <p className="text-5xl font-light tracking-wide text-foreground">
@@ -69,19 +89,19 @@ export function BreathingExercise() {
         </div>
       </div>
 
-      {/* Controls */}
+      {/* Controls - Yohaku+ button styling */}
       <div className="flex gap-4">
         {!isActive ? (
           <button
             onClick={handleStart}
-            className="rounded-sm border border-primary px-8 py-3 text-sm font-light tracking-wide transition-colors hover:bg-primary hover:text-primary-foreground"
+            className="rounded-xl bg-[#6F846F] px-8 py-3 text-sm font-light tracking-wide text-[#FAFAF8] transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:bg-[#5F7460] active:translate-y-[1px]"
           >
             Begin
           </button>
         ) : (
           <button
             onClick={handleStop}
-            className="rounded-sm border border-border px-8 py-3 text-sm font-light tracking-wide transition-colors hover:border-foreground"
+            className="rounded-xl border border-[#E6E6E1] bg-[#FAFAF8] px-8 py-3 text-sm font-light tracking-wide transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:bg-[#EEF3EF] active:translate-y-[1px]"
           >
             Stop
           </button>

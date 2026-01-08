@@ -11,7 +11,9 @@ import type {
   GuideFrontmatter,
   AboutPage,
   AboutPageFrontmatter,
+  BlogCategory,
 } from "@/types/content";
+import { getCategoryFromSlug, getCategorySlug } from "@/types/content";
 
 const CONTENT_DIR = path.join(process.cwd(), "000-content");
 
@@ -36,8 +38,9 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
       })
     );
 
-    // Sort by publishedAt date, newest first
-    return posts.sort((a, b) => {
+    // Filter out null posts and sort by publishedAt date, newest first
+    const validPosts = posts.filter((post): post is BlogPost => post !== null);
+    return validPosts.sort((a, b) => {
       return (
         new Date(b.frontmatter.publishedAt).getTime() -
         new Date(a.frontmatter.publishedAt).getTime()
@@ -49,7 +52,9 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
   }
 }
 
-export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+export async function getBlogPostBySlug(
+  slug: string
+): Promise<BlogPost | null> {
   const filePath = path.join(CONTENT_DIR, "blog", `${slug}.mdx`);
 
   try {
@@ -74,11 +79,32 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
   }
 }
 
-export async function getBlogPostsByCategory(category: string): Promise<BlogPost[]> {
+// Get posts by category - accepts either display name or slug
+export async function getBlogPostsByCategory(
+  categoryOrSlug: BlogCategory | string
+): Promise<BlogPost[]> {
   const allPosts = await getAllBlogPosts();
-  return allPosts.filter((post) =>
-    post.frontmatter.category.toLowerCase() === category.toLowerCase()
-  );
+
+  // Try to convert slug to category name if needed
+  const category =
+    getCategoryFromSlug(categoryOrSlug) || (categoryOrSlug as BlogCategory);
+
+  return allPosts.filter((post) => post.frontmatter.category === category);
+}
+
+// Get post count per category
+export async function getBlogCategoryStats(): Promise<
+  Record<BlogCategory, number>
+> {
+  const allPosts = await getAllBlogPosts();
+  const stats = {} as Record<BlogCategory, number>;
+
+  allPosts.forEach((post) => {
+    const cat = post.frontmatter.category;
+    stats[cat] = (stats[cat] || 0) + 1;
+  });
+
+  return stats;
 }
 
 // Guide utilities
@@ -96,8 +122,11 @@ export async function getAllGuides(): Promise<Guide[]> {
       })
     );
 
-    // Sort by publishedAt date, newest first
-    return guides.sort((a, b) => {
+    // Filter out null guides and sort by publishedAt date, newest first
+    const validGuides = guides.filter(
+      (guide): guide is Guide => guide !== null
+    );
+    return validGuides.sort((a, b) => {
       return (
         new Date(b.frontmatter.publishedAt).getTime() -
         new Date(a.frontmatter.publishedAt).getTime()

@@ -10,16 +10,18 @@ export const metadata: Metadata = {
 export default function BreathingPage() {
   return (
     <main className="min-h-screen">
-      {/* 1. Purpose */}
-      <div className="mx-auto max-w-2xl space-y-8 px-6 py-16">
-        <h1 className="text-3xl tracking-wide">Breathing exercise</h1>
-        <p className="text-base leading-relaxed">
-          A simple way to slow your thoughts.
-        </p>
+      {/* 1. Purpose - Pattern A: Top Wash */}
+      <div className="wash-top-sage">
+        <div className="mx-auto max-w-2xl space-y-8 px-6 py-16 animate-ink-flow-stagger">
+          <h1 className="text-3xl tracking-wide">Breathing exercise</h1>
+          <p className="text-base leading-relaxed">
+            A simple way to slow your thoughts.
+          </p>
+        </div>
       </div>
 
-      {/* 2. The Tool Itself */}
-      <div className="border-t border-border bg-muted/30">
+      {/* 2. The Tool Itself - Pattern B: Breathing Panel (Sage Wash) */}
+      <div className="panel-sage">
         <div className="mx-auto max-w-2xl px-6 py-16">
           <BreathingExercise />
         </div>
@@ -36,7 +38,7 @@ export default function BreathingPage() {
       </div>
 
       {/* 4. Why It Helps */}
-      <div className="border-t border-border bg-muted/30">
+      <div className="panel-mist">
         <div className="mx-auto max-w-2xl space-y-6 px-6 py-16">
           <h2 className="text-xl tracking-wide">Why it helps</h2>
           <div className="space-y-4 text-base leading-relaxed">
@@ -62,19 +64,19 @@ export default function BreathingPage() {
         <div className="space-y-3">
           <Link
             href="/exercises/grounding"
-            className="block text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="block text-sm text-muted-foreground transition-colors hover:text-[#6F846F]"
           >
             → Try the grounding exercise
           </Link>
           <Link
             href="/guides/anxiety"
-            className="block text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="block text-sm text-muted-foreground transition-colors hover:text-[#6F846F]"
           >
             → Read the guide on understanding anxiety
           </Link>
           <Link
             href="/blog/why-clarity-beats-motivation"
-            className="block text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="block text-sm text-muted-foreground transition-colors hover:text-[#6F846F]"
           >
             → Why clarity beats motivation
           </Link>

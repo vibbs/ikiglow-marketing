@@ -44,108 +44,169 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Yohaku+ Color System - "Quiet Fields" */
+  --color-ink-900: #1C1C1C;
+  --color-ink-700: #3E3E3E;
+  --color-ink-500: #7A7A7A;
+
+  --color-paper: #FAFAF8;
+  --color-mist: #F2F4F3;
+  --color-sand: #F4F1EA;
+
+  /* Soft Tints (Background Washes) */
+  --color-sage-wash: #EEF3EF;
+  --color-sky-wash: #EEF4F8;
+  --color-blush-wash: #F6EEF0;
+
+  /* Accents (Small, Intentional) */
+  --color-moss: #6F846F;
+  --color-river: #5F7C8B;
+  --color-clay: #9A6B5A;
+
+  /* Divider */
+  --color-divider: #E6E6E1;
+
+  /* Yohaku+ Motion System */
+  --ease-yohaku: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-slow: 320ms;
+  --duration-medium: 220ms;
+  --duration-breath: 4200ms;
 }
 
 :root {
-  /* Muji-inspired design tokens - 余白 (Yohaku) */
-  --radius: 0.25rem; /* Minimal border radius */
+  /* Yohaku+ Design Tokens - 余白 (Yohaku) with atmosphere */
+  --radius: 0.875rem;
+  /* 14px - Softer rounded corners */
 
-  /* Warm neutral palette */
-  --background: oklch(0.98 0.002 85); /* Warm off-white, like natural cotton */
-  --foreground: oklch(0.25 0.005 85); /* Deep charcoal with warmth */
+  /* Paper & Fields - Base colors */
+  --background: #FAFAF8;
+  /* Paper */
+  --foreground: #1C1C1C;
+  /* Ink 900 */
 
-  --card: oklch(0.99 0.002 85); /* Slightly warmer than background */
-  --card-foreground: oklch(0.25 0.005 85);
+  --card: #FAFAF8;
+  /* Paper */
+  --card-foreground: #1C1C1C;
 
-  --popover: oklch(0.98 0.002 85);
-  --popover-foreground: oklch(0.25 0.005 85);
+  --popover: #FAFAF8;
+  --popover-foreground: #1C1C1C;
 
-  /* Primary: soft gold accent for "glow" moments */
-  --primary: oklch(0.72 0.08 75); /* Soft amber/gold */
-  --primary-foreground: oklch(0.98 0.002 85);
+  /* Primary: Moss accent (disciplined use) */
+  --primary: #6F846F;
+  /* Moss */
+  --primary-foreground: #FAFAF8;
 
-  /* Secondary: subtle warm gray */
-  --secondary: oklch(0.95 0.003 85);
-  --secondary-foreground: oklch(0.25 0.005 85);
+  /* Secondary: Mist (cool neutral) */
+  --secondary: #F2F4F3;
+  /* Mist */
+  --secondary-foreground: #1C1C1C;
 
-  /* Muted: for backgrounds with breathing space */
-  --muted: oklch(0.96 0.003 85);
-  --muted-foreground: oklch(0.45 0.005 85); /* Medium gray */
+  /* Muted: Sand (warm neutral) */
+  --muted: #F4F1EA;
+  /* Sand */
+  --muted-foreground: #7A7A7A;
+  /* Ink 500 */
 
-  /* Accent: subtle warmth */
-  --accent: oklch(0.94 0.01 75);
-  --accent-foreground: oklch(0.25 0.005 85);
+  /* Accent: Sage Wash (default signature wash) */
+  --accent: #EEF3EF;
+  /* Sage Wash */
+  --accent-foreground: #1C1C1C;
 
   --destructive: oklch(0.577 0.245 27.325);
 
-  /* Minimal borders */
-  --border: oklch(0.90 0.005 85); /* Very subtle */
-  --input: oklch(0.90 0.005 85);
-  --ring: oklch(0.72 0.08 75); /* Gold for focus states */
+  /* Minimal borders with warmth */
+  --border: #E6E6E1;
+  /* Divider color */
+  --input: #E6E6E1;
+  --ring: #6F846F;
+  /* Moss for focus states */
 
-  --chart-1: oklch(0.72 0.08 75); /* Soft gold */
-  --chart-2: oklch(0.65 0.06 120); /* Muted sage */
-  --chart-3: oklch(0.60 0.05 200); /* Soft blue-gray */
-  --chart-4: oklch(0.55 0.04 40); /* Warm tan */
-  --chart-5: oklch(0.50 0.06 320); /* Muted mauve */
+  /* Chart colors using Yohaku+ accents */
+  --chart-1: #6F846F;
+  /* Moss */
+  --chart-2: #5F7C8B;
+  /* River */
+  --chart-3: #9A6B5A;
+  /* Clay */
+  --chart-4: #7A7A7A;
+  /* Ink 500 */
+  --chart-5: #3E3E3E;
+  /* Ink 700 */
 
-  --sidebar: oklch(0.98 0.002 85);
-  --sidebar-foreground: oklch(0.25 0.005 85);
-  --sidebar-primary: oklch(0.72 0.08 75);
-  --sidebar-primary-foreground: oklch(0.98 0.002 85);
-  --sidebar-accent: oklch(0.95 0.003 85);
-  --sidebar-accent-foreground: oklch(0.25 0.005 85);
-  --sidebar-border: oklch(0.90 0.005 85);
-  --sidebar-ring: oklch(0.72 0.08 75);
+  --sidebar: #FAFAF8;
+  --sidebar-foreground: #1C1C1C;
+  --sidebar-primary: #6F846F;
+  --sidebar-primary-foreground: #FAFAF8;
+  --sidebar-accent: #EEF3EF;
+  --sidebar-accent-foreground: #1C1C1C;
+  --sidebar-border: #E6E6E1;
+  --sidebar-ring: #6F846F;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: #1C1C1C;
+  /* Ink 900 */
+  --foreground: #FAFAF8;
+  /* Paper */
+  --card: #3E3E3E;
+  /* Ink 700 */
+  --card-foreground: #FAFAF8;
+  --popover: #3E3E3E;
+  --popover-foreground: #FAFAF8;
+  --primary: #8FA08F;
+  /* Lighter Moss for dark mode */
+  --primary-foreground: #1C1C1C;
+  --secondary: #3E3E3E;
+  --secondary-foreground: #FAFAF8;
+  --muted: #3E3E3E;
+  --muted-foreground: #7A7A7A;
+  --accent: #3E3E3E;
+  --accent-foreground: #FAFAF8;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --border: rgba(250, 250, 248, 0.1);
+  --input: rgba(250, 250, 248, 0.15);
+  --ring: #8FA08F;
+  --chart-1: #8FA08F;
+  --chart-2: #7F9CAB;
+  --chart-3: #BA8B7A;
+  --chart-4: #9A9A9A;
+  --chart-5: #5E5E5E;
+  --sidebar: #1C1C1C;
+  --sidebar-foreground: #FAFAF8;
+  --sidebar-primary: #8FA08F;
+  --sidebar-primary-foreground: #1C1C1C;
+  --sidebar-accent: #3E3E3E;
+  --sidebar-accent-foreground: #FAFAF8;
+  --sidebar-border: rgba(250, 250, 248, 0.1);
+  --sidebar-ring: #8FA08F;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground font-light;
     /* Yohaku (余白) - Meaningful Emptiness */
     line-height: 1.8;
     letter-spacing: 0.01em;
+    /* Background image - subtle, fixed */
+    background-image: url('/ikiglow_site_bg.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   /* Generous spacing for Yohaku (余白) */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-light tracking-wide;
     letter-spacing: 0.02em;
   }
@@ -155,8 +216,209 @@
     text-align: left;
   }
 
-  /* Calm, slow transitions */
-  button, a {
-    transition: all 200ms ease-in-out;
+  /* Yohaku+ Motion System - Slow, Soft, Meaningful */
+  button,
+  a {
+    transition: all var(--duration-medium, 220ms) var(--ease-yohaku, cubic-bezier(0.2, 0.8, 0.2, 1));
   }
+}
+
+/* ============================================
+   Yohaku+ Animation System
+   "Motion should lower pulse, not raise attention"
+   ============================================ */
+
+/* A) Breath Pulse - Signature animation */
+@keyframes breath-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.animate-breath-pulse {
+  animation: breath-pulse 4.2s var(--ease-yohaku, cubic-bezier(0.2, 0.8, 0.2, 1)) infinite;
+}
+
+/* B) Ink Flow - Text reveal with upward drift */
+@keyframes ink-flow {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-ink-flow {
+  animation: ink-flow var(--duration-slow, 320ms) var(--ease-yohaku) forwards;
+}
+
+/* Staggered ink flow for children */
+.animate-ink-flow-stagger>* {
+  opacity: 0;
+  animation: ink-flow var(--duration-slow, 320ms) var(--ease-yohaku) forwards;
+}
+
+.animate-ink-flow-stagger>*:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.animate-ink-flow-stagger>*:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.animate-ink-flow-stagger>*:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.animate-ink-flow-stagger>*:nth-child(4) {
+  animation-delay: 240ms;
+}
+
+.animate-ink-flow-stagger>*:nth-child(5) {
+  animation-delay: 320ms;
+}
+
+/* C) Ambient Wash Drift - Extremely subtle background movement */
+@keyframes wash-drift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-wash-drift {
+  background-size: 200% 200%;
+  animation: wash-drift 20s ease-in-out infinite;
+}
+
+/* D) Focus Halo - For input focus states */
+@keyframes focus-halo {
+  from {
+    box-shadow: 0 0 0 0 var(--color-moss, #6F846F);
+  }
+
+  to {
+    box-shadow: 0 0 0 4px rgba(111, 132, 111, 0.12);
+  }
+}
+
+.animate-focus-halo:focus {
+  animation: focus-halo var(--duration-medium) var(--ease-yohaku) forwards;
+}
+
+/* E) Soft Sheet - Modal/sheet entrance */
+@keyframes soft-sheet {
+  from {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-soft-sheet {
+  animation: soft-sheet var(--duration-slow) var(--ease-yohaku) forwards;
+}
+
+/* ============================================
+   Yohaku+ Wash Backgrounds
+   "Color is atmosphere, not emphasis"
+   ============================================ */
+
+/* Pattern A - Top Wash (morning light) */
+.wash-top-sage {
+  background: linear-gradient(to bottom, var(--color-sage-wash, #EEF3EF) 0%, var(--color-paper, #FAFAF8) 30%);
+}
+
+.wash-top-sky {
+  background: linear-gradient(to bottom, var(--color-sky-wash, #EEF4F8) 0%, var(--color-paper, #FAFAF8) 30%);
+}
+
+.wash-top-blush {
+  background: linear-gradient(to bottom, var(--color-blush-wash, #F6EEF0) 0%, var(--color-paper, #FAFAF8) 30%);
+}
+
+/* Pattern B - Breathing Panel (tinted container) */
+.panel-sage {
+  background-color: var(--color-sage-wash, #EEF3EF);
+}
+
+.panel-sky {
+  background-color: var(--color-sky-wash, #EEF4F8);
+}
+
+.panel-blush {
+  background-color: var(--color-blush-wash, #F6EEF0);
+}
+
+.panel-sand {
+  background-color: var(--color-sand, #F4F1EA);
+}
+
+.panel-mist {
+  background-color: var(--color-mist, #F2F4F3);
+}
+
+/* Pattern C - Accent dot system */
+.accent-dot::before {
+  content: "•";
+  color: var(--color-moss, #6F846F);
+  margin-right: 0.5rem;
+}
+
+.accent-underline {
+  border-bottom: 1px solid var(--color-moss, #6F846F);
+  padding-bottom: 2px;
+}
+
+/* ============================================
+   Yohaku+ Component Utilities
+   ============================================ */
+
+/* Soft dividers (faint lines instead of harsh borders) */
+.divider-soft {
+  border-color: rgba(230, 230, 225, 0.65);
+}
+
+/* Mist blur backdrop (for modals) */
+.backdrop-mist {
+  backdrop-filter: blur(8px);
+  background-color: rgba(242, 244, 243, 0.7);
+}
+
+/* Focus halo effect for inputs */
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 4px rgba(111, 132, 111, 0.12);
+  outline: none;
+  border-color: var(--color-moss, #6F846F);
+}
+
+/* Hover micro-interactions */
+.hover-lift {
+  transition: transform var(--duration-medium) var(--ease-yohaku);
+}
+
+.hover-lift:hover {
+  transform: translateY(-1px);
 }

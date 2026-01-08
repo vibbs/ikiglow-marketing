@@ -3,19 +3,21 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section - Entering a calm room */}
-      <section className="mx-auto max-w-2xl space-y-8 px-6 py-24">
-        <h1 className="text-4xl tracking-wide md:text-5xl">
-          A calm companion for personal growth
-        </h1>
-        <p className="text-lg text-muted-foreground">
-          A space for reflection, focus, and intentional action.
-        </p>
+      {/* Hero Section - Pattern A: Top Wash (Sage - signature) */}
+      <section className="wash-top-sage">
+        <div className="mx-auto max-w-2xl space-y-8 px-6 py-24 animate-ink-flow-stagger">
+          <h1 className="text-4xl tracking-wide md:text-5xl">
+            A calm companion for personal growth
+          </h1>
+          <p className="text-lg text-muted-foreground">
+            A space for reflection, focus, and intentional action.
+          </p>
+        </div>
       </section>
 
       {/* What Ikiglow Is */}
       <section className="mx-auto max-w-2xl space-y-12 px-6 py-16">
-        <div className="space-y-8">
+        <div className="space-y-8 animate-ink-flow-stagger">
           <p className="text-base leading-relaxed">
             Ikiglow helps you think clearly about what matters.
           </p>
@@ -31,14 +33,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Start Small - Tools as entry point */}
-      <section className="border-t border-border bg-muted/30">
+      {/* Start Small - Pattern B: Breathing Panel */}
+      <section className="panel-sage">
         <div className="mx-auto max-w-2xl space-y-12 px-6 py-16">
           <h2 className="text-2xl tracking-wide">Start small</h2>
           <div className="space-y-6">
             <Link
               href="/exercises/breathing"
-              className="block space-y-3 rounded-sm border border-border bg-background p-6 transition-colors hover:border-primary/40"
+              className="block space-y-3 rounded-xl border border-border/60 bg-background p-6 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:-translate-y-[1px]"
             >
               <h3 className="text-lg tracking-wide">Breathing exercise</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
@@ -48,7 +50,7 @@ export default function Home() {
 
             <Link
               href="/exercises/grounding"
-              className="block space-y-3 rounded-sm border border-border bg-background p-6 transition-colors hover:border-primary/40"
+              className="block space-y-3 rounded-xl border border-border/60 bg-background p-6 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:-translate-y-[1px]"
             >
               <h3 className="text-lg tracking-wide">Grounding practice</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
@@ -58,7 +60,7 @@ export default function Home() {
 
             <Link
               href="/tools"
-              className="block space-y-3 rounded-sm border border-border bg-background p-6 transition-colors hover:border-primary/40"
+              className="block space-y-3 rounded-xl border border-border/60 bg-background p-6 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:-translate-y-[1px]"
             >
               <h3 className="text-lg tracking-wide">More tools</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
@@ -69,13 +71,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Popular Reads - Manual curation */}
+      {/* Popular Reads */}
       <section className="mx-auto max-w-2xl space-y-12 px-6 py-16">
         <h2 className="text-2xl tracking-wide">Recent reflections</h2>
         <div className="space-y-8">
           <Link
             href="/blog/why-clarity-beats-motivation"
-            className="block space-y-3 border-b border-border pb-8 transition-colors hover:border-primary/40"
+            className="block space-y-3 border-b border-border/60 pb-8 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40"
           >
             <h3 className="text-lg tracking-wide">Why clarity beats motivation</h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
@@ -85,7 +87,7 @@ export default function Home() {
 
           <Link
             href="/blog/the-problem-with-productivity"
-            className="block space-y-3 border-b border-border pb-8 transition-colors hover:border-primary/40"
+            className="block space-y-3 border-b border-border/60 pb-8 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40"
           >
             <h3 className="text-lg tracking-wide">The problem with productivity</h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
@@ -95,19 +97,19 @@ export default function Home() {
 
           <Link
             href="/blog"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="text-sm text-muted-foreground transition-colors hover:text-[#6F846F]"
           >
             View all posts →
           </Link>
         </div>
       </section>
 
-      {/* Video Section - Optional layer */}
-      <section className="border-t border-border bg-muted/30">
+      {/* Video Section - Sky Wash for Mindset category */}
+      <section className="panel-sky">
         <div className="mx-auto max-w-2xl space-y-12 px-6 py-16">
           <h2 className="text-2xl tracking-wide">Brief moments of reflection</h2>
           <div className="space-y-6">
-            <div className="aspect-video rounded-sm border border-border bg-background">
+            <div className="aspect-video rounded-xl border border-border/60 bg-background">
               {/* Video embed placeholder - muted by default */}
               <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
                 Video content (muted by default)
@@ -115,7 +117,7 @@ export default function Home() {
             </div>
             <Link
               href="/videos"
-              className="block text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="block text-sm text-muted-foreground transition-colors hover:text-[#6F846F]"
             >
               View all videos →
             </Link>
@@ -123,16 +125,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter CTA - Gentle, no urgency */}
+      {/* Newsletter CTA - Gentle, tinted container style */}
       <section className="mx-auto max-w-2xl space-y-8 px-6 py-16">
-        <div className="space-y-6 rounded-sm border border-border p-8">
+        <div className="space-y-6 rounded-xl panel-sand p-8">
           <h2 className="text-xl tracking-wide">Weekly reflections</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
             One insight, one framework, one reflection. Delivered weekly.
           </p>
           <Link
             href="/newsletter"
-            className="inline-block rounded-sm bg-primary px-6 py-3 text-sm tracking-wide text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-block rounded-xl bg-[#6F846F] px-6 py-3 text-sm tracking-wide text-[#FAFAF8] transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:bg-[#5F7460] active:translate-y-[1px]"
           >
             Subscribe
           </Link>

@@ -69,7 +69,7 @@ export function GroundingExercise() {
 
   if (isComplete) {
     return (
-      <div className="flex flex-col items-center space-y-12 text-center">
+      <div className="flex flex-col items-center space-y-12 text-center animate-ink-flow">
         <div className="space-y-6">
           <p className="text-2xl font-light tracking-wide">
             You are here. You are present.
@@ -80,7 +80,7 @@ export function GroundingExercise() {
         </div>
         <button
           onClick={handleReset}
-          className="rounded-sm border border-border px-8 py-3 text-sm font-light tracking-wide transition-colors hover:border-foreground"
+          className="rounded-xl border border-[#E6E6E1] bg-[#FAFAF8] px-8 py-3 text-sm font-light tracking-wide transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:bg-[#EEF3EF] active:translate-y-[1px]"
         >
           Practice Again
         </button>
@@ -92,18 +92,17 @@ export function GroundingExercise() {
 
   return (
     <div className="mx-auto max-w-2xl space-y-12">
-      {/* Progress */}
+      {/* Progress - Yohaku+ accent bars */}
       <div className="flex justify-center gap-2">
         {steps.map((_, index) => (
           <div
             key={index}
-            className={`h-1 w-12 rounded-full transition-colors ${
-              index === currentStep
-                ? "bg-primary"
+            className={`h-1 w-12 rounded-full transition-all duration-[320ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] ${index === currentStep
+                ? "bg-[#6F846F]"
                 : index < currentStep
-                  ? "bg-primary/40"
-                  : "bg-border"
-            }`}
+                  ? "bg-[#6F846F]/40"
+                  : "bg-[#E6E6E1]"
+              }`}
           />
         ))}
       </div>
@@ -111,7 +110,7 @@ export function GroundingExercise() {
       {/* Current step */}
       <div className="space-y-8 text-center">
         <div className="space-y-4">
-          <p className="text-6xl font-light text-primary">{step.number}</p>
+          <p className="text-6xl font-light text-[#6F846F]">{step.number}</p>
           <h2 className="text-2xl font-light tracking-wide">{step.prompt}</h2>
         </div>
 
@@ -119,22 +118,22 @@ export function GroundingExercise() {
           value={responses[currentStep]}
           onChange={(e) => handleResponseChange(e.target.value)}
           placeholder={step.placeholder}
-          className="h-32 w-full resize-none rounded-sm border border-border bg-background px-4 py-3 text-base leading-relaxed outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-primary"
+          className="h-32 w-full resize-none rounded-xl border border-[#E6E6E1] bg-background px-4 py-3 text-base leading-relaxed outline-none transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] placeholder:text-muted-foreground/50 focus:border-[#6F846F] focus:ring-4 focus:ring-[#6F846F]/12"
         />
       </div>
 
-      {/* Navigation */}
+      {/* Navigation - Yohaku+ button styling */}
       <div className="flex justify-between">
         <button
           onClick={handlePrevious}
           disabled={currentStep === 0}
-          className="rounded-sm border border-border px-6 py-2 text-sm font-light tracking-wide transition-colors hover:border-foreground disabled:opacity-30 disabled:hover:border-border"
+          className="rounded-xl border border-[#E6E6E1] bg-[#FAFAF8] px-6 py-2 text-sm font-light tracking-wide transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:bg-[#EEF3EF] disabled:opacity-30 disabled:hover:border-[#E6E6E1] disabled:hover:bg-[#FAFAF8] active:translate-y-[1px]"
         >
           Previous
         </button>
         <button
           onClick={handleNext}
-          className="rounded-sm border border-primary px-6 py-2 text-sm font-light tracking-wide transition-colors hover:bg-primary hover:text-primary-foreground"
+          className="rounded-xl bg-[#6F846F] px-6 py-2 text-sm font-light tracking-wide text-[#FAFAF8] transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:bg-[#5F7460] active:translate-y-[1px]"
         >
           {currentStep === steps.length - 1 ? "Complete" : "Next"}
         </button>
