@@ -1,12 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getAllBlogPosts } from "@/lib/mdx/mdx-utils";
 
 export const metadata: Metadata = {
   title: "Blog — IkiGlow",
   description: "Reflections on purpose, attention, and living intentionally.",
 };
 
-export default function Blog() {
+export default async function Blog() {
+  const posts = await getAllBlogPosts();
   return (
     <main className="min-h-screen">
       {/* Header */}
@@ -69,45 +71,21 @@ export default function Blog() {
 
       {/* Blog posts */}
       <div className="mx-auto max-w-2xl space-y-12 px-6 py-16">
-        <article className="space-y-4 border-b border-border pb-12">
-          <Link href="/blog/why-clarity-beats-motivation" className="block space-y-3">
-            <div className="text-xs text-muted-foreground">Mindset · 5 min read</div>
-            <h2 className="text-xl tracking-wide transition-colors hover:text-primary">
-              Why clarity beats motivation
-            </h2>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              You don&apos;t need more motivation. You need fewer decisions. Most of us
-              wake up believing we lack willpower, when what we actually lack is a clear
-              path forward.
-            </p>
-          </Link>
-        </article>
-
-        <article className="space-y-4 border-b border-border pb-12">
-          <Link href="/blog/the-problem-with-productivity" className="block space-y-3">
-            <div className="text-xs text-muted-foreground">Focus & Productivity · 4 min read</div>
-            <h2 className="text-xl tracking-wide transition-colors hover:text-primary">
-              The problem with productivity
-            </h2>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              Being busy is not the same as moving forward. When productivity becomes
-              performance, we lose sight of what we&apos;re actually trying to build.
-            </p>
-          </Link>
-        </article>
-
-        <article className="space-y-4 border-b border-border pb-12">
-          <Link href="/blog/small-steps-big-shifts" className="block space-y-3">
-            <div className="text-xs text-muted-foreground">Habits · 6 min read</div>
-            <h2 className="text-xl tracking-wide transition-colors hover:text-primary">
-              Small steps, big shifts
-            </h2>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              Change doesn&apos;t happen in a moment of inspiration. It happens in the
-              space between intention and action, practiced daily.
-            </p>
-          </Link>
-        </article>
+        {posts.map((post) => (
+          <article key={post.slug} className="space-y-4 border-b border-border pb-12">
+            <Link href={`/blog/${post.slug}`} className="block space-y-3">
+              <div className="text-xs text-muted-foreground">
+                {post.frontmatter.category} · {post.frontmatter.readingTime} min read
+              </div>
+              <h2 className="text-xl tracking-wide transition-colors hover:text-primary">
+                {post.frontmatter.title}
+              </h2>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {post.frontmatter.description}
+              </p>
+            </Link>
+          </article>
+        ))}
       </div>
     </main>
   );
