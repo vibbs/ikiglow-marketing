@@ -113,8 +113,8 @@ export default function JournalingPage() {
                             key={category}
                             onClick={() => setSelectedCategory(category)}
                             className={`px-4 py-2 rounded-sm text-sm transition-all ${selectedCategory === category
-                                    ? "bg-primary text-primary-foreground"
-                                    : "bg-muted/50 text-muted-foreground hover:bg-muted"
+                                ? "bg-primary text-primary-foreground"
+                                : "bg-muted/50 text-muted-foreground hover:bg-muted"
                                 }`}
                         >
                             {journalPrompts[category].title}
@@ -135,7 +135,7 @@ export default function JournalingPage() {
                         </p>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-10">
                         {journalPrompts[selectedCategory].prompts.map((prompt, index) => (
                             <div
                                 key={index}
@@ -147,7 +147,7 @@ export default function JournalingPage() {
                                     </p>
                                     <button
                                         onClick={() => copyPrompt(prompt, index)}
-                                        className="flex-shrink-0 p-2 rounded-sm hover:bg-muted/50 transition-colors"
+                                        className="flex-shrink-0 p-2 rounded-sm hover:bg-muted/50 transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100"
                                         title="Copy prompt"
                                     >
                                         {copiedIndex === index ? (
