@@ -138,14 +138,25 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
-    /* Muji-inspired spacing - generous breathing room */
+    @apply bg-background text-foreground font-light;
+    /* Yohaku (余白) - Meaningful Emptiness */
     line-height: 1.8;
     letter-spacing: 0.01em;
   }
 
   /* Generous spacing for Yohaku (余白) */
   h1, h2, h3, h4, h5, h6 {
+    @apply font-light tracking-wide;
     letter-spacing: 0.02em;
+  }
+
+  /* Remove text justification */
+  p {
+    text-align: left;
+  }
+
+  /* Calm, slow transitions */
+  button, a {
+    transition: all 200ms ease-in-out;
   }
 }

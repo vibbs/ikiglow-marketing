@@ -2,84 +2,141 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen px-6 py-24 md:px-12 lg:px-24">
-      {/* Hero Section - Muji-inspired minimalism */}
-      <section className="mx-auto max-w-4xl space-y-16">
+    <main className="min-h-screen">
+      {/* Hero Section - Entering a calm room */}
+      <section className="mx-auto max-w-2xl space-y-8 px-6 py-24">
+        <h1 className="text-4xl tracking-wide md:text-5xl">
+          A calm companion for personal growth
+        </h1>
+        <p className="text-lg text-muted-foreground">
+          A space for reflection, focus, and intentional action.
+        </p>
+      </section>
+
+      {/* What Ikiglow Is */}
+      <section className="mx-auto max-w-2xl space-y-12 px-6 py-16">
         <div className="space-y-8">
-          <div className="space-y-4">
-            <h1 className="text-4xl font-light tracking-wide md:text-5xl lg:text-6xl">
-              IkiGlow
-            </h1>
-            <p className="text-xl font-light text-muted-foreground md:text-2xl">
-              Illuminate Your Purpose, Radiate Your Potential
-            </p>
-          </div>
+          <p className="text-base leading-relaxed">
+            Ikiglow helps you think clearly about what matters.
+          </p>
+          <p className="text-base leading-relaxed">
+            We create space for reflection, not noise.
+          </p>
+          <p className="text-base leading-relaxed">
+            We offer practical tools, not pressure.
+          </p>
+          <p className="text-base leading-relaxed">
+            We respect your pace, not force urgency.
+          </p>
         </div>
+      </section>
 
-        {/* Brand Story - 余白 (Yohaku) spacing */}
-        <div className="space-y-12 pt-16">
+      {/* Start Small - Tools as entry point */}
+      <section className="border-t border-border bg-muted/30">
+        <div className="mx-auto max-w-2xl space-y-12 px-6 py-16">
+          <h2 className="text-2xl tracking-wide">Start small</h2>
           <div className="space-y-6">
-            <p className="text-lg leading-relaxed text-foreground/80">
-              Born from the fusion of two powerful concepts: <span className="text-primary">Ikigai</span>,
-              the Japanese idea of finding one's purpose or reason for being, and <span className="text-primary">Glow</span>,
-              representing the radiance that comes from living a fulfilled life.
-            </p>
-            <p className="text-lg leading-relaxed text-foreground/80">
-              Our app guides you on a journey of self-discovery, helping you uncover your unique
-              Ikigai—the intersection of what you love, what you're good at, what the world needs,
-              and what you can be rewarded for.
-            </p>
-            <p className="text-lg leading-relaxed text-foreground/80">
-              As you progress on this path, you begin to glow from within, illuminating not just
-              your own life but also positively impacting those around you.
-            </p>
-          </div>
-        </div>
-
-        {/* Navigation - Minimal */}
-        <nav className="space-y-8 pt-16">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <Link
               href="/exercises/breathing"
-              className="group space-y-3 rounded-sm border border-border p-8 transition-colors hover:border-primary/40"
+              className="block space-y-3 rounded-sm border border-border bg-background p-6 transition-colors hover:border-primary/40"
             >
-              <h3 className="text-lg font-light tracking-wide">Breathing</h3>
+              <h3 className="text-lg tracking-wide">Breathing exercise</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Simple exercises to restore attention and find calm
+                A simple way to slow your thoughts
               </p>
             </Link>
 
             <Link
               href="/exercises/grounding"
-              className="group space-y-3 rounded-sm border border-border p-8 transition-colors hover:border-primary/40"
+              className="block space-y-3 rounded-sm border border-border bg-background p-6 transition-colors hover:border-primary/40"
             >
-              <h3 className="text-lg font-light tracking-wide">Grounding</h3>
+              <h3 className="text-lg tracking-wide">Grounding practice</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Connect with the present moment through gentle awareness
+                Return to the present moment
               </p>
             </Link>
 
             <Link
-              href="/blog"
-              className="group space-y-3 rounded-sm border border-border p-8 transition-colors hover:border-primary/40"
+              href="/tools"
+              className="block space-y-3 rounded-sm border border-border bg-background p-6 transition-colors hover:border-primary/40"
             >
-              <h3 className="text-lg font-light tracking-wide">Reflections</h3>
+              <h3 className="text-lg tracking-wide">More tools</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Thoughts on purpose, attention, and living intentionally
-              </p>
-            </Link>
-
-            <Link
-              href="/videos"
-              className="group space-y-3 rounded-sm border border-border p-8 transition-colors hover:border-primary/40"
-            >
-              <h3 className="text-lg font-light tracking-wide">Videos</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                Brief moments of inspiration and guidance
+                Simple exercises for focus and calm
               </p>
             </Link>
           </div>
-        </nav>
+        </div>
+      </section>
+
+      {/* Popular Reads - Manual curation */}
+      <section className="mx-auto max-w-2xl space-y-12 px-6 py-16">
+        <h2 className="text-2xl tracking-wide">Recent reflections</h2>
+        <div className="space-y-8">
+          <Link
+            href="/blog/why-clarity-beats-motivation"
+            className="block space-y-3 border-b border-border pb-8 transition-colors hover:border-primary/40"
+          >
+            <h3 className="text-lg tracking-wide">Why clarity beats motivation</h3>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              You don&apos;t need more motivation. You need fewer decisions.
+            </p>
+          </Link>
+
+          <Link
+            href="/blog/the-problem-with-productivity"
+            className="block space-y-3 border-b border-border pb-8 transition-colors hover:border-primary/40"
+          >
+            <h3 className="text-lg tracking-wide">The problem with productivity</h3>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Being busy is not the same as moving forward.
+            </p>
+          </Link>
+
+          <Link
+            href="/blog"
+            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            View all posts →
+          </Link>
+        </div>
+      </section>
+
+      {/* Video Section - Optional layer */}
+      <section className="border-t border-border bg-muted/30">
+        <div className="mx-auto max-w-2xl space-y-12 px-6 py-16">
+          <h2 className="text-2xl tracking-wide">Brief moments of reflection</h2>
+          <div className="space-y-6">
+            <div className="aspect-video rounded-sm border border-border bg-background">
+              {/* Video embed placeholder - muted by default */}
+              <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
+                Video content (muted by default)
+              </div>
+            </div>
+            <Link
+              href="/videos"
+              className="block text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              View all videos →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter CTA - Gentle, no urgency */}
+      <section className="mx-auto max-w-2xl space-y-8 px-6 py-16">
+        <div className="space-y-6 rounded-sm border border-border p-8">
+          <h2 className="text-xl tracking-wide">Weekly reflections</h2>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            One insight, one framework, one reflection. Delivered weekly.
+          </p>
+          <Link
+            href="/newsletter"
+            className="inline-block rounded-sm bg-primary px-6 py-3 text-sm tracking-wide text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            Subscribe
+          </Link>
+        </div>
       </section>
     </main>
   );
