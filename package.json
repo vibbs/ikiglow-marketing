@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/mdx": "^16.1.1",
+    "@radix-ui/react-slot": "^1.2.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
@@ -22,6 +23,7 @@
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
+    "serialize-javascript": "^7.0.2",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
