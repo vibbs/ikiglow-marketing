@@ -59,12 +59,12 @@ export default function Home() {
             </Link>
 
             <Link
-              href="/tools"
+              href="/exercises"
               className="block space-y-2 sm:space-y-3 rounded-xl border border-border/60 bg-background p-5 sm:p-6 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:-translate-y-[1px]"
             >
-              <h3 className="text-base sm:text-lg tracking-wide">More tools</h3>
+              <h3 className="text-base sm:text-lg tracking-wide">More exercises</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Simple exercises for focus and calm
+                Gentle practices for focus and calm
               </p>
             </Link>
           </div>

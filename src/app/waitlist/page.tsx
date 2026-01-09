@@ -29,7 +29,7 @@ export default function Waitlist() {
             <ul className="space-y-3">
               <li>• Personalized journaling prompts</li>
               <li>• Interactive goal-setting frameworks</li>
-              <li>• More micro-tools for calm and focus</li>
+              <li>• More exercises for calm and focus</li>
               <li>• Deeper guides on mental patterns and growth</li>
             </ul>
             <p className="text-sm text-muted-foreground">

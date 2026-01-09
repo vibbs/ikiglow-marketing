@@ -74,10 +74,12 @@ const journalPrompts = {
 };
 
 type Category = keyof typeof journalPrompts;
+type TabType = "exercise" | "how-to-use";
 
 export default function JournalingPage() {
     const [selectedCategory, setSelectedCategory] = useState<Category>("clarity");
     const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+    const [activeTab, setActiveTab] = useState<TabType>("exercise");
 
     const copyPrompt = async (prompt: string, index: number) => {
         await navigator.clipboard.writeText(prompt);
@@ -90,107 +92,145 @@ export default function JournalingPage() {
             {/* Header */}
             <div className="mx-auto max-w-3xl space-y-6 sm:space-y-8 px-4 sm:px-6 py-12 sm:py-16">
                 <Link
-                    href="/tools"
+                    href="/exercises"
                     className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                    ← Back to Tools
+                    ← Back to Exercises
                 </Link>
 
                 <div className="space-y-4">
                     <h1 className="text-2xl sm:text-3xl tracking-wide">Journaling Prompts</h1>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        Guided questions to explore what matters to you. Choose a category that resonates
-                        with where you are right now, pick a prompt, and write freely for 10-15 minutes.
+                        Questions to help you explore what matters. Choose a category that resonates
+                        with where you are right now. Pick a prompt that feels right, and write freely.
                     </p>
                 </div>
             </div>
 
-            {/* Category Pills */}
-            <div className="mx-auto max-w-3xl px-4 sm:px-6 pb-8">
-                <div className="flex flex-wrap gap-2">
-                    {(Object.keys(journalPrompts) as Category[]).map((category) => (
+            {/* Tab Navigation */}
+            <div className="border-b border-border">
+                <div className="mx-auto max-w-3xl px-4 sm:px-6">
+                    <div className="flex gap-6">
                         <button
-                            key={category}
-                            onClick={() => setSelectedCategory(category)}
-                            className={`px-4 py-2 rounded-sm text-sm transition-all ${selectedCategory === category
-                                ? "bg-primary text-primary-foreground"
-                                : "bg-muted/50 text-muted-foreground hover:bg-muted"
+                            onClick={() => setActiveTab("exercise")}
+                            className={`pb-3 text-sm transition-colors relative ${activeTab === "exercise"
+                                    ? "text-foreground"
+                                    : "text-muted-foreground hover:text-foreground"
                                 }`}
                         >
-                            {journalPrompts[category].title}
+                            Prompts
+                            {activeTab === "exercise" && (
+                                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
+                            )}
                         </button>
-                    ))}
+                        <button
+                            onClick={() => setActiveTab("how-to-use")}
+                            className={`pb-3 text-sm transition-colors relative ${activeTab === "how-to-use"
+                                    ? "text-foreground"
+                                    : "text-muted-foreground hover:text-foreground"
+                                }`}
+                        >
+                            How to Use
+                            {activeTab === "how-to-use" && (
+                                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
+                            )}
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            {/* Selected Category Content */}
-            <div className="mx-auto max-w-3xl px-4 sm:px-6 pb-12 sm:pb-16">
-                <div className="panel-sage rounded-sm p-6 sm:p-8 space-y-6">
-                    <div className="space-y-2">
-                        <h2 className="text-xl sm:text-2xl tracking-wide">
-                            {journalPrompts[selectedCategory].title}
-                        </h2>
-                        <p className="text-sm text-muted-foreground">
-                            {journalPrompts[selectedCategory].description}
-                        </p>
+            {/* Tab Content */}
+            {activeTab === "exercise" && (
+                <>
+
+                    {/* Category Pills */}
+                    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-8">
+                        <div className="flex flex-wrap gap-2">
+                            {(Object.keys(journalPrompts) as Category[]).map((category) => (
+                                <button
+                                    key={category}
+                                    onClick={() => setSelectedCategory(category)}
+                                    className={`px-4 py-2 rounded-sm text-sm transition-all ${selectedCategory === category
+                                        ? "bg-primary text-primary-foreground"
+                                        : "bg-muted/50 text-muted-foreground hover:bg-muted"
+                                        }`}
+                                >
+                                    {journalPrompts[category].title}
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
-                    <div className="space-y-10">
-                        {journalPrompts[selectedCategory].prompts.map((prompt, index) => (
-                            <div
-                                key={index}
-                                className="group bg-background/50 rounded-sm p-5 border border-border/50 hover:border-primary/30 transition-colors"
-                            >
-                                <div className="flex items-start justify-between gap-4">
-                                    <p className="text-base sm:text-lg leading-relaxed font-handwritten">
-                                        {prompt}
-                                    </p>
-                                    <button
-                                        onClick={() => copyPrompt(prompt, index)}
-                                        className="flex-shrink-0 p-2 rounded-sm hover:bg-muted/50 transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100"
-                                        title="Copy prompt"
-                                    >
-                                        {copiedIndex === index ? (
-                                            <Check className="w-4 h-4 text-primary" />
-                                        ) : (
-                                            <Copy className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-                                        )}
-                                    </button>
-                                </div>
+                    {/* Selected Category Content */}
+                    <div className="mx-auto max-w-3xl px-4 sm:px-6 pb-12 sm:pb-16">
+                        <div className="panel-sage rounded-sm p-6 sm:p-8 space-y-6">
+                            <div className="space-y-2">
+                                <h2 className="text-xl sm:text-2xl tracking-wide">
+                                    {journalPrompts[selectedCategory].title}
+                                </h2>
+                                <p className="text-sm text-muted-foreground">
+                                    {journalPrompts[selectedCategory].description}
+                                </p>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
 
-            {/* How to Use */}
-            <div className="border-t border-border bg-muted/30">
-                <div className="mx-auto max-w-3xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
-                    <h2 className="text-lg sm:text-xl tracking-wide">How to use these prompts</h2>
-                    <div className="space-y-4 text-sm sm:text-base leading-relaxed">
-                        <p>
-                            <strong>Pick one prompt</strong> that resonates with you. Don&apos;t overthink it—
-                            trust your instinct.
-                        </p>
-                        <p>
-                            <strong>Write for 10-15 minutes</strong> without stopping. Let your thoughts flow
-                            without judgment or editing.
-                        </p>
-                        <p>
-                            <strong>There are no wrong answers.</strong> This is for you, not for anyone else.
-                            Be honest, be messy, be real.
-                        </p>
-                        <p>
-                            <strong>You can copy any prompt</strong> by clicking the copy icon, then paste it
-                            into your favorite notes app or journal.
-                        </p>
-                        <p className="text-muted-foreground pt-2">
-                            These prompts are designed to help you think clearly, not to provide easy answers.
-                            The value is in the process, not the outcome.
-                        </p>
+                            <div className="space-y-10">
+                                {journalPrompts[selectedCategory].prompts.map((prompt, index) => (
+                                    <div
+                                        key={index}
+                                        className="group bg-background/50 rounded-sm p-5 border border-border/50 hover:border-primary/30 transition-colors"
+                                    >
+                                        <div className="flex items-start justify-between gap-4">
+                                            <p className="text-base sm:text-lg leading-relaxed font-handwritten">
+                                                {prompt}
+                                            </p>
+                                            <button
+                                                onClick={() => copyPrompt(prompt, index)}
+                                                className="flex-shrink-0 p-2 rounded-sm hover:bg-muted/50 transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100"
+                                                title="Copy prompt"
+                                            >
+                                                {copiedIndex === index ? (
+                                                    <Check className="w-4 h-4 text-primary" />
+                                                ) : (
+                                                    <Copy className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+                                                )}
+                                            </button>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )}
+
+            {activeTab === "how-to-use" && (
+                <div className="border-t border-border bg-muted/30">
+                    <div className="mx-auto max-w-3xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
+                        <h2 className="text-lg sm:text-xl tracking-wide">How to use these prompts</h2>
+                        <div className="space-y-4 text-sm sm:text-base leading-relaxed">
+                            <p>
+                                Pick one prompt that resonates with you. Trust your instinct.
+                            </p>
+                            <p>
+                                You might write for 10-15 minutes without stopping. Let your thoughts flow
+                                without judgment or editing.
+                            </p>
+                            <p>
+                                There are no wrong answers. This is for you, not for anyone else.
+                                Be honest, be messy, be real.
+                            </p>
+                            <p>
+                                You can copy any prompt by clicking the copy icon, then paste it
+                                into your favorite notes app or journal.
+                            </p>
+                            <p className="text-muted-foreground pt-2">
+                                These prompts are here to help you think clearly, not to provide easy answers.
+                                The value is in the process, not the outcome.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
         </main>
     );
 }

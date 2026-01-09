@@ -2,22 +2,22 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tools — IkiGlow",
-  description: "Simple exercises for focus, calm, and self-awareness. No login required.",
+  title: "Exercises — IkiGlow",
+  description: "Gentle practices for focus, calm, and self-awareness. Use them when you need them.",
 };
 
-export default function Tools() {
+export default function Exercises() {
   return (
     <main className="min-h-screen">
       {/* Header */}
       <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8 px-4 sm:px-6 py-12 sm:py-16">
-        <h1 className="text-2xl sm:text-3xl tracking-wide">Tools</h1>
+        <h1 className="text-2xl sm:text-3xl tracking-wide">Exercises</h1>
         <p className="text-sm sm:text-base text-muted-foreground">
-          Simple exercises for focus, calm, and self-awareness
+          Gentle practices for when you need to pause, reflect, or reconnect
         </p>
       </div>
 
-      {/* Tools Grid */}
+      {/* Exercises Grid */}
       <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 pb-12 sm:pb-16">
         <Link
           href="/exercises/breathing"
@@ -25,10 +25,8 @@ export default function Tools() {
         >
           <h2 className="text-lg sm:text-xl tracking-wide">Breathing exercise</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            A simple way to slow your thoughts. Follow the 4-4-6-2 breathing pattern to
-            activate your parasympathetic nervous system.
+            When thoughts feel rushed, this can help you slow down. Follow a gentle 4-4-6-2 breathing rhythm.
           </p>
-          <div className="text-xs text-muted-foreground">2-5 minutes</div>
         </Link>
 
         <Link
@@ -37,9 +35,8 @@ export default function Tools() {
         >
           <h2 className="text-lg sm:text-xl tracking-wide">Grounding practice</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Return to the present moment using the 5-4-3-2-1 sensory awareness technique.
+            When your mind feels scattered, this invites you back to the present using the 5-4-3-2-1 technique.
           </p>
-          <div className="text-xs text-muted-foreground">3-5 minutes</div>
         </Link>
 
         <Link
@@ -48,9 +45,8 @@ export default function Tools() {
         >
           <h2 className="text-lg sm:text-xl tracking-wide">Journaling prompts</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Guided reflection questions to explore what matters to you.
+            Questions to help you explore what matters. Pick what resonates, and write freely.
           </p>
-          <div className="text-xs text-muted-foreground">10-15 minutes</div>
         </Link>
 
         <div className="block space-y-3 sm:space-y-4 rounded-sm border border-border bg-muted/30 p-5 sm:p-6 opacity-60">
@@ -73,18 +69,17 @@ export default function Tools() {
       {/* Philosophy */}
       <div className="border-t border-border bg-muted/30">
         <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
-          <h2 className="text-lg sm:text-xl tracking-wide">How these tools work</h2>
+          <h2 className="text-lg sm:text-xl tracking-wide">How these work</h2>
           <div className="space-y-4 text-sm sm:text-base leading-relaxed">
             <p>
-              These exercises are designed to give you immediate value, without requiring
-              signup, tracking, or gamification.
+              These exercises are here when you need them — no signup, no tracking, no pressure.
             </p>
             <p>
-              They&apos;re grounded in psychological research and nervous system regulation,
+              They&apos;re grounded in research on nervous system regulation and self-awareness,
               but explained in plain language.
             </p>
             <p>
-              Use them when you need them. Leave them when you don&apos;t.
+              Use them when they feel right. Leave them when they don&apos;t.
             </p>
           </div>
         </div>

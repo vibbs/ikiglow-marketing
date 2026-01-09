@@ -43,10 +43,10 @@ export function Header() {
             </li>
             <li>
               <Link
-                href="/tools"
+                href="/exercises"
                 className="text-sm tracking-wide text-muted-foreground transition-colors duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:text-[#6F846F]"
               >
-                Tools
+                Exercises
               </Link>
             </li>
             <li>
@@ -116,11 +116,11 @@ export function Header() {
               </li>
               <li>
                 <Link
-                  href="/tools"
+                  href="/exercises"
                   className="block py-2 text-base tracking-wide text-muted-foreground transition-colors hover:text-[#6F846F]"
                   onClick={closeMenu}
                 >
-                  Tools
+                  Exercises
                 </Link>
               </li>
               <li>

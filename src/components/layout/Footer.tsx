@@ -45,14 +45,14 @@ export function Footer() {
           </div>
 
           <div className="space-y-3 sm:space-y-4">
-            <h3 className="text-sm tracking-wide text-foreground">Tools</h3>
+            <h3 className="text-sm tracking-wide text-foreground">Exercises</h3>
             <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link
-                  href="/tools"
+                  href="/exercises"
                   className="text-sm text-muted-foreground transition-colors duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:text-[#6F846F]"
                 >
-                  All Tools
+                  All Exercises
                 </Link>
               </li>
               <li>
