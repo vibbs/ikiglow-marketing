@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Newsletter — IkiGlow",
+  title: "Newsletter - IkiGlow",
   description: "Weekly reflections on purpose, clarity, and intentional living. One insight, one framework, one reflection.",
 };
 

@@ -14,7 +14,7 @@ Marketing website and micro-app platform for IkiGlow, featuring blog content, sh
 
 ## Design Principles
 
-The design follows Muji's philosophy of **余白 (Yohaku)** — meaningful emptiness:
+The design follows Muji's philosophy of **余白 (Yohaku)** - meaningful emptiness:
 
 - Generous whitespace and breathing room
 - Warm neutral color palette (off-whites, charcoals, soft gold accents)

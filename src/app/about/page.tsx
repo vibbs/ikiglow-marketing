@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const about = await getAboutPage();
 
   return {
-    title: `${about.frontmatter.title} — IkiGlow`,
+    title: `${about.frontmatter.title} - IkiGlow`,
     description: about.frontmatter.description,
   };
 }

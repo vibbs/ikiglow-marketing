@@ -1,4 +1,4 @@
-# Ikiglow Website — Implementation Plan
+# Ikiglow Website - Implementation Plan
 
 **Purpose:** Apply the Yohaku-based Brand Style Guide consistently across the marketing + content ecosystem site
 **Scope:** Branding, IA, layout rules, content patterns, SEO, micro-tools

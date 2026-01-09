@@ -17,8 +17,6 @@ export default function EditGuide({ params }: PageProps) {
   const { slug } = use(params);
   const router = useRouter();
   const [fullContent, setFullContent] = useState("");
-  const [frontmatter, setFrontmatter] = useState<Record<string, unknown>>({});
-  const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -33,9 +31,8 @@ export default function EditGuide({ params }: PageProps) {
         const data = await response.json();
         setFullContent(data.rawContent);
 
-        const { data: fm, content: c } = matter(data.rawContent);
-        setFrontmatter(fm);
-        setContent(c);
+        // Parse once to validate MDX structure and normalize content.
+        matter(data.rawContent);
       } catch (error) {
         console.error("Error loading guide:", error);
         alert("Failed to load guide");
@@ -64,8 +61,6 @@ export default function EditGuide({ params }: PageProps) {
 
       if (result.success) {
         setFullContent(newContent);
-        setFrontmatter(fm);
-        setContent(c);
         alert("Guide saved successfully!");
       } else {
         alert(`Failed to save: ${result.error}`);

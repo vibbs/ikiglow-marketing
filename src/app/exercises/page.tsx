@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Exercises — IkiGlow",
+  title: "Exercises - IkiGlow",
   description: "Gentle practices for focus, calm, and self-awareness. Use them when you need them.",
 };
 
@@ -72,7 +72,7 @@ export default function Exercises() {
           <h2 className="text-lg sm:text-xl tracking-wide">How these work</h2>
           <div className="space-y-4 text-sm sm:text-base leading-relaxed">
             <p>
-              These exercises are here when you need them — no signup, no tracking, no pressure.
+              These exercises are here when you need them - no signup, no tracking, no pressure.
             </p>
             <p>
               They&apos;re grounded in research on nervous system regulation and self-awareness,

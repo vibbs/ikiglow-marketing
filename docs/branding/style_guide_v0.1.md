@@ -1,4 +1,4 @@
-# Ikiglow — Brand Style Guide  
+# Ikiglow - Brand Style Guide  
 **Version:** 0.1  
 **Last updated:** 2026-01-08
 
@@ -7,7 +7,7 @@
 ## 1. Brand Philosophy
 
 ### Core Principle  
-**「余白 (Yohaku)」— Meaningful Emptiness**
+**「余白 (Yohaku)」- Meaningful Emptiness**
 
 Ikiglow is built on the idea that growth does not come from adding more,
 but from creating space for clarity.
@@ -39,7 +39,7 @@ This philosophy applies to **design, content, language, and interaction**.
 - Hustle culture or productivity-at-all-costs
 - Loud motivation or inspirational hype
 
-Ikiglow helps users think clearly —  
+Ikiglow helps users think clearly -  
 it does not tell them who to be.
 
 ---
@@ -111,14 +111,14 @@ Design should never compete with content.
 ## 6. Color System
 
 ### Primary Colors
-- **Warm Off-White** — base background  
+- **Warm Off-White** - base background  
   Purpose: neutrality, calm, openness
-- **Charcoal Grey** — primary text  
+- **Charcoal Grey** - primary text  
   Purpose: softness without harsh contrast
 
 ### Accent Colors (Used Sparingly)
-- **Soft Amber / Coral** — warmth, glow, gentle emphasis
-- **Muted Teal / Blue-Grey** — balance, calm, grounding
+- **Soft Amber / Coral** - warmth, glow, gentle emphasis
+- **Muted Teal / Blue-Grey** - balance, calm, grounding
 
 ### Color Rules
 - One accent color per screen
@@ -279,7 +279,7 @@ Every Ikiglow experience must:
 
 Before publishing anything, ask:
 
-> **Does this create space — or take it away?**
+> **Does this create space - or take it away?**
 
 If it takes space, remove it.
 

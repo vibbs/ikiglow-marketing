@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import {
   getAllBlogPosts,
   getBlogPostsByCategory,
-  getBlogCategoryStats,
 } from "@/lib/mdx/mdx-utils";
 import { Plus, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +11,7 @@ import { getCategoryFromSlug } from "@/types/content";
 import type { BlogCategory } from "@/types/content";
 
 export const metadata: Metadata = {
-  title: "Manage Blog Posts — CMS",
+  title: "Manage Blog Posts - CMS",
   description: "Create and manage blog posts",
 };
 
@@ -30,9 +29,6 @@ export default async function BlogCMS({ searchParams }: PageProps) {
   const posts = category
     ? await getBlogPostsByCategory(category)
     : await getAllBlogPosts();
-
-  // Get category stats for display
-  const categoryStats = await getBlogCategoryStats();
   const activeCategory: BlogCategory | "all" = category || "all";
 
   return (

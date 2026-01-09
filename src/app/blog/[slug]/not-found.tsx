@@ -10,7 +10,7 @@ export default function NotFound() {
               Post Not Found
             </h1>
             <p className="text-base text-muted-foreground">
-              The post you're looking for doesn't exist or has been moved.
+              The post you&apos;re looking for doesn&apos;t exist or has been moved.
             </p>
           </div>
 

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { FileText, BookOpen, Info } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "CMS Dashboard — IkiGlow",
+  title: "CMS Dashboard - IkiGlow",
   description: "Content management system for IkiGlow website",
 };
 

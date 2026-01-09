@@ -21,7 +21,7 @@ const kalam = Kalam({
 });
 
 export const metadata: Metadata = {
-  title: "IkiGlow — A Calm Companion for Personal Growth",
+  title: "IkiGlow - A Calm Companion for Personal Growth",
   description: "A space for reflection, focus, and intentional action. Discover your purpose through gentle guidance and practical tools.",
   keywords: ["ikigai", "personal growth", "mindfulness", "self-awareness", "mental wellness", "reflection"],
   authors: [{ name: "IkiGlow" }],
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "IkiGlow",
-    title: "IkiGlow — A Calm Companion for Personal Growth",
+    title: "IkiGlow - A Calm Companion for Personal Growth",
     description: "A space for reflection, focus, and intentional action.",
   },
 };

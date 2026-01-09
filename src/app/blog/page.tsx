@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllBlogPosts, getBlogPostsByCategory } from "@/lib/mdx/mdx-utils";
 import { CategoryFilter } from "@/components/blog/CategoryFilter";
-import { getCategoryFromSlug, isValidCategory } from "@/types/content";
+import { getCategoryFromSlug } from "@/types/content";
 import type { BlogCategory } from "@/types/content";
 
 interface PageProps {
@@ -17,14 +17,14 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
     const category = getCategoryFromSlug(categorySlug);
     if (category) {
       return {
-        title: `${category} — Blog — IkiGlow`,
+        title: `${category} - Blog - IkiGlow`,
         description: `Reflections on ${category.toLowerCase()}, purpose, and living intentionally.`,
       };
     }
   }
 
   return {
-    title: "Blog — IkiGlow",
+    title: "Blog - IkiGlow",
     description: "Reflections on purpose, attention, and living intentionally.",
   };
 }

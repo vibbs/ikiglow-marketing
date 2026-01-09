@@ -35,7 +35,7 @@ npm run lint         # Run ESLint
 
 ## Design Philosophy: Yohaku+ (余白) - Meaningful Emptiness with Atmosphere
 
-The entire codebase follows a Yohaku+ design system—an evolution of Muji-inspired minimalism that adds subtle color atmosphere and slow, meaningful motion while maintaining the core philosophy of intentional space.
+The entire codebase follows a Yohaku+ design system-an evolution of Muji-inspired minimalism that adds subtle color atmosphere and slow, meaningful motion while maintaining the core philosophy of intentional space.
 
 **Rule: Color is atmosphere, not emphasis. Motion should lower pulse, not raise attention.**
 

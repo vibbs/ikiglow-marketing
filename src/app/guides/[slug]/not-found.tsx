@@ -10,7 +10,7 @@ export default function NotFound() {
               Guide Not Found
             </h1>
             <p className="text-base text-muted-foreground">
-              The guide you're looking for doesn't exist or has been moved.
+              The guide you&apos;re looking for doesn&apos;t exist or has been moved.
             </p>
           </div>
 

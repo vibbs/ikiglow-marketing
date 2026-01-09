@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { getAllGuides } from "@/lib/mdx/mdx-utils";
 
 export const metadata: Metadata = {
-  title: "Guides — IkiGlow",
+  title: "Guides - IkiGlow",
   description: "Comprehensive guides for understanding yourself and navigating life's challenges with clarity.",
 };
 

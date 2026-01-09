@@ -13,7 +13,7 @@ import type {
   AboutPageFrontmatter,
   BlogCategory,
 } from "@/types/content";
-import { getCategoryFromSlug, getCategorySlug } from "@/types/content";
+import { getCategoryFromSlug } from "@/types/content";
 
 const CONTENT_DIR = path.join(process.cwd(), "000-content");
 

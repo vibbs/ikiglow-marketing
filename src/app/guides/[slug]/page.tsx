@@ -25,12 +25,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!guide) {
     return {
-      title: "Guide Not Found — IkiGlow",
+      title: "Guide Not Found - IkiGlow",
     };
   }
 
   return {
-    title: `${guide.frontmatter.title} — IkiGlow`,
+    title: `${guide.frontmatter.title} - IkiGlow`,
     description: guide.frontmatter.description,
     keywords: guide.frontmatter.keywords,
   };

@@ -19,7 +19,6 @@ export default function EditBlogPost({ params }: PageProps) {
   const router = useRouter();
   const [fullContent, setFullContent] = useState("");
   const [frontmatter, setFrontmatter] = useState<Record<string, unknown>>({});
-  const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -36,7 +35,6 @@ export default function EditBlogPost({ params }: PageProps) {
 
         const { data: fm, content: c } = matter(data.rawContent);
         setFrontmatter(fm);
-        setContent(c);
       } catch (error) {
         console.error("Error loading post:", error);
         alert("Failed to load post");
@@ -75,7 +73,6 @@ export default function EditBlogPost({ params }: PageProps) {
       if (result.success) {
         setFullContent(newContent);
         setFrontmatter(fm);
-        setContent(c);
         alert("Post saved successfully!");
       } else {
         alert(`Failed to save: ${result.error}`);

@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Videos — IkiGlow",
+  title: "Videos - IkiGlow",
   description: "Brief moments of reflection. Short-form videos on mindset, focus, and intentional living.",
 };
 

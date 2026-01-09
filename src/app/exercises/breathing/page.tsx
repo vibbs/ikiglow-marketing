@@ -37,8 +37,8 @@ export default function BreathingPage() {
             <button
               onClick={() => setActiveTab("exercise")}
               className={`pb-3 text-sm transition-colors relative ${activeTab === "exercise"
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
+                ? "text-foreground"
+                : "text-muted-foreground hover:text-foreground"
                 }`}
             >
               Exercise
@@ -49,8 +49,8 @@ export default function BreathingPage() {
             <button
               onClick={() => setActiveTab("how-to-use")}
               className={`pb-3 text-sm transition-colors relative ${activeTab === "how-to-use"
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
+                ? "text-foreground"
+                : "text-muted-foreground hover:text-foreground"
                 }`}
             >
               How to Use
@@ -61,8 +61,8 @@ export default function BreathingPage() {
             <button
               onClick={() => setActiveTab("why-it-helps")}
               className={`pb-3 text-sm transition-colors relative ${activeTab === "why-it-helps"
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
+                ? "text-foreground"
+                : "text-muted-foreground hover:text-foreground"
                 }`}
             >
               Why It Helps
@@ -88,7 +88,7 @@ export default function BreathingPage() {
           <h2 className="text-lg sm:text-xl tracking-wide">How to use</h2>
           <div className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed">
             <p>Begin when you&apos;re ready.</p>
-            <p>Follow the visual rhythm — there&apos;s no need to count.</p>
+            <p>Follow the visual rhythm - there&apos;s no need to count.</p>
             <p>You might try a few cycles, or stay as long as feels right.</p>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function BreathingPage() {
                 4 seconds, exhale for 6 seconds, rest for 2 seconds.
               </p>
               <p>
-                The longer exhale activates your parasympathetic nervous system — the
+                The longer exhale activates your parasympathetic nervous system - the
                 part responsible for rest and calm.
               </p>
               <p>

@@ -11,7 +11,6 @@ import matter from "gray-matter";
 export default function EditAboutPage() {
   const [fullContent, setFullContent] = useState("");
   const [frontmatter, setFrontmatter] = useState<Record<string, unknown>>({});
-  const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
 
@@ -27,7 +26,6 @@ export default function EditAboutPage() {
 
         const { data: fm, content: c } = matter(data.rawContent);
         setFrontmatter(fm);
-        setContent(c);
       } catch (error) {
         console.error("Error loading about page:", error);
         alert("Failed to load about page");
@@ -57,7 +55,6 @@ export default function EditAboutPage() {
       if (result.success) {
         setFullContent(newContent);
         setFrontmatter(fm);
-        setContent(c);
         alert("About page saved successfully!");
       } else {
         alert(`Failed to save: ${result.error}`);

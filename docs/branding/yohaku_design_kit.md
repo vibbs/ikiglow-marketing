@@ -1,6 +1,6 @@
 # 🌾 Yohaku+ UI Kit (Color + Motion)
 
-## 1) 🎨 Color System — “Quiet Fields”
+## 1) 🎨 Color System - “Quiet Fields”
 
 ### Rule
 
@@ -48,24 +48,24 @@ So we’ll introduce **tinted surfaces** (very low saturation) and keep “accen
 
 Pick one per screen:
 
-### Pattern A — Top Wash
+### Pattern A - Top Wash
 
 A very light gradient wash in the top 20–30% (rest stays Paper).
 Feels like morning light.
 
-### Pattern B — Breathing Panel
+### Pattern B - Breathing Panel
 
 A single large rounded panel (tint) behind the main prompt/journal area.
 The emptiness remains, but now it has a “field.”
 
-### Pattern C — Accent Dot System
+### Pattern C - Accent Dot System
 
 Use a tiny dot (•) / thin underline / cursor highlight in accent color.
 Your UI stays quiet but feels alive.
 
 ---
 
-## 3) ✨ Motion System — “Slow, Soft, Meaningful”
+## 3) ✨ Motion System - “Slow, Soft, Meaningful”
 
 ### Rule
 

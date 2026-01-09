@@ -90,3 +90,22 @@ Each blog post **must follow this structure**:
 * No keyword stuffing
 * One search intent per post
 
+---
+
+### Avoid These Pitfalls
+
+* Clinical jargon without explanation
+* Overly technical language
+* Urgency or hype
+* One-size-fits-all solutions
+* Overpromising quick fixes
+* Prescriptive "should" statements
+* Ignoring cultural/contextual factors
+* Neglecting the emotional experience of the reader
+* Focusing solely on content without connecting to the Ikiglow ecosystem
+* Using a tone that feels authoritative or lecturing rather than empathetic and collaborative
+* Creating content that is too dense or complex for the average reader to easily digest and apply in their daily life
+* Failing to provide actionable steps that readers can implement immediately to improve their mental well-being
+
+
+NOTE: DON'T EVER USE `—` INSTEAD OF `-` FOR BULLETS OR DASHES.

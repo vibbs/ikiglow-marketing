@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Eye, EyeOff, Save } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { mdxComponents } from "@/lib/mdx/mdx-components";
 import remarkGfm from "remark-gfm";
@@ -17,7 +18,7 @@ interface MDXEditorProps {
 export function MDXEditor({ initialContent, onSave, isSaving = false }: MDXEditorProps) {
   const [content, setContent] = useState(initialContent);
   const [showPreview, setShowPreview] = useState(false);
-  const [mdxSource, setMdxSource] = useState<any>(null);
+  const [mdxSource, setMdxSource] = useState<MDXRemoteSerializeResult | null>(null);
   const [isLoadingPreview, setIsLoadingPreview] = useState(false);
 
   const handlePreviewToggle = async () => {

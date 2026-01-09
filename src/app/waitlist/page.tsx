@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Early Access — IkiGlow",
+  title: "Early Access - IkiGlow",
   description: "Join the waitlist for early access to IkiGlow's full platform. No timeline pressure, just a gentle heads-up when we're ready.",
 };
 
@@ -87,7 +87,7 @@ export default function Waitlist() {
           <h2 className="text-xl tracking-wide">What to expect</h2>
           <div className="space-y-4 text-base leading-relaxed">
             <p>
-              You&apos;ll receive an email when we release something meaningful — not
+              You&apos;ll receive an email when we release something meaningful - not
               every small update.
             </p>
             <p>

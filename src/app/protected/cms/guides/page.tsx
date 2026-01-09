@@ -5,7 +5,7 @@ import { Plus, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Manage Guides — CMS",
+  title: "Manage Guides - CMS",
   description: "Create and manage guides",
 };
 

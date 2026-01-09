@@ -1,4 +1,4 @@
-# Ikiglow — Content Checklist  
+# Ikiglow - Content Checklist  
 **Purpose:** Build a calm, SEO-driven, user-first content ecosystem aligned with Yohaku  
 **Scope:** Blogs, Guides, Tools, Videos, System-level connections
 
@@ -11,12 +11,12 @@ Avoid overlap between categories.
 
 ---
 
-### 🧠 Mindset  
-**User intent:**  
-> “Why do I think this way — and how do I shift it gently?”
+### 🧠 Mindset
+**User intent:**
+> "Why do I think this way - and how do I shift it gently?"
 
-- [ ] You’re Not Unmotivated — You’re Mentally Overloaded  
-- [ ] How to Stop Overthinking Without Forcing Your Mind to Be Quiet  
+- [x] You're Not Unmotivated - You're Mentally Overloaded
+- [x] How to Stop Overthinking Without Forcing Your Mind to Be Quiet  
 - [ ] The Difference Between Discipline and Self-Punishment  
 - [ ] Why Positive Thinking Often Backfires  
 - [ ] A Calm Way to Rebuild Confidence After Failure  
@@ -30,13 +30,13 @@ Avoid overlap between categories.
 
 ---
 
-### 🌱 Mental Health (Non-Clinical)  
-**User intent:**  
-> “Something feels off — help me understand it without diagnosing me.”
+### 🌱 Mental Health (Non-Clinical)
+**User intent:**
+> "Something feels off - help me understand it without diagnosing me."
 
-- [ ] Feeling Anxious for No Clear Reason? This Might Help  
-- [ ] Why You Feel Tired Even After Resting  
-- [ ] Emotional Exhaustion vs Burnout — What’s the Difference?  
+- [x] Feeling Anxious for No Clear Reason? This Might Help
+- [x] Why You Feel Tired Even After Resting  
+- [ ] Emotional Exhaustion vs Burnout - What’s the Difference?  
 - [ ] When Your Mind Feels Heavy but Nothing Is ‘Wrong’  
 - [ ] Why Small Stress Builds Up Quietly  
 - [ ] How to Create Emotional Safety for Yourself  
@@ -49,12 +49,12 @@ Avoid overlap between categories.
 
 ---
 
-### 🔁 Habits  
-**User intent:**  
-> “How do I change behavior without relying on willpower?”
+### 🔁 Habits
+**User intent:**
+> "How do I change behavior without relying on willpower?"
 
-- [ ] Habits Are Easier When You Stop Trying So Hard  
-- [ ] Why Starting Small Is Not a Weak Strategy  
+- [x] Habits Are Easier When You Stop Trying So Hard
+- [x] Why Starting Small Is Not a Weak Strategy  
 - [ ] Habit Stacking That Actually Works in Real Life  
 - [ ] The Hidden Reason Most Habits Don’t Stick  
 - [ ] Identity-Based Habits, Explained Gently  
@@ -68,12 +68,12 @@ Avoid overlap between categories.
 
 ---
 
-### 🎯 Focus & Productivity  
-**User intent:**  
-> “Help me focus without pushing myself into burnout.”
+### 🎯 Focus & Productivity
+**User intent:**
+> "Help me focus without pushing myself into burnout."
 
-- [ ] Why You Can’t Focus — Even When You Care  
-- [ ] Productivity Isn’t About Doing More  
+- [x] Why You Can't Focus - Even When You Care
+- [x] Productivity Isn't About Doing More  
 - [ ] A Gentle Alternative to Hustle Culture  
 - [ ] How to Work With Your Attention, Not Against It  
 - [ ] Deep Focus Without Extreme Discipline  
@@ -87,11 +87,11 @@ Avoid overlap between categories.
 
 ---
 
-### 🔍 Self-Awareness  
-**User intent:**  
-> “I want to understand myself better, without overanalyzing.”
+### 🔍 Self-Awareness
+**User intent:**
+> "I want to understand myself better, without overanalyzing."
 
-- [ ] How to Build Self-Awareness Without Overthinking  
+- [x] How to Build Self-Awareness Without Overthinking  
 - [ ] Why Naming Your Emotions Helps  
 - [ ] What Your Reactions Are Trying to Tell You  
 - [ ] The Difference Between Awareness and Judgment  
@@ -106,12 +106,12 @@ Avoid overlap between categories.
 
 ---
 
-### 🧭 Life Goals & Direction  
-**User intent:**  
-> “I feel stuck — help me find direction without pressure.”
+### 🧭 Life Goals & Direction
+**User intent:**
+> "I feel stuck - help me find direction without pressure."
 
-- [ ] Feeling Lost Is a Valid Starting Point  
-- [ ] Goals vs Direction — Why Both Matter  
+- [x] Feeling Lost Is a Valid Starting Point  
+- [ ] Goals vs Direction - Why Both Matter  
 - [ ] How to Choose a Goal That Actually Matters to You  
 - [ ] Why Clarity Often Comes After Action  
 - [ ] When Big Goals Feel Intimidating  
@@ -125,19 +125,19 @@ Avoid overlap between categories.
 
 ---
 
-## GUIDES (PILLAR PAGES) — CHECKLIST
+## GUIDES (PILLAR PAGES) - CHECKLIST
 
 Guides are long-form, evergreen, and trust-building.
 
 ---
 
 ### Core Guides
-- [ ] A Gentle Guide to Anxiety (Without Labels or Diagnosis)  
-- [ ] A Calm Guide to Burnout and Emotional Exhaustion  
-- [ ] A Practical Guide to Overthinking  
-- [ ] A Humane Guide to Building Habits That Stick  
-- [ ] A Simple Guide to Finding Focus in a Distracted World  
-- [ ] A Thoughtful Guide to Self-Awareness  
+- [x] A Gentle Guide to Anxiety (Without Labels or Diagnosis) - *needs expansion*
+- [x] A Calm Guide to Burnout and Emotional Exhaustion
+- [x] A Practical Guide to Overthinking
+- [x] A Humane Guide to Building Habits That Stick
+- [x] A Simple Guide to Finding Focus in a Distracted World
+- [x] A Thoughtful Guide to Self-Awareness
 - [ ] A Calm Guide to Setting Meaningful Life Goals  
 
 ---
@@ -153,7 +153,7 @@ Guides are long-form, evergreen, and trust-building.
 
 ---
 
-## GUIDE STRUCTURE — REQUIRED CHECKLIST
+## GUIDE STRUCTURE - REQUIRED CHECKLIST
 
 Every guide must include:
 
