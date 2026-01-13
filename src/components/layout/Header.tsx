@@ -13,14 +13,18 @@ export function Header() {
     <header className="border-b border-[#E6E6E1]/60 bg-background/95 backdrop-blur-sm sticky top-0 z-50">
       <nav className="mx-auto max-w-5xl px-4 sm:px-6 py-4 sm:py-6">
         <div className="flex items-center justify-between">
-          {/* Logo - with accent dot */}
+          {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-1.5 text-lg sm:text-xl tracking-wide transition-colors hover:text-[#6F846F]"
+            className="flex items-center gap-2 text-lg sm:text-xl tracking-wide transition-colors hover:text-[#6F846F]"
             onClick={closeMenu}
           >
-            <span className="inline-block h-2 w-2 rounded-full bg-[#6F846F] animate-breath-pulse" />
-            IkiGlow
+            <img
+              src="/ikiglow-logo.svg"
+              alt="IkiGlow"
+              className="h-7 sm:h-8 w-auto opacity-90 hover:opacity-100 transition-opacity duration-[220ms]"
+            />
+            <span>IkiGlow</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -3,35 +3,65 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section - Pattern A: Top Wash (Sage - signature) */}
-      <section>
-        <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8 px-4 sm:px-6 py-16 sm:py-24 animate-ink-flow-stagger">
-          <h1 className="text-3xl sm:text-4xl tracking-wide md:text-5xl">
-            A calm companion for personal growth
-          </h1>
-          <p className="text-base sm:text-lg text-muted-foreground">
-            A space for reflection, focus, and intentional action.
-          </p>
-        </div>
-      </section>
+      {/* First Viewport: Hero + Logo + Core Values */}
+      <div className="min-h-screen flex flex-col justify-center px-4 sm:px-6 pb-12">
+        {/* Hero Section */}
+        <section className="flex-shrink-0">
+          <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8 py-8 sm:py-12 animate-ink-flow-stagger text-center">
+            <h1 className="text-3xl sm:text-4xl tracking-wide md:text-5xl">
+              A calm companion for personal growth
+            </h1>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed text-center">
+              A space for reflection, focus, and intentional action.
+            </p>
+          </div>
+        </section>
 
-      {/* What Ikiglow Is */}
-      <section className="mx-auto max-w-2xl space-y-8 sm:space-y-12 px-4 sm:px-6 py-12 sm:py-16">
-        <div className="space-y-6 sm:space-y-8 animate-ink-flow-stagger">
-          <p className="text-sm sm:text-base leading-relaxed">
-            Ikiglow helps you think clearly about what matters.
-          </p>
-          <p className="text-sm sm:text-base leading-relaxed">
-            We create space for reflection, not noise.
-          </p>
-          <p className="text-sm sm:text-base leading-relaxed">
-            We offer practical tools, not pressure.
-          </p>
-          <p className="text-sm sm:text-base leading-relaxed">
-            We respect your pace, not force urgency.
-          </p>
+        {/* Subtle Logo Divider */}
+        <div className="mx-auto max-w-2xl py-6 sm:py-8 flex justify-center flex-shrink-0">
+          <img
+            src="/ikiglow-logo.svg"
+            alt=""
+            className="h-16 sm:h-20 w-auto opacity-40"
+            aria-hidden="true"
+          />
         </div>
-      </section>
+
+        {/* What Ikiglow Is */}
+        <section className="mx-auto max-w-2xl py-6 sm:py-8 flex-shrink-0">
+          <div className="space-y-6 sm:space-y-8 animate-ink-flow-stagger">
+            <p className="text-sm sm:text-base leading-relaxed text-center">
+              Ikiglow helps you think clearly about what matters.
+            </p>
+            <p className="text-sm sm:text-base leading-relaxed text-center">
+              We create space for reflection, not noise.
+            </p>
+            <p className="text-sm sm:text-base leading-relaxed text-center">
+              We offer practical tools, not pressure.
+            </p>
+            <p className="text-sm sm:text-base leading-relaxed text-center">
+              We respect your pace, not force urgency.
+            </p>
+          </div>
+        </section>
+
+        {/* Scroll Indicator */}
+        {/* <div className="flex justify-center pt-8 sm:pt-12 flex-shrink-0">
+          <div className="opacity-20 animate-breath-pulse">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </div>
+        </div> */}
+      </div>
 
       {/* Start Small - Pattern B: Breathing Panel */}
       <section className="panel-sage">

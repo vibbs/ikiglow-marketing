@@ -201,6 +201,13 @@
     background-repeat: no-repeat;
   }
 
+  /* Mobile background image */
+  @media (max-width: 768px) {
+    body {
+      background-image: url('/ikiglow_site_bg_mobile.png') !important;
+    }
+  }
+
   /* Generous spacing for Yohaku (余白) */
   h1,
   h2,
