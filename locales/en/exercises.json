@@ -43,7 +43,9 @@
       "inhale": "Breathe in",
       "hold": "Hold",
       "exhale": "Breathe out",
-      "rest": "Rest"
+      "rest": "Rest",
+      "begin": "Begin",
+      "stop": "Stop"
     },
     "howToUse": {
       "title": "How to use",
@@ -96,7 +98,14 @@
     },
     "completion": {
       "title": "You are here. You are present.",
-      "subtitle": "Take a moment to notice how you feel now."
+      "subtitle": "Take a moment to notice how you feel now.",
+      "yourReflections": "What you noticed",
+      "practiceAgain": "Practice Again"
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next",
+      "complete": "Complete"
     },
     "howToUse": {
       "title": "How to use",

@@ -1,47 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
-const steps = [
-  {
-    number: 5,
-    sense: "See",
-    prompt: "Name 5 things you can see around you",
-    placeholder: "The light on the wall, a book, my hands...",
-  },
-  {
-    number: 4,
-    sense: "Touch",
-    prompt: "Name 4 things you can touch",
-    placeholder: "The chair beneath me, my breath, the floor...",
-  },
-  {
-    number: 3,
-    sense: "Hear",
-    prompt: "Name 3 things you can hear",
-    placeholder: "Birds outside, my breathing, distant traffic...",
-  },
-  {
-    number: 2,
-    sense: "Smell",
-    prompt: "Name 2 things you can smell",
-    placeholder: "Fresh air, coffee...",
-  },
-  {
-    number: 1,
-    sense: "Taste",
-    prompt: "Name 1 thing you can taste",
-    placeholder: "The lingering taste of tea...",
-  },
-];
+const stepKeys = ["step1", "step2", "step3", "step4", "step5"] as const;
+const stepNumbers = [5, 4, 3, 2, 1] as const;
 
 export function GroundingExercise() {
+  const t = useTranslations("exercises.grounding");
   const [currentStep, setCurrentStep] = useState(0);
   const [responses, setResponses] = useState<string[]>(Array(5).fill(""));
   const [isComplete, setIsComplete] = useState(false);
 
   const handleNext = () => {
-    if (currentStep < steps.length - 1) {
+    if (currentStep < stepKeys.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
       setIsComplete(true);
@@ -69,32 +41,60 @@ export function GroundingExercise() {
 
   if (isComplete) {
     return (
-      <div className="flex flex-col items-center space-y-8 sm:space-y-12 text-center animate-ink-flow px-4 wash-gold rounded-xl py-12">
-        <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col items-center space-y-12 sm:space-y-16 text-center animate-ink-flow px-4">
+        {/* Completion message */}
+        <div className="wash-gold rounded-xl py-12 px-6 sm:px-8 space-y-4 sm:space-y-6 max-w-2xl w-full">
           <p className="text-xl sm:text-2xl font-light tracking-wide">
-            You are here. You are present.
+            {t("completion.title")}
           </p>
           <p className="text-base sm:text-lg text-muted-foreground">
-            Take a moment to notice how you feel now.
+            {t("completion.subtitle")}
           </p>
         </div>
+
+        {/* User's responses - gentle reflection */}
+        <div className="space-y-6 sm:space-y-8 max-w-2xl w-full">
+          <p className="text-sm text-muted-foreground font-light tracking-wide">
+            {t("completion.yourReflections")}
+          </p>
+          
+          {stepKeys.map((stepKey, index) => {
+            const response = responses[index];
+            if (!response.trim()) return null;
+            
+            return (
+              <div key={stepKey} className="space-y-2 text-left">
+                <p className="text-sm text-muted-foreground">
+                  {t(`steps.${stepKey}.prompt`)}
+                </p>
+                <p className="text-base leading-relaxed pl-4 border-l-2 border-primary/20">
+                  {response}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
         <button
           onClick={handleReset}
           className="rounded-xl border border-border bg-background px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-light tracking-wide transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-primary/40 hover:bg-accent active:translate-y-[1px]"
         >
-          Practice Again
+          {t("completion.practiceAgain")}
         </button>
       </div>
     );
   }
 
-  const step = steps[currentStep];
+  const stepKey = stepKeys[currentStep];
+  const stepNumber = stepNumbers[currentStep];
+  const currentResponse = responses[currentStep].trim();
+  const canProceed = currentResponse.length > 0;
 
   return (
     <div className="mx-auto max-w-2xl space-y-8 sm:space-y-12 px-4">
       {/* Progress - Sage glow accent bars */}
       <div className="flex justify-center gap-1.5 sm:gap-2">
-        {steps.map((_, index) => (
+        {stepKeys.map((_, index) => (
           <div
             key={index}
             className={`h-1 w-8 sm:w-12 rounded-full transition-all duration-[320ms] ease-[cubic-bezier(0.2,0.8,0.2,1)]`}
@@ -115,22 +115,18 @@ export function GroundingExercise() {
       </div>
 
       {/* Current step - Sage wash background */}
-      <div className="space-y-6 sm:space-y-8 text-center wash-sage rounded-xl py-8">
-        <div className="space-y-3 sm:space-y-4">
-          <p
-            className="text-5xl sm:text-6xl font-light"
-            style={{ color: "#6F846F" }}
-          >
-            {step.number}
-          </p>
-          <h2 className="text-xl sm:text-2xl font-light tracking-wide px-2">{step.prompt}</h2>
+      <div className="space-y-6 sm:space-y-8 text-center wash-sage rounded-xl py-12 px-6 sm:px-8">
+        <div className="space-y-4 sm:space-y-6">
+          <h2 className="text-xl sm:text-2xl font-light tracking-wide">
+            {t(`steps.${stepKey}.prompt`)}
+          </h2>
         </div>
 
         <textarea
           value={responses[currentStep]}
           onChange={(e) => handleResponseChange(e.target.value)}
-          placeholder={step.placeholder}
-          className="h-32 sm:h-36 w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm sm:text-base leading-relaxed outline-none transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] placeholder:text-muted-foreground/50 focus:border-primary focus:ring-4 focus:ring-primary/12"
+          placeholder={t(`steps.${stepKey}.placeholder`)}
+          className="h-40 sm:h-44 w-full resize-none rounded-xl border border-border bg-background px-5 py-4 text-sm sm:text-base leading-relaxed outline-none transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] placeholder:text-muted-foreground/50 focus:border-primary focus:ring-4 focus:ring-primary/12"
         />
       </div>
 
@@ -141,13 +137,14 @@ export function GroundingExercise() {
           disabled={currentStep === 0}
           className="rounded-xl border border-border bg-background px-4 sm:px-6 py-2 text-sm font-light tracking-wide transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-primary/40 hover:bg-accent disabled:opacity-30 disabled:hover:border-border disabled:hover:bg-background active:translate-y-[1px]"
         >
-          Previous
+          {t("navigation.previous")}
         </button>
         <button
           onClick={handleNext}
-          className="rounded-xl bg-primary px-4 sm:px-6 py-2 text-sm font-light tracking-wide text-primary-foreground transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:opacity-90 active:translate-y-[1px]"
+          disabled={!canProceed}
+          className="rounded-xl bg-primary px-4 sm:px-6 py-2 text-sm font-light tracking-wide text-primary-foreground transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed active:translate-y-[1px]"
         >
-          {currentStep === steps.length - 1 ? "Complete" : "Next"}
+          {currentStep === stepKeys.length - 1 ? t("navigation.complete") : t("navigation.next")}
         </button>
       </div>
     </div>

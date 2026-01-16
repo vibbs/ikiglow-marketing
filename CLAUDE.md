@@ -224,6 +224,82 @@ export async function generateMetadata(): Promise<Metadata> {
 2. Use in component: `{t("newKey")}`
 3. TypeScript will autocomplete available keys
 
+### Localization Best Practices & Rules
+
+**CRITICAL: This is non-negotiable for all code you write.**
+
+1. **Never hardcode user-facing text**
+   - ❌ BAD: `<button>Begin</button>`
+   - ✅ GOOD: `<button>{t("phases.begin")}</button>`
+
+2. **All product copy belongs in locales/**
+   - Button labels → `locales/en/common.json` or page-specific JSON
+   - Placeholders → Translation files
+   - Instructions → Translation files
+   - Error messages → Translation files
+   - Aria labels → Translation files
+   - Alt text → Translation files
+   - Success/confirmation messages → Translation files
+
+3. **Component structure for client components**
+   ```tsx
+   "use client";
+   import { useTranslations } from "next-intl";
+
+   export function MyComponent() {
+     const t = useTranslations("namespace");
+     const tCommon = useTranslations("common"); // for shared strings
+
+     return (
+       <div>
+         <h1>{t("title")}</h1>
+         <button>{tCommon("buttons.save")}</button>
+       </div>
+     );
+   }
+   ```
+
+4. **Component structure for server components**
+   ```tsx
+   import { useTranslations } from "next-intl";
+
+   export default function Page() {
+     const t = useTranslations("namespace");
+     return <h1>{t("title")}</h1>;
+   }
+   ```
+
+5. **Before creating any new component:**
+   - First, add all necessary strings to the appropriate `locales/en/*.json` file
+   - Then import and use `useTranslations()` in the component
+   - Never write the component with hardcoded strings "to be replaced later"
+
+6. **When reviewing existing code:**
+   - If you see ANY hardcoded user-facing text, fix it immediately
+   - Add the strings to the appropriate locale file
+   - Update the component to use translations
+
+7. **Exceptions (the ONLY acceptable hardcoded strings):**
+   - Developer console.log messages
+   - Code comments
+   - Technical constants not shown to users
+   - Environment variable names
+   - File paths
+
+8. **Choosing the right namespace:**
+   - Page-specific content → Use page namespace (e.g., `home`, `blog`, `exercises`)
+   - Shared UI elements → `common`
+   - Shared buttons → `common.buttons.*`
+   - Shared navigation → `common.nav.*`
+   - Shared footer → `common.footer.*`
+
+9. **Adding new locale files:**
+   - If you need a new namespace, create the file in `locales/en/`
+   - Export it from `locales/en/index.ts`
+   - Add it to the messages type in i18n config
+
+**Remember: Future internationalization depends on this. Every hardcoded string is technical debt.**
+
 ### Future Localization
 
 To add a new language (e.g., Spanish):
@@ -416,10 +492,13 @@ Components will be added to `src/components/ui/`.
 - **Utility function**: Use `cn()` from `@/lib/utils` to merge Tailwind classes
 - **Client vs Server**: Default to Server Components. Only add `"use client"` when state/effects needed
 - **Exports**: Use named exports for components (e.g., `export function BreathingExercise()`)
-- **Internationalization**: NEVER hardcode user-facing text. Always use `useTranslations()` from next-intl
+- **Internationalization**: **CRITICAL - NEVER hardcode user-facing text**. Always use `useTranslations()` from next-intl
   - Import: `import { useTranslations } from "next-intl";`
   - Usage: `const t = useTranslations("namespace"); return <h1>{t("key")}</h1>;`
   - For metadata: Use `getTranslations` from `"next-intl/server"`
+  - **ALL product copy must be placed in `locales/en/*.json` files**
+  - This includes: button labels, instructions, placeholders, error messages, tooltips, aria-labels, etc.
+  - The only exceptions are: developer comments, console logs, and non-user-facing technical strings
 
 ## MDX Content Management
 
