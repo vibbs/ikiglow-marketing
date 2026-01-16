@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
+type Scene = "beach" | "forest" | "mountain";
+
 type GuidedVisualizationExerciseProps = {
   i18nKey: string;
 };
@@ -11,12 +13,16 @@ export function GuidedVisualizationExercise({
   i18nKey,
 }: GuidedVisualizationExerciseProps) {
   const t = useTranslations(i18nKey);
-  const [currentStep, setCurrentStep] = useState(-1); // -1 = not started
+  const [selectedScene, setSelectedScene] = useState<Scene | null>(null);
+  const [currentStep, setCurrentStep] = useState(-1); // -1 = scene selection
   const [isComplete, setIsComplete] = useState(false);
 
-  const stepsCount = 6; // 6 visualization steps
+  const scenes: Scene[] = ["beach", "forest", "mountain"];
+  const steps = ["intro", "sense1", "sense2", "sense3", "sense4", "closing"];
+  const stepsCount = steps.length;
 
-  const handleStart = () => {
+  const handleSceneSelect = (scene: Scene) => {
+    setSelectedScene(scene);
     setCurrentStep(0);
     setIsComplete(false);
   };
@@ -36,6 +42,7 @@ export function GuidedVisualizationExercise({
   };
 
   const handleReset = () => {
+    setSelectedScene(null);
     setCurrentStep(-1);
     setIsComplete(false);
   };
@@ -62,21 +69,27 @@ export function GuidedVisualizationExercise({
     );
   }
 
-  if (currentStep === -1) {
+  // Scene selection view
+  if (!selectedScene || currentStep === -1) {
     return (
       <div className="flex flex-col items-center space-y-8 sm:space-y-12 px-4">
         <div className="max-w-2xl space-y-6 text-center">
           <p className="text-lg sm:text-xl font-light leading-relaxed text-muted-foreground">
-            {t("tabs.exercise")}
+            {t("controls.selectScene")}
           </p>
         </div>
 
-        <button
-          onClick={handleStart}
-          className="rounded-xl bg-primary px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-light tracking-wide text-primary-foreground transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:opacity-90 active:translate-y-[1px]"
-        >
-          {t("controls.begin")}
-        </button>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 w-full max-w-2xl">
+          {scenes.map((scene) => (
+            <button
+              key={scene}
+              onClick={() => handleSceneSelect(scene)}
+              className="wash-sky rounded-xl border border-border px-6 py-8 text-base font-light tracking-wide transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-primary/40 hover:bg-accent active:translate-y-[1px]"
+            >
+              {t(`scenes.${scene}`)}
+            </button>
+          ))}
+        </div>
       </div>
     );
   }
@@ -104,11 +117,8 @@ export function GuidedVisualizationExercise({
       {/* Current Step */}
       <div className="space-y-6 wash-sky rounded-xl py-12 px-6 sm:px-8">
         <div className="text-center space-y-4">
-          <p className="text-sm text-muted-foreground font-light tracking-wide uppercase">
-            {t(`steps.${currentStep}.title`)}
-          </p>
           <p className="text-lg sm:text-xl font-light leading-relaxed">
-            {t(`steps.${currentStep}.instruction`)}
+            {t(`prompts.${selectedScene}.${steps[currentStep]}`)}
           </p>
         </div>
       </div>

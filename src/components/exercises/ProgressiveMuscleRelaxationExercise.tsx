@@ -15,7 +15,19 @@ export function ProgressiveMuscleRelaxationExercise({
   const [currentStep, setCurrentStep] = useState(-1); // -1 = not started
   const [isComplete, setIsComplete] = useState(false);
 
-  const bodyPartsCount = 9; // Number of body parts
+  // Get all body parts from translations
+  const bodyParts = [
+    { name: t("bodyParts.0.name"), instruction: t("bodyParts.0.instruction") },
+    { name: t("bodyParts.1.name"), instruction: t("bodyParts.1.instruction") },
+    { name: t("bodyParts.2.name"), instruction: t("bodyParts.2.instruction") },
+    { name: t("bodyParts.3.name"), instruction: t("bodyParts.3.instruction") },
+    { name: t("bodyParts.4.name"), instruction: t("bodyParts.4.instruction") },
+    { name: t("bodyParts.5.name"), instruction: t("bodyParts.5.instruction") },
+    { name: t("bodyParts.6.name"), instruction: t("bodyParts.6.instruction") },
+    { name: t("bodyParts.7.name"), instruction: t("bodyParts.7.instruction") },
+    { name: t("bodyParts.8.name"), instruction: t("bodyParts.8.instruction") },
+  ];
+  const bodyPartsCount = bodyParts.length;
 
   const handleStart = () => {
     setCurrentStep(0);
@@ -100,10 +112,10 @@ export function ProgressiveMuscleRelaxationExercise({
       <div className="space-y-6 wash-indigo rounded-xl py-12 px-6 sm:px-8">
         <div className="text-center space-y-4">
           <p className="text-sm text-muted-foreground font-light tracking-wide uppercase">
-            {t(`bodyParts.${currentStep}.name`)}
+            {bodyParts[currentStep].name}
           </p>
           <p className="text-lg sm:text-xl font-light leading-relaxed">
-            {t(`bodyParts.${currentStep}.instruction`)}
+            {bodyParts[currentStep].instruction}
           </p>
         </div>
       </div>

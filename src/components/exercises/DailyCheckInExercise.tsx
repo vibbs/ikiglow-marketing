@@ -23,13 +23,13 @@ export function DailyCheckInExercise({ i18nKey }: DailyCheckInExerciseProps) {
   ];
 
   const intentionOptions = [
-    "Presence",
-    "Calm",
-    "Clarity",
-    "Growth",
-    "Gratitude",
-    "Rest",
-    "Connection",
+    t("prompts.intentionOptions.0"),
+    t("prompts.intentionOptions.1"),
+    t("prompts.intentionOptions.2"),
+    t("prompts.intentionOptions.3"),
+    t("prompts.intentionOptions.4"),
+    t("prompts.intentionOptions.5"),
+    t("prompts.intentionOptions.6"),
   ];
 
   const handleSave = () => {
