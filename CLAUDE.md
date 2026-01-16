@@ -18,6 +18,7 @@ IkiGlow fuses **Ikigai** (Japanese concept of purpose) with **Glow** (radiance f
 - **Utilities**: clsx + tailwind-merge via `cn()` helper
 - **Content**: MDX-based content system with gray-matter frontmatter parsing
 - **CMS**: File-based content management at `/protected/cms`
+- **Internationalization**: next-intl for localization support
 
 ## Development Commands
 
@@ -124,6 +125,117 @@ TypeScript path aliases are configured in `tsconfig.json`:
 - Components: `@/components`
 - Utils: `@/lib/utils`
 - Types: `@/types`
+
+## Internationalization (i18n)
+
+The project uses **next-intl** for internationalization support. All user-facing text is stored in translation files for future localization.
+
+### Translation System
+
+**IMPORTANT: Never hardcode user-facing text. Always use translations.**
+
+**Translation Files:**
+```
+locales/en/
+├── common.json        # Nav, footer, buttons, shared UI
+├── home.json          # Homepage content
+├── blog.json          # Blog listings
+├── exercises.json     # All exercises (breathing, grounding, journaling)
+├── guides.json        # Guides listing
+├── newsletter.json    # Newsletter page
+├── waitlist.json      # Waitlist page
+├── videos.json        # Videos page
+└── metadata.json      # SEO metadata
+```
+
+### Usage Patterns
+
+**Server Components:**
+```tsx
+import { useTranslations } from "next-intl";
+
+export default function Page() {
+  const t = useTranslations("namespace"); // e.g., "home", "blog"
+  const tCommon = useTranslations("common"); // for shared strings
+
+  return (
+    <div>
+      <h1>{t("title")}</h1>
+      <p>{t("description")}</p>
+      <button>{tCommon("buttons.submit")}</button>
+    </div>
+  );
+}
+```
+
+**Client Components:**
+```tsx
+"use client";
+import { useTranslations } from "next-intl";
+
+export function Component() {
+  const t = useTranslations("namespace");
+  return <button>{t("key")}</button>;
+}
+```
+
+**With Variables:**
+```tsx
+{t("footer.copyright", { year: new Date().getFullYear() })}
+```
+
+**Metadata:**
+```tsx
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.blog");
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
+```
+
+### Translation Namespaces
+
+- `common`: Navigation, footer, buttons, links
+  - `common.nav.*` - Navigation links
+  - `common.footer.*` - Footer sections
+  - `common.buttons.*` - Reusable buttons
+  - `common.links.*` - Reusable link text
+
+- `home`: Homepage content
+  - `home.hero.*` - Hero section
+  - `home.values.*` - Value propositions
+  - `home.startSmall.*` - Exercise cards
+
+- `exercises`: All exercise content
+  - `exercises.listing.*` - Exercise listing page
+  - `exercises.breathing.*` - Breathing exercise
+  - `exercises.grounding.*` - Grounding exercise
+  - `exercises.journaling.*` - Journaling prompts
+
+- `blog`, `guides`, `newsletter`, `waitlist`, `videos`: Page-specific content
+
+### Adding New Translations
+
+1. Add key to appropriate JSON file in `locales/en/`
+2. Use in component: `{t("newKey")}`
+3. TypeScript will autocomplete available keys
+
+### Future Localization
+
+To add a new language (e.g., Spanish):
+1. Copy `locales/en/` to `locales/es/`
+2. Translate all JSON files
+3. Update `src/i18n/config.ts`:
+   ```ts
+   export const locales = ["en", "es"] as const;
+   ```
+4. No code changes needed!
+
+**See `docs/I18N_MIGRATION_GUIDE.md` for complete documentation.**
 
 ## Interactive Exercise Architecture
 
@@ -304,6 +416,10 @@ Components will be added to `src/components/ui/`.
 - **Utility function**: Use `cn()` from `@/lib/utils` to merge Tailwind classes
 - **Client vs Server**: Default to Server Components. Only add `"use client"` when state/effects needed
 - **Exports**: Use named exports for components (e.g., `export function BreathingExercise()`)
+- **Internationalization**: NEVER hardcode user-facing text. Always use `useTranslations()` from next-intl
+  - Import: `import { useTranslations } from "next-intl";`
+  - Usage: `const t = useTranslations("namespace"); return <h1>{t("key")}</h1>;`
+  - For metadata: Use `getTranslations` from `"next-intl/server"`
 
 ## MDX Content Management
 

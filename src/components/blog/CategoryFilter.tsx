@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { getAllBlogCategories, getCategorySlug } from "@/types/content";
 import type { BlogCategory } from "@/types/content";
+import { useTranslations } from "next-intl";
 
 interface CategoryFilterProps {
   activeCategory?: BlogCategory | "all";
@@ -13,6 +16,7 @@ export function CategoryFilter({
   basePath = "/blog",
   showAll = true,
 }: CategoryFilterProps) {
+  const t = useTranslations("common.categories");
   const categories = getAllBlogCategories();
 
   return (
@@ -25,7 +29,7 @@ export function CategoryFilter({
             : "text-muted-foreground hover:text-[#6F846F]"
             }`}
         >
-          All
+          {t("all")}
         </Link>
       )}
       {categories.map((category) => {

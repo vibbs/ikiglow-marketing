@@ -5,7 +5,9 @@
       "Bash(npx create-next-app:*)",
       "Bash(npx shadcn@latest init:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []

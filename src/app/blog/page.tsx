@@ -4,6 +4,7 @@ import { getAllBlogPosts, getBlogPostsByCategory } from "@/lib/mdx/mdx-utils";
 import { CategoryFilter } from "@/components/blog/CategoryFilter";
 import { getCategoryFromSlug } from "@/types/content";
 import type { BlogCategory } from "@/types/content";
+import { getTranslations } from "next-intl/server";
 
 interface PageProps {
   searchParams: Promise<{ category?: string }>;
@@ -12,24 +13,27 @@ interface PageProps {
 export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
   const params = await searchParams;
   const categorySlug = params.category;
+  const t = await getTranslations("metadata.blog");
 
   if (categorySlug) {
     const category = getCategoryFromSlug(categorySlug);
     if (category) {
       return {
-        title: `${category} - Blog - IkiGlow`,
-        description: `Reflections on ${category.toLowerCase()}, purpose, and living intentionally.`,
+        title: t("categoryTitle", { category }),
+        description: t("categoryDescription", { category: category.toLowerCase() }),
       };
     }
   }
 
   return {
-    title: "Blog - IkiGlow",
-    description: "Reflections on purpose, attention, and living intentionally.",
+    title: t("title"),
+    description: t("description"),
   };
 }
 
 export default async function Blog({ searchParams }: PageProps) {
+  const t = await getTranslations("blog");
+
   const params = await searchParams;
   const categorySlug = params.category;
   let category: BlogCategory | "all" = "all";
@@ -52,12 +56,12 @@ export default async function Blog({ searchParams }: PageProps) {
       {/* Header */}
       <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8 px-4 sm:px-6 py-12 sm:py-16">
         <h1 className="text-2xl sm:text-3xl tracking-wide">
-          {category === "all" ? "Reflections" : category}
+          {category === "all" ? t("title") : category}
         </h1>
         <p className="text-sm sm:text-base text-muted-foreground">
           {category === "all"
-            ? "Thoughts on purpose, attention, and living intentionally"
-            : `${posts.length} ${posts.length === 1 ? "post" : "posts"}`
+            ? t("description")
+            : t("categoryDescription", { count: posts.length })
           }
         </p>
       </div>
@@ -74,13 +78,13 @@ export default async function Blog({ searchParams }: PageProps) {
         {posts.length === 0 ? (
           <div className="rounded-xl border border-[#E6E6E1]/60 bg-[#EEF3EF] p-8 sm:p-12 text-center">
             <p className="text-sm text-muted-foreground">
-              No posts in this category yet.
+              {t("emptyState.message")}
             </p>
             <Link
               href="/blog"
               className="mt-4 inline-block text-sm text-[#6F846F] transition-colors hover:text-[#5F7460]"
             >
-              View all posts →
+              {t("emptyState.action")}
             </Link>
           </div>
         ) : (
@@ -88,7 +92,7 @@ export default async function Blog({ searchParams }: PageProps) {
             <article key={post.slug} className="space-y-3 sm:space-y-4 border-b border-[#E6E6E1]/60 pb-8 sm:pb-12">
               <Link href={`/blog/${post.slug}`} className="block space-y-2 sm:space-y-3">
                 <div className="text-xs text-muted-foreground">
-                  {post.frontmatter.category} · {post.frontmatter.readingTime} min read
+                  {post.frontmatter.category} · {post.frontmatter.readingTime} {t("readingTime")}
                 </div>
                 <h2 className="text-lg sm:text-xl tracking-wide transition-colors hover:text-[#6F846F]">
                   {post.frontmatter.title}
