@@ -4,10 +4,12 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 const stepKeys = ["step1", "step2", "step3", "step4", "step5"] as const;
-const stepNumbers = [5, 4, 3, 2, 1] as const;
+type GroundingExerciseProps = {
+  i18nKey: string;
+};
 
-export function GroundingExercise() {
-  const t = useTranslations("exercises.grounding");
+export function GroundingExercise({ i18nKey }: GroundingExerciseProps) {
+  const t = useTranslations(i18nKey);
   const [currentStep, setCurrentStep] = useState(0);
   const [responses, setResponses] = useState<string[]>(Array(5).fill(""));
   const [isComplete, setIsComplete] = useState(false);
@@ -86,7 +88,6 @@ export function GroundingExercise() {
   }
 
   const stepKey = stepKeys[currentStep];
-  const stepNumber = stepNumbers[currentStep];
   const currentResponse = responses[currentStep].trim();
   const canProceed = currentResponse.length > 0;
 

@@ -12,17 +12,49 @@
   "exercises": {
     "title": "Exercises - IkiGlow",
     "description": "Gentle practices for focus, calm, and self-awareness. Use them when you need them.",
-    "breathing": {
-      "title": "Breathing Exercise - IkiGlow",
-      "description": "A gentle 4-4-6-2 breathing practice to slow your thoughts and activate calm."
+    "categories": {
+      "breathing": {
+        "title": "Breathing Exercises - IkiGlow",
+        "description": "Steady breathing patterns for calm, focus, and sleep."
+      },
+      "grounding": {
+        "title": "Grounding Exercises - IkiGlow",
+        "description": "Sensory practices that anchor you in the present moment."
+      },
+      "focus": {
+        "title": "Focus Exercises - IkiGlow",
+        "description": "Short resets for attention and clarity."
+      },
+      "sleep": {
+        "title": "Sleep Exercises - IkiGlow",
+        "description": "Gentle wind-down practices for evening calm."
+      },
+      "mindset": {
+        "title": "Mindset Exercises - IkiGlow",
+        "description": "Small reframes for perspective and self-talk."
+      },
+      "energy": {
+        "title": "Energy Exercises - IkiGlow",
+        "description": "Somatic resets to lift your momentum."
+      }
     },
-    "grounding": {
-      "title": "Grounding Practice - IkiGlow",
-      "description": "Use the 5-4-3-2-1 technique to anchor yourself in the present moment."
-    },
-    "journaling": {
-      "title": "Journaling Prompts - IkiGlow",
-      "description": "Thoughtful prompts across 6 categories to help you explore what matters."
+    "items": {
+      "box-breathing": {
+        "title": "Box Breathing - IkiGlow",
+        "description": "A four-part breathing rhythm to steady attention and calm the body."
+      },
+      "four-seven-eight": {
+        "title": "4-7-8 Breathing - IkiGlow",
+        "description": "A longer exhale pattern that supports relaxation and sleep."
+      },
+      "coherent-breathing": {
+        "title": "Coherent Breathing - IkiGlow",
+        "description": "Balanced six-count breaths for steady focus."
+      },
+      "five-four-three-two-one": {
+        "title": "5-4-3-2-1 Grounding - IkiGlow",
+        "description": "A sensory scan to bring your attention back to the present."
+      }
     }
   },
   "reflections": {

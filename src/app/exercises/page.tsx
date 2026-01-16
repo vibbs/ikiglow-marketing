@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import { Eye, Type, Volume2 } from "lucide-react";
+import { exerciseCategories, getExerciseBySlug } from "@/exercises/registry";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.exercises");
@@ -12,60 +14,113 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Exercises() {
-  const t = useTranslations("exercises.listing");
+  const t = useTranslations("exercises.hub");
+  const tMeta = useTranslations("exercises.meta");
+  const tCategories = useTranslations("exercises.categories");
+
+  const formatIcons = {
+    visual: Eye,
+    audio: Volume2,
+    text: Type,
+  } as const;
+
+  const quickPickSlots = [
+    { key: "calmIn2", slug: "box-breathing" },
+    { key: "groundInPresent", slug: "five-four-three-two-one" },
+    { key: "sleepWindDown", slug: "four-seven-eight" },
+    { key: "resetFocus", slug: "coherent-breathing" },
+    { key: "confidenceBoost" },
+  ] as const;
 
   return (
     <main className="min-h-screen">
-      {/* Header */}
-      <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8 px-4 sm:px-6 py-12 sm:py-16">
+      <div className="mx-auto max-w-3xl space-y-6 sm:space-y-8 px-4 sm:px-6 py-12 sm:py-16">
         <h1 className="text-2xl sm:text-3xl tracking-wide">{t("title")}</h1>
         <p className="text-sm sm:text-base text-muted-foreground">
-          {t("description")}
+          {t("subtitle")}
         </p>
       </div>
 
-      {/* Exercises Grid */}
-      <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 pb-12 sm:pb-16">
-        <Link
-          href="/exercises/breathing"
-          className="block space-y-3 sm:space-y-4 rounded-sm border border-border p-5 sm:p-6 transition-colors hover:border-primary/40"
-        >
-          <h2 className="text-lg sm:text-xl tracking-wide">{t("breathingExercise.title")}</h2>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {t("breathingExercise.description")}
-          </p>
-        </Link>
+      <section className="mx-auto max-w-3xl space-y-4 sm:space-y-6 px-4 sm:px-6 pb-12 sm:pb-16">
+        <h2 className="text-lg sm:text-xl tracking-wide">
+          {t("quickPicks.title")}
+        </h2>
+        <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
+          {quickPickSlots.map((pick) => {
+            const exercise = pick.slug ? getExerciseBySlug(pick.slug) : null;
+            const duration = exercise
+              ? tMeta(`durations.${exercise.durationRange}`)
+              : t("quickPicks.durationPlaceholder");
 
-        <Link
-          href="/exercises/grounding"
-          className="block space-y-3 sm:space-y-4 rounded-sm border border-border p-5 sm:p-6 transition-colors hover:border-primary/40"
-        >
-          <h2 className="text-lg sm:text-xl tracking-wide">{t("groundingPractice.title")}</h2>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {t("groundingPractice.description")}
-          </p>
-        </Link>
+            if (!pick.slug || !exercise) {
+              return (
+                <div
+                  key={pick.key}
+                  className="space-y-2 rounded-xl border border-border bg-muted/30 p-4 sm:p-5 text-sm text-muted-foreground"
+                >
+                  <p className="text-base text-foreground">
+                    {t(`quickPicks.items.${pick.key}`)}
+                  </p>
+                  <p>{duration}</p>
+                  <p className="text-xs">{t("quickPicks.comingSoon")}</p>
+                </div>
+              );
+            }
 
-        <div className="block space-y-3 sm:space-y-4 rounded-sm border border-border bg-muted/30 p-5 sm:p-6 opacity-60">
-          <h2 className="text-lg sm:text-xl tracking-wide">{t("stressReset.title")}</h2>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {t("stressReset.description")}
-          </p>
-          <div className="text-xs text-muted-foreground">{t("stressReset.comingSoon")}</div>
+            return (
+              <Link
+                key={pick.key}
+                href={`/exercises/${exercise.slug}`}
+                className="space-y-2 rounded-xl border border-border p-4 sm:p-5 transition-colors hover:border-primary/40"
+              >
+                <p className="text-base tracking-wide">
+                  {t(`quickPicks.items.${pick.key}`)}
+                </p>
+                <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                  <span className="rounded-full border border-border px-3 py-1">
+                    {duration}
+                  </span>
+                  {exercise.formats.map((format) => {
+                    const Icon = formatIcons[format];
+                    return (
+                      <span
+                        key={format}
+                        className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1"
+                      >
+                        <Icon className="h-3.5 w-3.5" aria-hidden="true" />
+                        {tMeta(`formats.${format}`)}
+                      </span>
+                    );
+                  })}
+                </div>
+              </Link>
+            );
+          })}
         </div>
-      </div>
+      </section>
 
-      {/* Philosophy */}
-      <div className="border-t border-border bg-muted/30">
-        <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
-          <h2 className="text-lg sm:text-xl tracking-wide">{t("philosophy.title")}</h2>
-          <div className="space-y-4 text-sm sm:text-base leading-relaxed">
-            <p>{t("philosophy.line1")}</p>
-            <p>{t("philosophy.line2")}</p>
-            <p>{t("philosophy.line3")}</p>
-          </div>
+      <section className="mx-auto max-w-3xl space-y-4 sm:space-y-6 px-4 sm:px-6 pb-12 sm:pb-16">
+        <h2 className="text-lg sm:text-xl tracking-wide">
+          {t("categories.title")}
+        </h2>
+        <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
+          {exerciseCategories.map((category) => (
+            <Link
+              key={category.slug}
+              href={`/exercises/${category.slug}`}
+              className="space-y-2 rounded-xl border border-border p-4 sm:p-5 transition-colors hover:border-primary/40"
+            >
+              <p className="text-base tracking-wide">
+                {tCategories(`${category.slug}.title`)}
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {tCategories(`${category.slug}.description`)}
+              </p>
+            </Link>
+          ))}
         </div>
-      </div>
+      </section>
+
     </main>
   );
 }

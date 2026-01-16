@@ -72,7 +72,7 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl tracking-wide">{t("startSmall.title")}</h2>
           <div className="space-y-4 sm:space-y-6">
             <Link
-              href="/exercises/breathing"
+              href="/exercises/box-breathing"
               className="block space-y-2 sm:space-y-3 rounded-xl border border-border/60 bg-background p-5 sm:p-6 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:-translate-y-[1px]"
             >
               <h3 className="text-base sm:text-lg tracking-wide">{t("startSmall.breathingExercise.title")}</h3>
@@ -82,7 +82,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="/exercises/grounding"
+              href="/exercises/five-four-three-two-one"
               className="block space-y-2 sm:space-y-3 rounded-xl border border-border/60 bg-background p-5 sm:p-6 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:-translate-y-[1px]"
             >
               <h3 className="text-base sm:text-lg tracking-wide">{t("startSmall.groundingPractice.title")}</h3>

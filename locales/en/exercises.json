@@ -1,120 +1,232 @@
 {
-  "listing": {
+  "hub": {
     "title": "Exercises",
-    "description": "Gentle practices for when you need to pause, reflect, or reconnect",
-    "breathingExercise": {
-      "title": "Breathing exercise",
-      "description": "When thoughts feel rushed, this can help you slow down. Follow a gentle 4-4-6-2 breathing rhythm."
-    },
-    "groundingPractice": {
-      "title": "Grounding practice",
-      "description": "When your mind feels scattered, this invites you back to the present using the 5-4-3-2-1 technique."
-    },
-    "stressReset": {
-      "title": "Stress reset",
-      "description": "Quick physical practices to release tension and restore energy.",
-      "comingSoon": "Coming soon"
-    },
-    "philosophy": {
-      "title": "How these work",
-      "line1": "These exercises are here when you need them - no signup, no tracking, no pressure.",
-      "line2": "They're grounded in research on nervous system regulation and self-awareness, but explained in plain language.",
-      "line3": "Use them when they feel right. Leave them when they don't."
-    }
-  },
-  "breathing": {
-    "title": "Breathing exercise",
-    "subtitle": "When thoughts feel rushed, this can help you slow down.",
-    "tabs": {
-      "exercise": "Exercise",
-      "howToUse": "How to Use",
-      "whyItHelps": "Why It Helps"
-    },
-    "phases": {
-      "inhale": "Breathe in",
-      "hold": "Hold",
-      "exhale": "Breathe out",
-      "rest": "Rest",
-      "begin": "Begin",
-      "stop": "Stop"
-    },
-    "howToUse": {
-      "title": "How to use",
-      "line1": "Begin when you're ready.",
-      "line2": "Follow the visual rhythm - there's no need to count.",
-      "line3": "You might try a few cycles, or stay as long as feels right."
-    },
-    "whyItHelps": {
-      "title": "Why it helps",
-      "line1": "This uses a 4-4-6-2 pattern: inhale for 4 seconds, hold for 4 seconds, exhale for 6 seconds, rest for 2 seconds.",
-      "line2": "The longer exhale activates your parasympathetic nervous system - the part responsible for rest and calm.",
-      "line3": "When you're anxious or overwhelmed, breathing often becomes shallow and rapid. Slowing it down gently signals safety to your body."
-    },
-    "nextSteps": {
-      "title": "Next steps",
-      "grounding": "→ Try the grounding exercise",
-      "anxietyGuide": "→ Read the guide on understanding anxiety",
-      "clarityPost": "→ Why clarity beats motivation"
-    }
-  },
-  "grounding": {
-    "title": "Grounding practice",
-    "subtitle": "When your mind feels scattered, this can help you come back to now.",
-    "tabs": {
-      "exercise": "Exercise",
-      "howToUse": "How to Use",
-      "whyItHelps": "Why It Helps"
-    },
-    "steps": {
-      "step1": {
-        "prompt": "Name 5 things you can see around you",
-        "placeholder": "The light on the wall, a book, my hands..."
-      },
-      "step2": {
-        "prompt": "Name 4 things you can touch",
-        "placeholder": "The chair beneath me, my breath, the floor..."
-      },
-      "step3": {
-        "prompt": "Name 3 things you can hear",
-        "placeholder": "Birds outside, my breathing, distant traffic..."
-      },
-      "step4": {
-        "prompt": "Name 2 things you can smell",
-        "placeholder": "Fresh air, coffee..."
-      },
-      "step5": {
-        "prompt": "Name 1 thing you can taste",
-        "placeholder": "The lingering taste of tea..."
+    "subtitle": "Gentle practices for when you need to pause, reset, or reconnect.",
+    "quickPicks": {
+      "title": "Quick picks",
+      "comingSoon": "Coming soon",
+      "durationPlaceholder": "New practice",
+      "items": {
+        "calmIn2": "Calm in 2 minutes",
+        "groundInPresent": "Ground in the present",
+        "sleepWindDown": "Sleep wind-down",
+        "resetFocus": "Reset focus",
+        "confidenceBoost": "Confidence boost"
       }
     },
-    "completion": {
-      "title": "You are here. You are present.",
-      "subtitle": "Take a moment to notice how you feel now.",
-      "yourReflections": "What you noticed",
-      "practiceAgain": "Practice Again"
+    "categories": {
+      "title": "Categories"
+    }
+  },
+  "categories": {
+    "backToExercises": "All exercises",
+    "comingSoon": "New exercises are on the way for this category.",
+    "breathing": {
+      "title": "Breathing",
+      "description": "Rhythms that slow the mind and steady the body."
     },
-    "navigation": {
-      "previous": "Previous",
-      "next": "Next",
-      "complete": "Complete"
+    "grounding": {
+      "title": "Grounding",
+      "description": "Sensory practices that return you to the present."
     },
-    "howToUse": {
-      "title": "How to use",
-      "line1": "Start when you're ready.",
-      "line2": "Notice what each sense brings to your awareness, without judgment.",
-      "line3": "Move through the steps at your own pace."
+    "focus": {
+      "title": "Focus",
+      "description": "Short resets for scattered or restless attention."
     },
-    "whyItHelps": {
-      "title": "Why it helps",
-      "line1": "The 5-4-3-2-1 technique anchors you in the present by engaging each of your senses, one at a time.",
-      "line2": "When your mind is racing or you feel disconnected, sensory awareness brings you back to what's real and immediate.",
-      "line3": "This doesn't require you to change anything. It simply invites you to notice what's already here."
+    "sleep": {
+      "title": "Sleep",
+      "description": "Wind-down practices for slower evenings."
     },
-    "nextSteps": {
-      "title": "Next steps",
-      "breathing": "→ Try the breathing exercise",
-      "anxietyGuide": "→ Read the guide on understanding anxiety",
-      "allExercises": "→ View all exercises"
+    "mindset": {
+      "title": "Mindset",
+      "description": "Gentle reframes for self-talk and perspective."
+    },
+    "energy": {
+      "title": "Energy",
+      "description": "Small body-based resets to lift your momentum."
+    }
+  },
+  "meta": {
+    "durations": {
+      "oneToTwo": "1-2 min",
+      "twoToThree": "2-3 min",
+      "threeToFive": "3-5 min",
+      "tenPlus": "10+ min"
+    },
+    "formats": {
+      "visual": "Visual",
+      "audio": "Audio",
+      "text": "Text"
+    }
+  },
+  "shell": {
+    "tryNext": "Try next"
+  },
+  "items": {
+    "box-breathing": {
+      "title": "Box breathing",
+      "subtitle": "A square rhythm to steady attention.",
+      "summary": "When thoughts feel rushed, a steady four-part breath can slow the pace.",
+      "tabs": {
+        "exercise": "Exercise",
+        "how": "How to Use",
+        "why": "Why It Helps",
+        "variations": "Variations"
+      },
+      "phases": {
+        "inhale": "Breathe in",
+        "hold": "Hold",
+        "exhale": "Breathe out",
+        "rest": "Rest",
+        "begin": "Begin",
+        "stop": "Stop"
+      },
+      "how": {
+        "title": "How to use",
+        "steps": [
+          "Begin when you are ready.",
+          "Follow the visual rhythm instead of counting.",
+          "Stay for a few cycles, or as long as feels right."
+        ]
+      },
+      "why": {
+        "title": "Why it helps",
+        "points": [
+          "Box breathing uses four equal phases to steady your pace.",
+          "Even breathing signals safety to your nervous system.",
+          "A consistent rhythm helps ease mental spirals."
+        ]
+      }
+    },
+    "four-seven-eight": {
+      "title": "4-7-8 breathing",
+      "subtitle": "Lengthen the exhale to invite calm and sleepiness.",
+      "summary": "A soothing cadence to quiet the body before rest.",
+      "tabs": {
+        "exercise": "Exercise",
+        "how": "How to Use",
+        "why": "Why It Helps",
+        "variations": "Variations"
+      },
+      "phases": {
+        "inhale": "Breathe in",
+        "hold": "Hold",
+        "exhale": "Breathe out",
+        "rest": "Rest",
+        "begin": "Begin",
+        "stop": "Stop"
+      },
+      "how": {
+        "title": "How to use",
+        "steps": [
+          "Sit comfortably or lie down if you are winding down.",
+          "Let the long exhale soften your shoulders and jaw.",
+          "Repeat for four to six rounds, then pause."
+        ]
+      },
+      "why": {
+        "title": "Why it helps",
+        "points": [
+          "The extended exhale shifts your nervous system toward rest.",
+          "The gentle hold builds a sense of steadiness between breaths.",
+          "It can be especially helpful before sleep or during anxious moments."
+        ]
+      }
+    },
+    "coherent-breathing": {
+      "title": "Coherent breathing",
+      "subtitle": "Six counts in, six counts out for steady focus.",
+      "summary": "A calm rhythm that balances breath and attention.",
+      "tabs": {
+        "exercise": "Exercise",
+        "how": "How to Use",
+        "why": "Why It Helps",
+        "variations": "Variations"
+      },
+      "phases": {
+        "inhale": "Breathe in",
+        "hold": "Hold",
+        "exhale": "Breathe out",
+        "rest": "Rest",
+        "begin": "Begin",
+        "stop": "Stop"
+      },
+      "how": {
+        "title": "How to use",
+        "steps": [
+          "Breathe in for six counts, then out for six counts.",
+          "Keep the breath soft and smooth, like a gentle wave.",
+          "Stay for a few minutes, then return to your task."
+        ]
+      },
+      "why": {
+        "title": "Why it helps",
+        "points": [
+          "Balanced breathing supports heart rhythm coherence.",
+          "A steady pace can improve attention and emotional steadiness.",
+          "It is an easy reset between tasks or meetings."
+        ]
+      }
+    },
+    "five-four-three-two-one": {
+      "title": "5-4-3-2-1 grounding",
+      "subtitle": "Name what you sense to return to the present.",
+      "summary": "A sensory scan to anchor your attention here and now.",
+      "tabs": {
+        "exercise": "Exercise",
+        "how": "How to Use",
+        "why": "Why It Helps",
+        "variations": "Variations"
+      },
+      "steps": {
+        "step1": {
+          "prompt": "Name 5 things you can see around you",
+          "placeholder": "The light on the wall, a book, my hands..."
+        },
+        "step2": {
+          "prompt": "Name 4 things you can touch",
+          "placeholder": "The chair beneath me, my breath, the floor..."
+        },
+        "step3": {
+          "prompt": "Name 3 things you can hear",
+          "placeholder": "Birds outside, my breathing, distant traffic..."
+        },
+        "step4": {
+          "prompt": "Name 2 things you can smell",
+          "placeholder": "Fresh air, coffee..."
+        },
+        "step5": {
+          "prompt": "Name 1 thing you can taste",
+          "placeholder": "The lingering taste of tea..."
+        }
+      },
+      "completion": {
+        "title": "You are here. You are present.",
+        "subtitle": "Take a moment to notice how you feel now.",
+        "yourReflections": "What you noticed",
+        "practiceAgain": "Practice again"
+      },
+      "navigation": {
+        "previous": "Previous",
+        "next": "Next",
+        "complete": "Complete"
+      },
+      "how": {
+        "title": "How to use",
+        "steps": [
+          "Start when you are ready.",
+          "Notice each sense without judgment.",
+          "Move through the steps at your own pace."
+        ]
+      },
+      "why": {
+        "title": "Why it helps",
+        "points": [
+          "The 5-4-3-2-1 method anchors you in the present moment.",
+          "Sensory attention interrupts racing thoughts and loops.",
+          "You do not have to change anything, just notice."
+        ]
+      }
     }
   }
 }
