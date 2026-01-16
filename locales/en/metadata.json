@@ -54,6 +54,38 @@
       "five-four-three-two-one": {
         "title": "5-4-3-2-1 Grounding - IkiGlow",
         "description": "A sensory scan to bring your attention back to the present."
+      },
+      "one-minute-mindful-break": {
+        "title": "One-Minute Mindful Break - IkiGlow",
+        "description": "A brief pause to reset your attention and clear mental fog."
+      },
+      "guided-visualization": {
+        "title": "Guided Visualization - IkiGlow",
+        "description": "A mental journey to a peaceful scene for relaxation and calm."
+      },
+      "thought-reframing": {
+        "title": "Thought Reframing - IkiGlow",
+        "description": "Turn harsh self-talk into something kinder and more balanced."
+      },
+      "self-compassion-break": {
+        "title": "Self-Compassion Break - IkiGlow",
+        "description": "Three steps to respond to difficulty with care instead of criticism."
+      },
+      "positive-affirmations": {
+        "title": "Positive Affirmations - IkiGlow",
+        "description": "Gentle reminders of your capability to counter doubt and build confidence."
+      },
+      "body-shake-release": {
+        "title": "Body Shake and Release - IkiGlow",
+        "description": "Move your body to release stuck energy and reset your nervous system."
+      },
+      "daily-check-in": {
+        "title": "Daily Check-In - IkiGlow",
+        "description": "Pause to notice how you are and what you need, morning or evening."
+      },
+      "progressive-muscle-relaxation": {
+        "title": "Progressive Muscle Relaxation - IkiGlow",
+        "description": "Tense and release each part of your body for a guided wind-down to sleep."
       }
     }
   },

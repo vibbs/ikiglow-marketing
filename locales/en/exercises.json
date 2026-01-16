@@ -227,6 +227,457 @@
           "You do not have to change anything, just notice."
         ]
       }
+    },
+    "one-minute-mindful-break": {
+      "title": "One-minute mindful break",
+      "subtitle": "A brief pause to reset your attention.",
+      "summary": "Sixty seconds of stillness to clear mental fog.",
+      "tabs": {
+        "exercise": "Exercise",
+        "how": "How to Use",
+        "why": "Why It Helps"
+      },
+      "instruction": "Close your eyes if comfortable. Feel your breath move in and out. Notice your body where it touches the chair or floor. Let thoughts pass without holding them. You have this minute.",
+      "timer": {
+        "ready": "Begin",
+        "active": "Breathe",
+        "complete": "Complete"
+      },
+      "completion": {
+        "title": "You paused. You returned.",
+        "subtitle": "Even one minute can shift your state.",
+        "practiceAgain": "Practice again"
+      },
+      "how": {
+        "title": "How to use",
+        "steps": [
+          "Find a quiet moment between tasks.",
+          "Close your eyes or soften your gaze.",
+          "Follow your breath for one full minute."
+        ]
+      },
+      "why": {
+        "title": "Why it helps",
+        "points": [
+          "A brief pause can interrupt stress cycles.",
+          "One minute of focus improves decision-making.",
+          "Regular micro-breaks build lasting calm."
+        ]
+      }
+    },
+    "guided-visualization": {
+      "title": "Guided visualization",
+      "subtitle": "Imagine a place of calm and safety.",
+      "summary": "A mental journey to a peaceful scene.",
+      "tabs": {
+        "exercise": "Exercise",
+        "how": "How to Use",
+        "why": "Why It Helps"
+      },
+      "scenes": {
+        "beach": "Warm beach",
+        "forest": "Quiet forest",
+        "mountain": "Mountain overlook"
+      },
+      "prompts": {
+        "beach": {
+          "intro": "Picture yourself on a warm beach. The sand is soft beneath you.",
+          "sense1": "Feel the sun warming your skin.",
+          "sense2": "Hear the gentle rhythm of waves.",
+          "sense3": "Smell the salt air. Taste it on your lips.",
+          "sense4": "Notice the space around you—open, safe, calm.",
+          "closing": "When you are ready, take a deep breath and return."
+        },
+        "forest": {
+          "intro": "Imagine walking through a quiet forest. The path is soft with moss.",
+          "sense1": "Feel the cool air on your face.",
+          "sense2": "Hear birds singing, leaves rustling.",
+          "sense3": "Smell pine and earth.",
+          "sense4": "Notice the light filtering through the trees.",
+          "closing": "When you are ready, take a deep breath and return."
+        },
+        "mountain": {
+          "intro": "Picture yourself standing on a mountain overlook. The view is endless.",
+          "sense1": "Feel the breeze moving around you.",
+          "sense2": "Hear the quiet hum of wind.",
+          "sense3": "Smell the clean mountain air.",
+          "sense4": "Notice the vastness—you are small, but you are here.",
+          "closing": "When you are ready, take a deep breath and return."
+        }
+      },
+      "controls": {
+        "selectScene": "Choose your scene",
+        "begin": "Begin",
+        "next": "Continue",
+        "finish": "Finish"
+      },
+      "completion": {
+        "title": "You went somewhere peaceful.",
+        "subtitle": "You can return whenever you need.",
+        "practiceAgain": "Try another scene"
+      },
+      "how": {
+        "title": "How to use",
+        "steps": [
+          "Choose a scene that feels calming.",
+          "Close your eyes and follow the prompts.",
+          "Engage all your senses in the imagery."
+        ]
+      },
+      "why": {
+        "title": "Why it helps",
+        "points": [
+          "Visualization triggers your relaxation response.",
+          "Mental imagery can lower heart rate and stress.",
+          "Creating a mental safe space builds resilience."
+        ]
+      }
+    },
+    "thought-reframing": {
+      "title": "Thought reframing",
+      "subtitle": "Turn harsh self-talk into something kinder.",
+      "summary": "A simple shift from criticism to compassion.",
+      "tabs": {
+        "exercise": "Exercise",
+        "how": "How to Use",
+        "why": "Why It Helps"
+      },
+      "labels": {
+        "unhelpfulThought": "A thought that is bothering you",
+        "unhelpfulPlaceholder": "I messed everything up today...",
+        "reframe": "A kinder, more balanced way to see it",
+        "reframePlaceholder": "I made a mistake, but I also did several things well. I am learning.",
+        "guidingQuestion": "What would you say to a friend who had this thought?"
+      },
+      "controls": {
+        "clear": "Clear",
+        "save": "Save reflection"
+      },
+      "completion": {
+        "title": "You shifted your perspective.",
+        "subtitle": "Each reframe trains a more compassionate mind.",
+        "saved": "Your reframe",
+        "practiceAgain": "Reframe another thought"
+      },
+      "how": {
+        "title": "How to use",
+        "steps": [
+          "Write down a stressful or critical thought.",
+          "Ask yourself how a friend might see it.",
+          "Rephrase it into something more balanced."
+        ]
+      },
+      "why": {
+        "title": "Why it helps",
+        "points": [
+          "Reframing interrupts negative thought loops.",
+          "It builds cognitive flexibility and resilience.",
+          "Even one shift can change your entire day."
+        ]
+      }
+    },
+    "self-compassion-break": {
+      "title": "Self-compassion break",
+      "subtitle": "Offer yourself the kindness you need.",
+      "summary": "Three steps to respond to pain with care.",
+      "tabs": {
+        "exercise": "Exercise",
+        "how": "How to Use",
+        "why": "Why It Helps"
+      },
+      "steps": {
+        "step1": {
+          "title": "Acknowledge the difficulty",
+          "prompt": "This is a moment of suffering.",
+          "instruction": "Place a hand on your heart if it feels right. Notice what you are feeling."
+        },
+        "step2": {
+          "title": "Remember you are not alone",
+          "prompt": "Struggle is part of being human.",
+          "instruction": "Everyone experiences pain. You are not broken or uniquely flawed."
+        },
+        "step3": {
+          "title": "Offer yourself kindness",
+          "prompt": "May I be kind to myself.",
+          "instruction": "Choose a phrase that feels supportive: 'May I be patient with myself.' 'May I give myself the compassion I need.'"
+        }
+      },
+      "controls": {
+        "previous": "Previous",
+        "next": "Continue",
+        "finish": "Finish"
+      },
+      "completion": {
+        "title": "You met yourself with kindness.",
+        "subtitle": "This is the practice. Return to it when you need it.",
+        "practiceAgain": "Practice again"
+      },
+      "how": {
+        "title": "How to use",
+        "steps": [
+          "Use this when you are being hard on yourself.",
+          "Move through each of the three steps slowly.",
+          "Repeat the phrases silently or out loud."
+        ]
+      },
+      "why": {
+        "title": "Why it helps",
+        "points": [
+          "Self-compassion reduces anxiety and self-criticism.",
+          "It activates the same calming response as receiving care.",
+          "You deserve the same kindness you give others."
+        ]
+      }
+    },
+    "positive-affirmations": {
+      "title": "Positive affirmations",
+      "subtitle": "Gentle reminders of your capability.",
+      "summary": "Short phrases to counter doubt and build confidence.",
+      "tabs": {
+        "exercise": "Exercise",
+        "how": "How to Use",
+        "why": "Why It Helps"
+      },
+      "categories": {
+        "confidence": "Confidence",
+        "calm": "Calm",
+        "growth": "Growth",
+        "gratitude": "Gratitude"
+      },
+      "affirmations": {
+        "confidence": [
+          "I am capable and calm.",
+          "I trust myself to handle what comes.",
+          "I have the skills I need.",
+          "I am enough as I am.",
+          "I deserve success and rest."
+        ],
+        "calm": [
+          "I am safe in this moment.",
+          "I breathe in peace, I release tension.",
+          "I do not have to rush.",
+          "I am allowed to rest.",
+          "My calm is a choice I can make."
+        ],
+        "growth": [
+          "I am learning and growing.",
+          "Mistakes are part of the path.",
+          "I am becoming who I want to be.",
+          "Progress is not always visible, but it is happening.",
+          "I honor my pace."
+        ],
+        "gratitude": [
+          "I am grateful for this moment.",
+          "I notice the small gifts in my day.",
+          "I appreciate my body and what it does for me.",
+          "I have enough. I am enough.",
+          "I see the good around me."
+        ]
+      },
+      "controls": {
+        "shuffle": "Shuffle",
+        "next": "Next",
+        "selectCategory": "Choose focus"
+      },
+      "instruction": "Read this affirmation slowly. Let it settle. Repeat it a few times if it resonates.",
+      "completion": {
+        "title": "You planted seeds of belief.",
+        "subtitle": "Return to these phrases when doubt arises.",
+        "practiceAgain": "Read more"
+      },
+      "how": {
+        "title": "How to use",
+        "steps": [
+          "Choose a category that speaks to your need.",
+          "Read each affirmation slowly, out loud or silently.",
+          "Repeat the ones that resonate most."
+        ]
+      },
+      "why": {
+        "title": "Why it helps",
+        "points": [
+          "Affirmations rewire negative thought patterns.",
+          "Repetition builds new neural pathways.",
+          "They offer an alternative to harsh self-talk."
+        ]
+      }
+    },
+    "body-shake-release": {
+      "title": "Body shake and release",
+      "subtitle": "Move your body to release stuck energy.",
+      "summary": "A quick somatic reset to discharge tension.",
+      "tabs": {
+        "exercise": "Exercise",
+        "how": "How to Use",
+        "why": "Why It Helps"
+      },
+      "instructions": {
+        "start": "Stand with your feet hip-width apart. Take a breath.",
+        "hands": "Shake out your hands and wrists.",
+        "arms": "Let the shake move up your arms and shoulders.",
+        "body": "Bounce gently on your knees. Let your whole body shake.",
+        "release": "Continue for 30 seconds to 2 minutes. Let it be playful."
+      },
+      "controls": {
+        "begin": "Start shaking",
+        "stop": "Stop"
+      },
+      "timer": {
+        "countdown": "seconds left"
+      },
+      "completion": {
+        "title": "You moved the energy.",
+        "subtitle": "Notice how your body feels now.",
+        "practiceAgain": "Shake again"
+      },
+      "how": {
+        "title": "How to use",
+        "steps": [
+          "Stand somewhere private if you feel self-conscious.",
+          "Let the movement be loose and uncontrolled.",
+          "Shake for at least 30 seconds, longer if it feels good."
+        ]
+      },
+      "why": {
+        "title": "Why it helps",
+        "points": [
+          "Shaking mimics the body's natural stress discharge.",
+          "It releases muscle tension and stuck energy.",
+          "Movement resets your nervous system."
+        ]
+      }
+    },
+    "daily-check-in": {
+      "title": "Daily check-in",
+      "subtitle": "Pause to notice how you are and what you need.",
+      "summary": "A brief morning or evening reflection.",
+      "tabs": {
+        "exercise": "Exercise",
+        "how": "How to Use",
+        "why": "Why It Helps"
+      },
+      "prompts": {
+        "mood": "How are you feeling right now?",
+        "moodScale": [
+          "Struggling",
+          "Low",
+          "Neutral",
+          "Good",
+          "Great"
+        ],
+        "intention": "What do you want to focus on today?",
+        "intentionOptions": [
+          "Presence",
+          "Calm",
+          "Clarity",
+          "Growth",
+          "Gratitude",
+          "Rest",
+          "Connection"
+        ],
+        "action": "What is one small step you can take toward that?",
+        "actionPlaceholder": "Take a walk, reach out to someone, finish one task..."
+      },
+      "controls": {
+        "save": "Save check-in",
+        "skip": "Skip for now"
+      },
+      "completion": {
+        "title": "You checked in.",
+        "subtitle": "You named how you feel and what you need.",
+        "saved": "Your intention",
+        "practiceAgain": "Check in again tomorrow"
+      },
+      "how": {
+        "title": "How to use",
+        "steps": [
+          "Use this in the morning to set intention or evening to reflect.",
+          "Answer honestly—there are no wrong answers.",
+          "Keep it simple. One intention, one small step."
+        ]
+      },
+      "why": {
+        "title": "Why it helps",
+        "points": [
+          "Regular check-ins build self-awareness.",
+          "Naming your state helps regulate emotions.",
+          "Intention-setting aligns your day with your values."
+        ]
+      }
+    },
+    "progressive-muscle-relaxation": {
+      "title": "Progressive muscle relaxation",
+      "subtitle": "Tense and release each part of your body.",
+      "summary": "A guided wind-down to ease into sleep.",
+      "tabs": {
+        "exercise": "Exercise",
+        "how": "How to Use",
+        "why": "Why It Helps"
+      },
+      "bodyParts": [
+        {
+          "name": "Feet and toes",
+          "instruction": "Curl your toes and tense your feet. Hold for 3 seconds. Release and notice the difference."
+        },
+        {
+          "name": "Calves",
+          "instruction": "Tighten your calf muscles. Hold. Release and feel them soften."
+        },
+        {
+          "name": "Thighs",
+          "instruction": "Tense your thighs. Hold. Let them go heavy and relaxed."
+        },
+        {
+          "name": "Glutes and hips",
+          "instruction": "Squeeze your glutes. Hold. Release completely."
+        },
+        {
+          "name": "Abdomen",
+          "instruction": "Pull your belly in tight. Hold. Let it soften and expand."
+        },
+        {
+          "name": "Hands and arms",
+          "instruction": "Make fists and tighten your arms. Hold. Release and feel warmth spread."
+        },
+        {
+          "name": "Shoulders",
+          "instruction": "Lift your shoulders toward your ears. Hold. Drop them and feel the tension melt."
+        },
+        {
+          "name": "Neck",
+          "instruction": "Gently press your head back. Hold. Release and let your neck lengthen."
+        },
+        {
+          "name": "Face",
+          "instruction": "Scrunch your face tight. Hold. Release and let your jaw drop open."
+        }
+      ],
+      "controls": {
+        "begin": "Begin relaxation",
+        "next": "Next",
+        "finish": "Finish"
+      },
+      "completion": {
+        "title": "Your body is relaxed.",
+        "subtitle": "Notice the heaviness, the warmth. Let yourself rest.",
+        "practiceAgain": "Practice again"
+      },
+      "how": {
+        "title": "How to use",
+        "steps": [
+          "Lie down or sit in a comfortable position.",
+          "Move through each body part slowly.",
+          "Tense for 3-5 seconds, then fully release."
+        ]
+      },
+      "why": {
+        "title": "Why it helps",
+        "points": [
+          "PMR signals your body it is safe to rest.",
+          "It reduces physical tension that blocks sleep.",
+          "The structured focus quiets a racing mind."
+        ]
+      }
     }
   }
 }
