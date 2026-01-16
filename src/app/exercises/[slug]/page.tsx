@@ -8,6 +8,8 @@ import { CoherentBreathingExercise } from "@/components/exercises/CoherentBreath
 import { ExerciseShell } from "@/components/exercises/ExerciseShell";
 import { FiveFourThreeTwoOneExercise } from "@/components/exercises/FiveFourThreeTwoOneExercise";
 import { FourSevenEightExercise } from "@/components/exercises/FourSevenEightExercise";
+import { OneMinuteMindfulBreakExercise } from "@/components/exercises/OneMinuteMindfulBreakExercise";
+import { PositiveAffirmationsExercise } from "@/components/exercises/PositiveAffirmationsExercise";
 import {
   exerciseCategories,
   exerciseRegistry,
@@ -72,6 +74,10 @@ function getExerciseComponent(slug: string) {
       return CoherentBreathingExercise;
     case "five-four-three-two-one":
       return FiveFourThreeTwoOneExercise;
+    case "one-minute-mindful-break":
+      return OneMinuteMindfulBreakExercise;
+    case "positive-affirmations":
+      return PositiveAffirmationsExercise;
     default:
       return null;
   }

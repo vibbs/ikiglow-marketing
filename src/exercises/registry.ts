@@ -103,6 +103,27 @@ export const exerciseRegistry: ExerciseItem[] = [
     panelClassName: "panel-sage",
     nextSlug: "box-breathing",
   },
+  {
+    slug: "one-minute-mindful-break",
+    categories: ["focus"],
+    durationRange: "oneToTwo",
+    formats: ["visual", "text"],
+    tags: ["focus", "reset"],
+    i18nKey: "exercises.items.one-minute-mindful-break",
+    headerClassName: "wash-sage",
+    panelClassName: "panel-sage",
+  },
+  {
+    slug: "positive-affirmations",
+    categories: ["mindset"],
+    durationRange: "oneToTwo",
+    formats: ["text"],
+    tags: ["confidence", "mindset"],
+    i18nKey: "exercises.items.positive-affirmations",
+    quickPickOrder: 5,
+    headerClassName: "wash-rose",
+    panelClassName: "panel-rose",
+  },
 ];
 
 export const quickPicks = exerciseRegistry
