@@ -57,11 +57,11 @@ export function GroundingExercise() {
           <p className="text-sm text-muted-foreground font-light tracking-wide">
             {t("completion.yourReflections")}
           </p>
-          
+
           {stepKeys.map((stepKey, index) => {
             const response = responses[index];
             if (!response.trim()) return null;
-            
+
             return (
               <div key={stepKey} className="space-y-2 text-left">
                 <p className="text-sm text-muted-foreground">

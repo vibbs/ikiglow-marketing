@@ -11,31 +11,31 @@ const phasesConfig: {
   color: string;
   glowColor: string;
 }[] = [
-  {
-    phase: "inhale",
-    duration: 4,
-    color: "rgba(78, 195, 214, 0.12)", // Teal glow expands
-    glowColor: "rgba(78, 195, 214, 0.20)"
-  },
-  {
-    phase: "hold",
-    duration: 4,
-    color: "rgba(111, 120, 184, 0.10)", // Indigo wash stills
-    glowColor: "rgba(111, 120, 184, 0.14)"
-  },
-  {
-    phase: "exhale",
-    duration: 6,
-    color: "rgba(242, 139, 184, 0.10)", // Rose → Sage dissolves
-    glowColor: "rgba(111, 132, 111, 0.12)"
-  },
-  {
-    phase: "rest",
-    duration: 2,
-    color: "rgba(111, 132, 111, 0.06)", // Sage calm
-    glowColor: "rgba(111, 132, 111, 0.08)"
-  },
-];
+    {
+      phase: "inhale",
+      duration: 4,
+      color: "rgba(78, 195, 214, 0.12)", // Teal glow expands
+      glowColor: "rgba(78, 195, 214, 0.20)"
+    },
+    {
+      phase: "hold",
+      duration: 4,
+      color: "rgba(111, 120, 184, 0.10)", // Indigo wash stills
+      glowColor: "rgba(111, 120, 184, 0.14)"
+    },
+    {
+      phase: "exhale",
+      duration: 6,
+      color: "rgba(242, 139, 184, 0.10)", // Rose → Sage dissolves
+      glowColor: "rgba(111, 132, 111, 0.12)"
+    },
+    {
+      phase: "rest",
+      duration: 2,
+      color: "rgba(111, 132, 111, 0.06)", // Sage calm
+      glowColor: "rgba(111, 132, 111, 0.08)"
+    },
+  ];
 
 export function BreathingExercise() {
   const t = useTranslations("exercises.breathing.phases");
