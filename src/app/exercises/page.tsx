@@ -46,24 +46,6 @@ export default function Exercises() {
           </p>
         </Link>
 
-        <Link
-          href="/exercises/journaling"
-          className="block space-y-3 sm:space-y-4 rounded-sm border border-border p-5 sm:p-6 transition-colors hover:border-primary/40"
-        >
-          <h2 className="text-lg sm:text-xl tracking-wide">{t("journalingPrompts.title")}</h2>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {t("journalingPrompts.description")}
-          </p>
-        </Link>
-
-        <div className="block space-y-3 sm:space-y-4 rounded-sm border border-border bg-muted/30 p-5 sm:p-6 opacity-60">
-          <h2 className="text-lg sm:text-xl tracking-wide">{t("goalSettingFramework.title")}</h2>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {t("goalSettingFramework.description")}
-          </p>
-          <div className="text-xs text-muted-foreground">{t("goalSettingFramework.comingSoon")}</div>
-        </div>
-
         <div className="block space-y-3 sm:space-y-4 rounded-sm border border-border bg-muted/30 p-5 sm:p-6 opacity-60">
           <h2 className="text-lg sm:text-xl tracking-wide">{t("stressReset.title")}</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">

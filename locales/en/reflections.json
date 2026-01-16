@@ -1,0 +1,142 @@
+{
+  "listing": {
+    "title": "Reflect",
+    "description": "Open-ended space for clarity, not urgency.",
+    "journalingPrompts": {
+      "title": "Journaling prompts",
+      "description": "Questions to help you explore what matters. Pick what resonates, and write freely."
+    },
+    "comingSoon": {
+      "title": "Coming soon",
+      "label": "Coming soon",
+      "items": [
+        {
+          "title": "Daily check-in",
+          "description": "A gentle prompt to notice where you are today."
+        },
+        {
+          "title": "Gratitude",
+          "description": "Small reflections to shift perspective and steady your day."
+        },
+        {
+          "title": "Tiny wins",
+          "description": "Celebrate the small steps that add up over time."
+        },
+        {
+          "title": "Weekly reflection",
+          "description": "A spacious recap of what mattered most this week."
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "Reflection, not urgency",
+      "roleTitle": "Role",
+      "roleText": "Help me understand myself.",
+      "mindsetTitle": "User mindset",
+      "mindsetItems": [
+        "I’m not in crisis",
+        "I’m open to thinking and writing",
+        "I want clarity, not urgency"
+      ],
+      "characteristicsTitle": "Characteristics",
+      "characteristicsItems": [
+        "Open-ended",
+        "Spacious",
+        "Journaling / prompts",
+        "Self-observation"
+      ],
+      "examplesTitle": "Examples",
+      "examplesItems": [
+        "Journaling prompts",
+        "Daily check-in",
+        "Gratitude",
+        "Tiny wins",
+        "Weekly reflection"
+      ]
+    }
+  },
+  "journaling": {
+    "title": "Journaling Prompts",
+    "subtitle": "Questions to help you explore what matters. Choose a category that resonates with where you are right now. Pick a prompt that feels right, and write freely.",
+    "tabs": {
+      "prompts": "Prompts",
+      "howToUse": "How to Use"
+    },
+    "categories": {
+      "clarity": {
+        "title": "Finding Clarity",
+        "description": "When you need to understand what really matters",
+        "prompts": [
+          "What would I do today if I knew no one would judge my choices?",
+          "What drains my energy, and what restores it?",
+          "If I could only focus on three things this month, what would they be?",
+          "What am I avoiding that I know I need to address?",
+          "What does 'enough' look like for me right now?"
+        ]
+      },
+      "stress": {
+        "title": "Processing Stress",
+        "description": "When you're feeling overwhelmed or anxious",
+        "prompts": [
+          "What specifically am I worried about, and what parts can I actually control?",
+          "What would I tell a friend who came to me with this same situation?",
+          "What's the smallest step I could take right now to feel less stuck?",
+          "What physical sensations am I experiencing, and what might they be telling me?",
+          "What would it look like to be gentle with myself today?"
+        ]
+      },
+      "growth": {
+        "title": "Personal Growth",
+        "description": "When you want to evolve and understand yourself better",
+        "prompts": [
+          "What pattern keeps showing up in my life, and what might it be teaching me?",
+          "What belief about myself no longer serves me?",
+          "What would my life look like if I trusted myself completely?",
+          "What did I learn about myself this week?",
+          "What strength of mine have I been underestimating?"
+        ]
+      },
+      "gratitude": {
+        "title": "Gratitude & Perspective",
+        "description": "When you need to shift your mindset",
+        "prompts": [
+          "What small moment today deserves more appreciation?",
+          "Who has made my life easier recently, and have I acknowledged them?",
+          "What challenge am I grateful for because of what it taught me?",
+          "What part of my routine do I take for granted?",
+          "What's working well in my life right now?"
+        ]
+      },
+      "purpose": {
+        "title": "Purpose & Direction",
+        "description": "When you're questioning your path",
+        "prompts": [
+          "What activities make me lose track of time?",
+          "What would I regret not doing in five years?",
+          "What problems do I naturally notice and want to solve?",
+          "What do I want to be known for?",
+          "If money and status weren't factors, what would I choose to do?"
+        ]
+      },
+      "relationships": {
+        "title": "Connection & Boundaries",
+        "description": "When you're navigating relationships",
+        "prompts": [
+          "What do I need more of in my relationships, and what do I need less of?",
+          "Where am I giving more than I have capacity for?",
+          "What conversation have I been avoiding, and what's it costing me?",
+          "Who brings out the best in me, and am I spending enough time with them?",
+          "What boundary would improve my wellbeing if I set it?"
+        ]
+      }
+    },
+    "howToUse": {
+      "title": "How to use these prompts",
+      "line1": "Pick one prompt that resonates with you. Trust your instinct.",
+      "line2": "You might write for 10-15 minutes without stopping. Let your thoughts flow without judgment or editing.",
+      "line3": "There are no wrong answers. This is for you, not for anyone else. Be honest, be messy, be real.",
+      "line4": "You can copy any prompt by clicking the copy icon, then paste it into your favorite notes app or journal.",
+      "line5": "These prompts are here to help you think clearly, not to provide easy answers. The value is in the process, not the outcome."
+    }
+  }
+}

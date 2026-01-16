@@ -25,6 +25,14 @@
       "description": "Thoughtful prompts across 6 categories to help you explore what matters."
     }
   },
+  "reflections": {
+    "title": "Reflections - IkiGlow",
+    "description": "Open-ended prompts for clarity, insight, and self-understanding.",
+    "journaling": {
+      "title": "Journaling Prompts - IkiGlow",
+      "description": "Thoughtful prompts across 6 categories to help you explore what matters."
+    }
+  },
   "guides": {
     "title": "Guides - IkiGlow",
     "description": "Comprehensive guides for understanding yourself and navigating life's challenges with clarity."

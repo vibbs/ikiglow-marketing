@@ -57,6 +57,14 @@ export function Header() {
             </li>
             <li>
               <Link
+                href="/reflections"
+                className="text-sm tracking-wide text-muted-foreground transition-colors duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:text-[#6F846F]"
+              >
+                {t("reflections")}
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/guides"
                 className="text-sm tracking-wide text-muted-foreground transition-colors duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:text-[#6F846F]"
               >
@@ -127,6 +135,15 @@ export function Header() {
                   onClick={closeMenu}
                 >
                   {t("exercises")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/reflections"
+                  className="block py-2 text-base tracking-wide text-muted-foreground transition-colors hover:text-[#6F846F]"
+                  onClick={closeMenu}
+                >
+                  {t("reflections")}
                 </Link>
               </li>
               <li>

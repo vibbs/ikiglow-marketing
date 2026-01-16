@@ -3,6 +3,7 @@
     "home": "Home",
     "blog": "Blog",
     "exercises": "Exercises",
+    "reflections": "Reflect",
     "guides": "Guides",
     "about": "About",
     "videos": "Videos",
@@ -12,10 +13,13 @@
   "footer": {
     "explore": "Explore",
     "exercisesSection": "Exercises",
+    "reflectionsSection": "Reflections",
     "connect": "Connect",
     "allExercises": "All Exercises",
+    "allReflections": "All Reflections",
     "breathing": "Breathing",
     "grounding": "Grounding",
+    "journaling": "Journaling",
     "disclaimer": "IkiGlow is not therapy or medical advice. If you're experiencing a mental health crisis, please seek professional help.",
     "copyright": "© {year} IkiGlow. A space for reflection and growth."
   },

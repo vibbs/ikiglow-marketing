@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="border-t border-[#E6E6E1]/60 bg-[#F2F4F3]">
       <div className="mx-auto max-w-5xl space-y-8 sm:space-y-12 px-4 sm:px-6 py-12 sm:py-16">
         {/* Navigation */}
-        <nav className="grid gap-6 sm:gap-8 grid-cols-2 md:grid-cols-3">
+        <nav className="grid gap-6 sm:gap-8 grid-cols-2 md:grid-cols-4">
           <div className="space-y-3 sm:space-y-4">
             <h3 className="text-sm tracking-wide text-foreground">{t("explore")}</h3>
             <ul className="space-y-2 sm:space-y-3">
@@ -74,6 +74,28 @@ export function Footer() {
                   className="text-sm text-muted-foreground transition-colors duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:text-[#6F846F]"
                 >
                   {t("grounding")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-3 sm:space-y-4">
+            <h3 className="text-sm tracking-wide text-foreground">{t("reflectionsSection")}</h3>
+            <ul className="space-y-2 sm:space-y-3">
+              <li>
+                <Link
+                  href="/reflections"
+                  className="text-sm text-muted-foreground transition-colors duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:text-[#6F846F]"
+                >
+                  {t("allReflections")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/reflections/journaling"
+                  className="text-sm text-muted-foreground transition-colors duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:text-[#6F846F]"
+                >
+                  {t("journaling")}
                 </Link>
               </li>
             </ul>
