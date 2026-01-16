@@ -11,6 +11,7 @@ export function OneMinuteMindfulBreakExercise({
   i18nKey,
 }: OneMinuteMindfulBreakExerciseProps) {
   const t = useTranslations(i18nKey);
+  const tCommon = useTranslations("common.buttons");
   const [isActive, setIsActive] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(60);
   const [isComplete, setIsComplete] = useState(false);
@@ -140,7 +141,7 @@ export function OneMinuteMindfulBreakExercise({
             onClick={handleStop}
             className="rounded-xl border border-border bg-background px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-light tracking-wide transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-primary/40 hover:bg-accent active:translate-y-[1px]"
           >
-            {t("phases.stop")}
+            {tCommon("stop")}
           </button>
         )}
       </div>

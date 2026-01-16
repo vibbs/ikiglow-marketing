@@ -24,11 +24,16 @@ export function PositiveAffirmationsExercise({
     "gratitude",
   ];
 
-  // Get affirmations array for current category
+  // Get affirmations for current category
   const affirmationsCount = 5; // Each category has 5 affirmations
-  const currentAffirmation = t(
-    `affirmations.${selectedCategory}.${currentIndex}`
-  );
+  const affirmations = [
+    t(`affirmations.${selectedCategory}.0`),
+    t(`affirmations.${selectedCategory}.1`),
+    t(`affirmations.${selectedCategory}.2`),
+    t(`affirmations.${selectedCategory}.3`),
+    t(`affirmations.${selectedCategory}.4`),
+  ];
+  const currentAffirmation = affirmations[currentIndex];
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % affirmationsCount);
