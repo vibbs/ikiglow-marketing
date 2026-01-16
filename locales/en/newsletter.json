@@ -1,0 +1,31 @@
+{
+  "title": "Weekly reflections",
+  "description": "One insight, one framework, one reflection. Delivered weekly.",
+  "whatToExpect": {
+    "title": "What to expect",
+    "intro": "Every Sunday morning, you'll receive a calm email with:",
+    "item1": "• One psychological insight, explained plainly",
+    "item2": "• One practical framework you can use immediately",
+    "item3": "• One reflection prompt for the week ahead",
+    "outro": "No sales pitches. No urgency. No overwhelm. Just clarity."
+  },
+  "form": {
+    "emailLabel": "Email address",
+    "emailPlaceholder": "your@email.com",
+    "submitButton": "Subscribe",
+    "disclaimer": "Unsubscribe anytime. No spam. Your email stays private."
+  },
+  "recentEditions": {
+    "title": "Recent editions",
+    "edition1": {
+      "date": "January 5, 2026",
+      "title": "Why clarity beats motivation",
+      "excerpt": "You don't need more willpower. You need fewer decisions..."
+    },
+    "edition2": {
+      "date": "December 29, 2025",
+      "title": "The problem with productivity",
+      "excerpt": "Being busy is not the same as moving forward..."
+    }
+  }
+}

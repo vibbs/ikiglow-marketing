@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "title": "A calm companion for personal growth",
+    "subtitle": "A space for reflection, focus, and intentional action."
+  },
+  "values": {
+    "line1": "Ikiglow helps you think clearly about what matters.",
+    "line2": "We create space for reflection, not noise.",
+    "line3": "We offer practical tools, not pressure.",
+    "line4": "We respect your pace, not force urgency."
+  },
+  "startSmall": {
+    "title": "Start small",
+    "breathingExercise": {
+      "title": "Breathing exercise",
+      "description": "A simple way to slow your thoughts"
+    },
+    "groundingPractice": {
+      "title": "Grounding practice",
+      "description": "Return to the present moment"
+    },
+    "moreExercises": {
+      "title": "More exercises",
+      "description": "Gentle practices for focus and calm"
+    }
+  },
+  "recentReflections": {
+    "title": "Recent reflections",
+    "clarityPost": {
+      "title": "Why clarity beats motivation",
+      "description": "You don't need more motivation. You need fewer decisions."
+    },
+    "productivityPost": {
+      "title": "The problem with productivity",
+      "description": "Being busy is not the same as moving forward."
+    }
+  },
+  "videos": {
+    "title": "Brief moments of reflection",
+    "placeholder": "Video content (muted by default)"
+  },
+  "newsletter": {
+    "title": "Weekly reflections",
+    "description": "One insight, one framework, one reflection. Delivered weekly."
+  }
+}

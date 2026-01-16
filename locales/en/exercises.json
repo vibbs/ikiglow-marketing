@@ -1,0 +1,204 @@
+{
+  "listing": {
+    "title": "Exercises",
+    "description": "Gentle practices for when you need to pause, reflect, or reconnect",
+    "breathingExercise": {
+      "title": "Breathing exercise",
+      "description": "When thoughts feel rushed, this can help you slow down. Follow a gentle 4-4-6-2 breathing rhythm."
+    },
+    "groundingPractice": {
+      "title": "Grounding practice",
+      "description": "When your mind feels scattered, this invites you back to the present using the 5-4-3-2-1 technique."
+    },
+    "journalingPrompts": {
+      "title": "Journaling prompts",
+      "description": "Questions to help you explore what matters. Pick what resonates, and write freely."
+    },
+    "goalSettingFramework": {
+      "title": "Goal-setting framework",
+      "description": "A calm approach to setting intentions without pressure.",
+      "comingSoon": "Coming soon"
+    },
+    "stressReset": {
+      "title": "Stress reset",
+      "description": "Quick physical practices to release tension and restore energy.",
+      "comingSoon": "Coming soon"
+    },
+    "philosophy": {
+      "title": "How these work",
+      "line1": "These exercises are here when you need them - no signup, no tracking, no pressure.",
+      "line2": "They're grounded in research on nervous system regulation and self-awareness, but explained in plain language.",
+      "line3": "Use them when they feel right. Leave them when they don't."
+    }
+  },
+  "breathing": {
+    "title": "Breathing exercise",
+    "subtitle": "When thoughts feel rushed, this can help you slow down.",
+    "tabs": {
+      "exercise": "Exercise",
+      "howToUse": "How to Use",
+      "whyItHelps": "Why It Helps"
+    },
+    "phases": {
+      "inhale": "Breathe in",
+      "hold": "Hold",
+      "exhale": "Breathe out",
+      "rest": "Rest"
+    },
+    "howToUse": {
+      "title": "How to use",
+      "line1": "Begin when you're ready.",
+      "line2": "Follow the visual rhythm - there's no need to count.",
+      "line3": "You might try a few cycles, or stay as long as feels right."
+    },
+    "whyItHelps": {
+      "title": "Why it helps",
+      "line1": "This uses a 4-4-6-2 pattern: inhale for 4 seconds, hold for 4 seconds, exhale for 6 seconds, rest for 2 seconds.",
+      "line2": "The longer exhale activates your parasympathetic nervous system - the part responsible for rest and calm.",
+      "line3": "When you're anxious or overwhelmed, breathing often becomes shallow and rapid. Slowing it down gently signals safety to your body."
+    },
+    "nextSteps": {
+      "title": "Next steps",
+      "grounding": "→ Try the grounding exercise",
+      "anxietyGuide": "→ Read the guide on understanding anxiety",
+      "clarityPost": "→ Why clarity beats motivation"
+    }
+  },
+  "grounding": {
+    "title": "Grounding practice",
+    "subtitle": "When your mind feels scattered, this can help you come back to now.",
+    "tabs": {
+      "exercise": "Exercise",
+      "howToUse": "How to Use",
+      "whyItHelps": "Why It Helps"
+    },
+    "steps": {
+      "step1": {
+        "prompt": "Name 5 things you can see around you",
+        "placeholder": "The light on the wall, a book, my hands..."
+      },
+      "step2": {
+        "prompt": "Name 4 things you can touch",
+        "placeholder": "The chair beneath me, my breath, the floor..."
+      },
+      "step3": {
+        "prompt": "Name 3 things you can hear",
+        "placeholder": "Birds outside, my breathing, distant traffic..."
+      },
+      "step4": {
+        "prompt": "Name 2 things you can smell",
+        "placeholder": "Fresh air, coffee..."
+      },
+      "step5": {
+        "prompt": "Name 1 thing you can taste",
+        "placeholder": "The lingering taste of tea..."
+      }
+    },
+    "completion": {
+      "title": "You are here. You are present.",
+      "subtitle": "Take a moment to notice how you feel now."
+    },
+    "howToUse": {
+      "title": "How to use",
+      "line1": "Start when you're ready.",
+      "line2": "Notice what each sense brings to your awareness, without judgment.",
+      "line3": "Move through the steps at your own pace."
+    },
+    "whyItHelps": {
+      "title": "Why it helps",
+      "line1": "The 5-4-3-2-1 technique anchors you in the present by engaging each of your senses, one at a time.",
+      "line2": "When your mind is racing or you feel disconnected, sensory awareness brings you back to what's real and immediate.",
+      "line3": "This doesn't require you to change anything. It simply invites you to notice what's already here."
+    },
+    "nextSteps": {
+      "title": "Next steps",
+      "breathing": "→ Try the breathing exercise",
+      "anxietyGuide": "→ Read the guide on understanding anxiety",
+      "allExercises": "→ View all exercises"
+    }
+  },
+  "journaling": {
+    "title": "Journaling Prompts",
+    "subtitle": "Questions to help you explore what matters. Choose a category that resonates with where you are right now. Pick a prompt that feels right, and write freely.",
+    "tabs": {
+      "prompts": "Prompts",
+      "howToUse": "How to Use"
+    },
+    "categories": {
+      "clarity": {
+        "title": "Finding Clarity",
+        "description": "When you need to understand what really matters",
+        "prompts": [
+          "What would I do today if I knew no one would judge my choices?",
+          "What drains my energy, and what restores it?",
+          "If I could only focus on three things this month, what would they be?",
+          "What am I avoiding that I know I need to address?",
+          "What does 'enough' look like for me right now?"
+        ]
+      },
+      "stress": {
+        "title": "Processing Stress",
+        "description": "When you're feeling overwhelmed or anxious",
+        "prompts": [
+          "What specifically am I worried about, and what parts can I actually control?",
+          "What would I tell a friend who came to me with this same situation?",
+          "What's the smallest step I could take right now to feel less stuck?",
+          "What physical sensations am I experiencing, and what might they be telling me?",
+          "What would it look like to be gentle with myself today?"
+        ]
+      },
+      "growth": {
+        "title": "Personal Growth",
+        "description": "When you want to evolve and understand yourself better",
+        "prompts": [
+          "What pattern keeps showing up in my life, and what might it be teaching me?",
+          "What belief about myself no longer serves me?",
+          "What would my life look like if I trusted myself completely?",
+          "What did I learn about myself this week?",
+          "What strength of mine have I been underestimating?"
+        ]
+      },
+      "gratitude": {
+        "title": "Gratitude & Perspective",
+        "description": "When you need to shift your mindset",
+        "prompts": [
+          "What small moment today deserves more appreciation?",
+          "Who has made my life easier recently, and have I acknowledged them?",
+          "What challenge am I grateful for because of what it taught me?",
+          "What part of my routine do I take for granted?",
+          "What's working well in my life right now?"
+        ]
+      },
+      "purpose": {
+        "title": "Purpose & Direction",
+        "description": "When you're questioning your path",
+        "prompts": [
+          "What activities make me lose track of time?",
+          "What would I regret not doing in five years?",
+          "What problems do I naturally notice and want to solve?",
+          "What do I want to be known for?",
+          "If money and status weren't factors, what would I choose to do?"
+        ]
+      },
+      "relationships": {
+        "title": "Connection & Boundaries",
+        "description": "When you're navigating relationships",
+        "prompts": [
+          "What do I need more of in my relationships, and what do I need less of?",
+          "Where am I giving more than I have capacity for?",
+          "What conversation have I been avoiding, and what's it costing me?",
+          "Who brings out the best in me, and am I spending enough time with them?",
+          "What boundary would improve my wellbeing if I set it?"
+        ]
+      }
+    },
+    "howToUse": {
+      "title": "How to use these prompts",
+      "line1": "Pick one prompt that resonates with you. Trust your instinct.",
+      "line2": "You might write for 10-15 minutes without stopping. Let your thoughts flow without judgment or editing.",
+      "line3": "There are no wrong answers. This is for you, not for anyone else. Be honest, be messy, be real.",
+      "line4": "You can copy any prompt by clicking the copy icon, then paste it into your favorite notes app or journal.",
+      "line5": "These prompts are here to help you think clearly, not to provide easy answers. The value is in the process, not the outcome."
+    }
+  }
+}

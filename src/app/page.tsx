@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("home");
+  const tCommon = useTranslations("common");
   return (
     <main className="min-h-screen">
       {/* First Viewport: Hero + Logo + Core Values */}
@@ -9,10 +12,10 @@ export default function Home() {
         <section className="flex-shrink-0">
           <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8 py-8 sm:py-12 animate-ink-flow-stagger text-center">
             <h1 className="text-3xl sm:text-4xl tracking-wide md:text-5xl">
-              A calm companion for personal growth
+              {t("hero.title")}
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed text-center">
-              A space for reflection, focus, and intentional action.
+              {t("hero.subtitle")}
             </p>
           </div>
         </section>
@@ -31,16 +34,16 @@ export default function Home() {
         <section className="mx-auto max-w-2xl py-6 sm:py-8 flex-shrink-0">
           <div className="space-y-6 sm:space-y-8 animate-ink-flow-stagger">
             <p className="text-sm sm:text-base leading-relaxed text-center">
-              Ikiglow helps you think clearly about what matters.
+              {t("values.line1")}
             </p>
             <p className="text-sm sm:text-base leading-relaxed text-center">
-              We create space for reflection, not noise.
+              {t("values.line2")}
             </p>
             <p className="text-sm sm:text-base leading-relaxed text-center">
-              We offer practical tools, not pressure.
+              {t("values.line3")}
             </p>
             <p className="text-sm sm:text-base leading-relaxed text-center">
-              We respect your pace, not force urgency.
+              {t("values.line4")}
             </p>
           </div>
         </section>
@@ -66,15 +69,15 @@ export default function Home() {
       {/* Start Small - Pattern B: Breathing Panel */}
       <section className="panel-sage">
         <div className="mx-auto max-w-2xl space-y-8 sm:space-y-12 px-4 sm:px-6 py-12 sm:py-16">
-          <h2 className="text-xl sm:text-2xl tracking-wide">Start small</h2>
+          <h2 className="text-xl sm:text-2xl tracking-wide">{t("startSmall.title")}</h2>
           <div className="space-y-4 sm:space-y-6">
             <Link
               href="/exercises/breathing"
               className="block space-y-2 sm:space-y-3 rounded-xl border border-border/60 bg-background p-5 sm:p-6 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:-translate-y-[1px]"
             >
-              <h3 className="text-base sm:text-lg tracking-wide">Breathing exercise</h3>
+              <h3 className="text-base sm:text-lg tracking-wide">{t("startSmall.breathingExercise.title")}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                A simple way to slow your thoughts
+                {t("startSmall.breathingExercise.description")}
               </p>
             </Link>
 
@@ -82,9 +85,9 @@ export default function Home() {
               href="/exercises/grounding"
               className="block space-y-2 sm:space-y-3 rounded-xl border border-border/60 bg-background p-5 sm:p-6 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:-translate-y-[1px]"
             >
-              <h3 className="text-base sm:text-lg tracking-wide">Grounding practice</h3>
+              <h3 className="text-base sm:text-lg tracking-wide">{t("startSmall.groundingPractice.title")}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Return to the present moment
+                {t("startSmall.groundingPractice.description")}
               </p>
             </Link>
 
@@ -92,9 +95,9 @@ export default function Home() {
               href="/exercises"
               className="block space-y-2 sm:space-y-3 rounded-xl border border-border/60 bg-background p-5 sm:p-6 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:-translate-y-[1px]"
             >
-              <h3 className="text-base sm:text-lg tracking-wide">More exercises</h3>
+              <h3 className="text-base sm:text-lg tracking-wide">{t("startSmall.moreExercises.title")}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Gentle practices for focus and calm
+                {t("startSmall.moreExercises.description")}
               </p>
             </Link>
           </div>
@@ -103,15 +106,15 @@ export default function Home() {
 
       {/* Popular Reads */}
       <section className="mx-auto max-w-2xl space-y-8 sm:space-y-12 px-4 sm:px-6 py-12 sm:py-16">
-        <h2 className="text-xl sm:text-2xl tracking-wide">Recent reflections</h2>
+        <h2 className="text-xl sm:text-2xl tracking-wide">{t("recentReflections.title")}</h2>
         <div className="space-y-6 sm:space-y-8">
           <Link
             href="/blog/why-clarity-beats-motivation"
             className="block space-y-2 sm:space-y-3 border-b border-border/60 pb-6 sm:pb-8 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40"
           >
-            <h3 className="text-base sm:text-lg tracking-wide">Why clarity beats motivation</h3>
+            <h3 className="text-base sm:text-lg tracking-wide">{t("recentReflections.clarityPost.title")}</h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              You don&apos;t need more motivation. You need fewer decisions.
+              {t("recentReflections.clarityPost.description")}
             </p>
           </Link>
 
@@ -119,9 +122,9 @@ export default function Home() {
             href="/blog/the-problem-with-productivity"
             className="block space-y-2 sm:space-y-3 border-b border-border/60 pb-6 sm:pb-8 transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40"
           >
-            <h3 className="text-base sm:text-lg tracking-wide">The problem with productivity</h3>
+            <h3 className="text-base sm:text-lg tracking-wide">{t("recentReflections.productivityPost.title")}</h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Being busy is not the same as moving forward.
+              {t("recentReflections.productivityPost.description")}
             </p>
           </Link>
 
@@ -129,7 +132,7 @@ export default function Home() {
             href="/blog"
             className="text-sm text-muted-foreground transition-colors hover:text-[#6F846F]"
           >
-            View all posts →
+            {tCommon("links.viewAllPosts")}
           </Link>
         </div>
       </section>
@@ -137,19 +140,19 @@ export default function Home() {
       {/* Video Section - Sky Wash for Mindset category */}
       <section className="panel-sky">
         <div className="mx-auto max-w-2xl space-y-8 sm:space-y-12 px-4 sm:px-6 py-12 sm:py-16">
-          <h2 className="text-xl sm:text-2xl tracking-wide">Brief moments of reflection</h2>
+          <h2 className="text-xl sm:text-2xl tracking-wide">{t("videos.title")}</h2>
           <div className="space-y-4 sm:space-y-6">
             <div className="aspect-video rounded-xl border border-border/60 bg-background">
               {/* Video embed placeholder - muted by default */}
               <div className="flex h-full items-center justify-center text-xs sm:text-sm text-muted-foreground px-4 text-center">
-                Video content (muted by default)
+                {t("videos.placeholder")}
               </div>
             </div>
             <Link
               href="/videos"
               className="block text-sm text-muted-foreground transition-colors hover:text-[#6F846F]"
             >
-              View all videos →
+              {tCommon("links.viewAllVideos")}
             </Link>
           </div>
         </div>
@@ -158,15 +161,15 @@ export default function Home() {
       {/* Newsletter CTA - Gentle, tinted container style */}
       <section className="mx-auto max-w-2xl space-y-6 sm:space-y-8 px-4 sm:px-6 py-12 sm:py-16">
         <div className="space-y-4 sm:space-y-6 rounded-xl panel-sand p-6 sm:p-8">
-          <h2 className="text-lg sm:text-xl tracking-wide">Weekly reflections</h2>
+          <h2 className="text-lg sm:text-xl tracking-wide">{t("newsletter.title")}</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            One insight, one framework, one reflection. Delivered weekly.
+            {t("newsletter.description")}
           </p>
           <Link
             href="/newsletter"
             className="inline-block rounded-xl bg-[#6F846F] px-5 sm:px-6 py-2.5 sm:py-3 text-sm tracking-wide text-[#FAFAF8] transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:bg-[#5F7460] active:translate-y-[1px]"
           >
-            Subscribe
+            {tCommon("buttons.subscribe")}
           </Link>
         </div>
       </section>

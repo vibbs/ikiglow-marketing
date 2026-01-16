@@ -1,0 +1,44 @@
+{
+  "home": {
+    "title": "IkiGlow - A calm companion for personal growth",
+    "description": "A space for reflection, focus, and intentional action. Discover exercises, guides, and insights for living with clarity and purpose."
+  },
+  "blog": {
+    "title": "Blog - IkiGlow",
+    "description": "Reflections on purpose, attention, and living intentionally.",
+    "categoryTitle": "{category} - Blog - IkiGlow",
+    "categoryDescription": "Reflections on {category}, purpose, and living intentionally."
+  },
+  "exercises": {
+    "title": "Exercises - IkiGlow",
+    "description": "Gentle practices for focus, calm, and self-awareness. Use them when you need them.",
+    "breathing": {
+      "title": "Breathing Exercise - IkiGlow",
+      "description": "A gentle 4-4-6-2 breathing practice to slow your thoughts and activate calm."
+    },
+    "grounding": {
+      "title": "Grounding Practice - IkiGlow",
+      "description": "Use the 5-4-3-2-1 technique to anchor yourself in the present moment."
+    },
+    "journaling": {
+      "title": "Journaling Prompts - IkiGlow",
+      "description": "Thoughtful prompts across 6 categories to help you explore what matters."
+    }
+  },
+  "guides": {
+    "title": "Guides - IkiGlow",
+    "description": "Comprehensive guides for understanding yourself and navigating life's challenges with clarity."
+  },
+  "newsletter": {
+    "title": "Newsletter - IkiGlow",
+    "description": "Weekly reflections on purpose, clarity, and intentional living. One insight, one framework, one reflection."
+  },
+  "waitlist": {
+    "title": "Early Access - IkiGlow",
+    "description": "Join the waitlist for early access to IkiGlow's full platform. No timeline pressure, just a gentle heads-up when we're ready."
+  },
+  "videos": {
+    "title": "Videos - IkiGlow",
+    "description": "Brief moments of reflection. Short-form videos on mindset, focus, and intentional living."
+  }
+}

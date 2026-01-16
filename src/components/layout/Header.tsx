@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export function Header() {
+  const t = useTranslations("common.nav");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);
@@ -34,7 +36,7 @@ export function Header() {
                 href="/"
                 className="text-sm tracking-wide text-muted-foreground transition-colors duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:text-[#6F846F]"
               >
-                Home
+                {t("home")}
               </Link>
             </li>
             <li>
@@ -42,7 +44,7 @@ export function Header() {
                 href="/blog"
                 className="text-sm tracking-wide text-muted-foreground transition-colors duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:text-[#6F846F]"
               >
-                Blog
+                {t("blog")}
               </Link>
             </li>
             <li>
@@ -50,7 +52,7 @@ export function Header() {
                 href="/exercises"
                 className="text-sm tracking-wide text-muted-foreground transition-colors duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:text-[#6F846F]"
               >
-                Exercises
+                {t("exercises")}
               </Link>
             </li>
             <li>
@@ -58,7 +60,7 @@ export function Header() {
                 href="/guides"
                 className="text-sm tracking-wide text-muted-foreground transition-colors duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:text-[#6F846F]"
               >
-                Guides
+                {t("guides")}
               </Link>
             </li>
             <li>
@@ -66,7 +68,7 @@ export function Header() {
                 href="/about"
                 className="text-sm tracking-wide text-muted-foreground transition-colors duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:text-[#6F846F]"
               >
-                About
+                {t("about")}
               </Link>
             </li>
           </ul>
@@ -75,7 +77,7 @@ export function Header() {
           <button
             onClick={toggleMenu}
             className="md:hidden p-2 text-muted-foreground hover:text-[#6F846F] transition-colors"
-            aria-label="Toggle menu"
+            aria-label={t("toggleMenu")}
             aria-expanded={mobileMenuOpen}
           >
             <svg
@@ -106,7 +108,7 @@ export function Header() {
                   className="block py-2 text-base tracking-wide text-muted-foreground transition-colors hover:text-[#6F846F]"
                   onClick={closeMenu}
                 >
-                  Home
+                  {t("home")}
                 </Link>
               </li>
               <li>
@@ -115,7 +117,7 @@ export function Header() {
                   className="block py-2 text-base tracking-wide text-muted-foreground transition-colors hover:text-[#6F846F]"
                   onClick={closeMenu}
                 >
-                  Blog
+                  {t("blog")}
                 </Link>
               </li>
               <li>
@@ -124,7 +126,7 @@ export function Header() {
                   className="block py-2 text-base tracking-wide text-muted-foreground transition-colors hover:text-[#6F846F]"
                   onClick={closeMenu}
                 >
-                  Exercises
+                  {t("exercises")}
                 </Link>
               </li>
               <li>
@@ -133,7 +135,7 @@ export function Header() {
                   className="block py-2 text-base tracking-wide text-muted-foreground transition-colors hover:text-[#6F846F]"
                   onClick={closeMenu}
                 >
-                  Guides
+                  {t("guides")}
                 </Link>
               </li>
               <li>
@@ -142,7 +144,7 @@ export function Header() {
                   className="block py-2 text-base tracking-wide text-muted-foreground transition-colors hover:text-[#6F846F]"
                   onClick={closeMenu}
                 >
-                  About
+                  {t("about")}
                 </Link>
               </li>
             </ul>

@@ -1,0 +1,28 @@
+{
+  "title": "Early access",
+  "description": "Get early access to new tools, guides, and features as we build them.",
+  "whatWereBuilding": {
+    "title": "What we're building",
+    "intro": "We're slowly expanding IkiGlow with more resources for self-awareness, focus, and intentional living.",
+    "futureAdditions": "Future additions include:",
+    "item1": "• Personalized journaling prompts",
+    "item2": "• Interactive goal-setting frameworks",
+    "item3": "• More exercises for calm and focus",
+    "item4": "• Deeper guides on mental patterns and growth",
+    "outro": "No timelines. No pressure. Just quiet, steady progress."
+  },
+  "form": {
+    "nameLabel": "First name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "your@email.com",
+    "submitButton": "Join waitlist",
+    "disclaimer": "We'll email you when something new is ready. No spam. You can opt out anytime."
+  },
+  "whatToExpect": {
+    "title": "What to expect",
+    "line1": "You'll receive an email when we release something meaningful - not every small update.",
+    "line2": "You'll get early access to test new features and share feedback if you want to.",
+    "line3": "You won't receive marketing emails, growth hacks, or urgency-driven messages. Just calm updates."
+  }
+}

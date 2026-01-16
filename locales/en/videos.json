@@ -1,0 +1,34 @@
+{
+  "title": "Videos",
+  "description": "Brief moments of reflection and guidance",
+  "categories": {
+    "all": "All",
+    "calmResets": "Calm Resets",
+    "mindsetReframes": "Mindset Reframes",
+    "microFrameworks": "Micro Frameworks"
+  },
+  "video1": {
+    "category": "Mindset Reframes",
+    "duration": "3:24",
+    "title": "Why clarity beats motivation",
+    "description": "You don't need more willpower. You need a clearer path forward.",
+    "placeholder": "Video: Why clarity beats motivation",
+    "transcript": {
+      "line1": "Most of us wake up believing we lack willpower...",
+      "line2": "When what we actually lack is a clear path forward.",
+      "line3": "Every day, your brain makes thousands of micro-decisions. By the time you sit down to work on what matters, your decision-making capacity is already depleted."
+    }
+  },
+  "video2": {
+    "category": "Calm Resets",
+    "duration": "2:15",
+    "title": "2-minute calm reset",
+    "description": "A guided practice to release tension and restore clarity.",
+    "placeholder": "Video: 2-minute calm reset",
+    "transcript": {
+      "line1": "Find a comfortable position...",
+      "line2": "Notice where you're holding tension in your body."
+    }
+  },
+  "comingSoon": "More videos coming soon. Each will include a full transcript for accessibility and SEO."
+}

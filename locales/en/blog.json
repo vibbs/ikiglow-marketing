@@ -1,0 +1,11 @@
+{
+  "title": "Reflections",
+  "titleWithCategory": "{category}",
+  "description": "Thoughts on purpose, attention, and living intentionally",
+  "categoryDescription": "{count} {count, plural, one {post} other {posts}}",
+  "emptyState": {
+    "message": "No posts in this category yet.",
+    "action": "View all posts →"
+  },
+  "readingTime": "min read"
+}

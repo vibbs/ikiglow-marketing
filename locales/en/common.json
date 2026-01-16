@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "exercises": "Exercises",
+    "guides": "Guides",
+    "about": "About",
+    "videos": "Videos",
+    "newsletter": "Newsletter",
+    "toggleMenu": "Toggle menu"
+  },
+  "footer": {
+    "explore": "Explore",
+    "exercisesSection": "Exercises",
+    "connect": "Connect",
+    "allExercises": "All Exercises",
+    "breathing": "Breathing",
+    "grounding": "Grounding",
+    "disclaimer": "IkiGlow is not therapy or medical advice. If you're experiencing a mental health crisis, please seek professional help.",
+    "copyright": "© {year} IkiGlow. A space for reflection and growth."
+  },
+  "buttons": {
+    "begin": "Begin",
+    "stop": "Stop",
+    "next": "Next",
+    "previous": "Previous",
+    "complete": "Complete",
+    "practiceAgain": "Practice Again",
+    "subscribe": "Subscribe",
+    "joinWaitlist": "Join waitlist",
+    "viewTranscript": "View transcript"
+  },
+  "links": {
+    "viewAllPosts": "View all posts →",
+    "viewAllVideos": "View all videos →",
+    "backToExercises": "← Back to Exercises"
+  },
+  "categories": {
+    "all": "All"
+  },
+  "accessibility": {
+    "logoAlt": "IkiGlow",
+    "logoAria": ""
+  }
+}
