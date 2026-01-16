@@ -8,6 +8,7 @@ const journalPrompts = {
     clarity: {
         title: "Finding Clarity",
         description: "When you need to understand what really matters",
+        wash: "wash-teal", // Teal - clarity, breath
         prompts: [
             "What would I do today if I knew no one would judge my choices?",
             "What drains my energy, and what restores it?",
@@ -19,6 +20,7 @@ const journalPrompts = {
     stress: {
         title: "Processing Stress",
         description: "When you're feeling overwhelmed or anxious",
+        wash: "wash-indigo", // Indigo - depth, stillness
         prompts: [
             "What specifically am I worried about, and what parts can I actually control?",
             "What would I tell a friend who came to me with this same situation?",
@@ -30,6 +32,7 @@ const journalPrompts = {
     growth: {
         title: "Personal Growth",
         description: "When you want to evolve and understand yourself better",
+        wash: "wash-gold", // Gold - awareness, insight
         prompts: [
             "What pattern keeps showing up in my life, and what might it be teaching me?",
             "What belief about myself no longer serves me?",
@@ -41,6 +44,7 @@ const journalPrompts = {
     gratitude: {
         title: "Gratitude & Perspective",
         description: "When you need to shift your mindset",
+        wash: "wash-rose", // Rose - emotional openness
         prompts: [
             "What small moment today deserves more appreciation?",
             "Who has made my life easier recently, and have I acknowledged them?",
@@ -52,6 +56,7 @@ const journalPrompts = {
     purpose: {
         title: "Purpose & Direction",
         description: "When you're questioning your path",
+        wash: "wash-sage", // Sage - grounding, calm
         prompts: [
             "What activities make me lose track of time?",
             "What would I regret not doing in five years?",
@@ -63,6 +68,7 @@ const journalPrompts = {
     relationships: {
         title: "Connection & Boundaries",
         description: "When you're navigating relationships",
+        wash: "wash-orange", // Orange - gentle activation
         prompts: [
             "What do I need more of in my relationships, and what do I need less of?",
             "Where am I giving more than I have capacity for?",
@@ -75,6 +81,13 @@ const journalPrompts = {
 
 type Category = keyof typeof journalPrompts;
 type TabType = "exercise" | "how-to-use";
+
+interface CategoryData {
+    title: string;
+    description: string;
+    wash: string;
+    prompts: string[];
+}
 
 export default function JournalingPage() {
     const [selectedCategory, setSelectedCategory] = useState<Category>("clarity");
@@ -143,16 +156,16 @@ export default function JournalingPage() {
             {activeTab === "exercise" && (
                 <>
 
-                    {/* Category Pills */}
+                    {/* Category Pills - Wash-based backgrounds */}
                     <div className="mx-auto max-w-3xl px-4 sm:px-6 py-8">
                         <div className="flex flex-wrap gap-2">
                             {(Object.keys(journalPrompts) as Category[]).map((category) => (
                                 <button
                                     key={category}
                                     onClick={() => setSelectedCategory(category)}
-                                    className={`px-4 py-2 rounded-sm text-sm transition-all ${selectedCategory === category
-                                        ? "bg-primary text-primary-foreground"
-                                        : "bg-muted/50 text-muted-foreground hover:bg-muted"
+                                    className={`px-4 py-2 rounded-xl text-sm font-light transition-all duration-[220ms] ${selectedCategory === category
+                                        ? `${journalPrompts[category].wash} border border-primary/20`
+                                        : "bg-muted/30 text-muted-foreground hover:bg-muted/50"
                                         }`}
                                 >
                                     {journalPrompts[category].title}
@@ -161,9 +174,9 @@ export default function JournalingPage() {
                         </div>
                     </div>
 
-                    {/* Selected Category Content */}
+                    {/* Selected Category Content - Dynamic wash background */}
                     <div className="mx-auto max-w-3xl px-4 sm:px-6 pb-12 sm:pb-16">
-                        <div className="panel-sage rounded-sm p-6 sm:p-8 space-y-6">
+                        <div className={`${journalPrompts[selectedCategory].wash} rounded-xl p-6 sm:p-8 space-y-6`}>
                             <div className="space-y-2">
                                 <h2 className="text-xl sm:text-2xl tracking-wide">
                                     {journalPrompts[selectedCategory].title}
@@ -177,7 +190,7 @@ export default function JournalingPage() {
                                 {journalPrompts[selectedCategory].prompts.map((prompt, index) => (
                                     <div
                                         key={index}
-                                        className="group bg-background/50 rounded-sm p-5 border border-border/50 hover:border-primary/30 transition-colors"
+                                        className="group bg-background/50 rounded-xl p-5 border border-border/50 hover:border-primary/30 transition-all duration-[220ms]"
                                     >
                                         <div className="flex items-start justify-between gap-4">
                                             <p className="text-base sm:text-lg leading-relaxed font-handwritten">
@@ -185,7 +198,7 @@ export default function JournalingPage() {
                                             </p>
                                             <button
                                                 onClick={() => copyPrompt(prompt, index)}
-                                                className="flex-shrink-0 p-2 rounded-sm hover:bg-muted/50 transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100"
+                                                className="flex-shrink-0 p-2 rounded-xl hover:bg-muted/50 transition-all duration-[220ms] opacity-100 md:opacity-0 md:group-hover:opacity-100"
                                                 title="Copy prompt"
                                             >
                                                 {copiedIndex === index ? (

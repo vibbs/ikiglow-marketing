@@ -1,186 +1,389 @@
-# 🌾 Yohaku+ UI Kit (Color + Motion)
+# 🌾 Yohaku UI Kit — Ikiglow (Refined & Logo-Aligned)
 
-## 1) 🎨 Color System - “Quiet Fields”
+> **Yohaku (余白)** is not the absence of design.  
+> It is the presence of space, light, and meaning.  
+>  
+> This UI kit translates Ikiglow’s **overlapping, translucent, multi-tone logo** into a **calm, purpose-driven product system** where color, motion, and emptiness work together.
 
-### Rule
-
-> Color is **atmosphere**, not emphasis.
-
-So we’ll introduce **tinted surfaces** (very low saturation) and keep “accent” usage disciplined.
-
-### Updated Palette
-
-**Ink**
-
-* Ink 900: `#1C1C1C`
-* Ink 700: `#3E3E3E`
-* Ink 500: `#7A7A7A`
-
-**Paper & Fields**
-
-* Paper: `#FAFAF8`
-* Mist: `#F2F4F3` (cool neutral)
-* Sand: `#F4F1EA` (warm neutral)
-
-**Soft Tints (Background Washes)**
-
-* Sage Wash: `#EEF3EF`
-* Sky Wash: `#EEF4F8`
-* Blush Wash: `#F6EEF0`
-
-**Accents (Small, Intentional)**
-
-* Moss: `#6F846F` (primary accent)
-* River: `#5F7C8B` (secondary)
-* Clay: `#9A6B5A` (rare)
-
-### Usage rules (keeps it Yohaku)
-
-* **60–80%** = Paper / Mist / Sand
-* **15–30%** = one Wash (Sage *or* Sky *or* Blush) per screen
-* **<5%** = Accent (Moss/River/Clay)
-* Never use more than **1 accent** on a screen.
-* Prefer **tinted containers** over colored buttons.
+This is not minimalism.  
+This is **intentional restraint with emotional range**.
 
 ---
 
-## 2) 🌈 “Color Placement Patterns” (Practical)
+## 1. Core Philosophy (Non-Negotiables)
 
-Pick one per screen:
+### 1.1 Emptiness Is Primary
+- Space is the main component.
+- Color, icons, and motion **enter only when they reduce words or anxiety**.
+- A screen must feel complete even if color is removed.
 
-### Pattern A - Top Wash
+### 1.2 Color Is Atmospheric, Not Semantic
+- No “red = error / green = success”.
+- Color represents **emotional state, phase, or tone**, not correctness.
 
-A very light gradient wash in the top 20–30% (rest stays Paper).
-Feels like morning light.
+### 1.3 The Logo Is the System
+- Overlap → meaning
+- Transparency → safety
+- Empty center → reflection
 
-### Pattern B - Breathing Panel
-
-A single large rounded panel (tint) behind the main prompt/journal area.
-The emptiness remains, but now it has a “field.”
-
-### Pattern C - Accent Dot System
-
-Use a tiny dot (•) / thin underline / cursor highlight in accent color.
-Your UI stays quiet but feels alive.
-
----
-
-## 3) ✨ Motion System - “Slow, Soft, Meaningful”
-
-### Rule
-
-> Motion should **lower pulse**, not raise attention.
-
-### Motion Defaults
-
-* Duration: **220–420ms**
-* Easing: **ease-out / cubic-bezier(0.2, 0.8, 0.2, 1)**
-* Use **fade + 2–6px drift** (micro-movement)
-* Avoid bounce/spring by default (unless tuned very gently)
-
-### Recommended Animations (Yohaku-friendly)
-
-#### A) “Breath Pulse” (Signature)
-
-* Dot or ring expands 6–10% and returns
-* 3.8–5.5 seconds per loop
-* Opacity shifts subtly (no scaling jumps)
-
-Use on:
-
-* Arrival screen
-* Breathing micro-app entry
-* Idle moments
-
-#### B) “Ink Flow” (Text Reveal)
-
-* Prompt text fades in with slight upward drift (4px)
-* Stagger by phrase, not by word (avoid “typewriter”)
-
-#### C) “Ambient Wash Drift”
-
-* The background wash slowly shifts position (like light moving)
-* Extremely subtle; users shouldn’t *notice* it, only *feel* it
-
-#### D) “Focus Halo” (Journaling)
-
-* When cursor enters input: a soft halo appears around the writing area
-* Accent at **10–14% opacity** (very faint)
-
-#### E) “Soft Sheet” (Modals/Bottom Sheets)
-
-* Bottom sheet slides up **8–12%** distance + fade
-* Backdrop is not dark; it’s a **mist blur** or light overlay
+The product **behaves like the logo**, not the other way around.
 
 ---
 
-## 4) 🧩 Component Updates (With Color + Motion)
+## 2. Foundation Layer (Always Present)
 
-### Buttons (now allowed to feel nicer)
+### 2.1 Neutrals (Structural Backbone)
 
-* Primary action can be **filled**, but only using muted accent:
+| Token     | Hex     | Purpose              |
+| --------- | ------- | -------------------- |
+| `ink.900` | #1C1C1C | Primary text         |
+| `ink.700` | #3D3D3D | Secondary text       |
+| `ink.500` | #7A7A7A | Metadata             |
+| `paper.0` | #FAFAF8 | Primary background   |
+| `paper.1` | #F2F1ED | Secondary background |
+| `line.0`  | #E6E4DD | Dividers             |
 
-  * Background: Moss at ~85–90% tone (still muted)
-  * Text: Paper
-  * Radius: 14–18px
-  * No shadow; use subtle border or slight tint difference
-
-Micro-interactions:
-
-* Hover/press: **1–2% darken** + 1px downward (mobile) + subtle haptic (if available)
-
-### Cards / Panels
-
-* Use **wash tints** instead of elevation
-* Separation via padding + rounding + whitespace
-
-### Dividers
-
-* Replace lines with:
-
-  * extra spacing, or
-  * a faint 1px line with `#E6E6E1` at 60–70% opacity
+**Usage rules**
+- 80–90% of any screen uses these colors.
+- Never use pure black or pure white.
+- Contrast is gentle, not sharp.
 
 ---
 
-## 5) Typography rule tweak (to match motion/color)
+## 3. Ikiglow Atmospheric Palette (Derived from Logo)
 
-Still book-like, but add **one expressive layer**:
+These colors are **never used at full strength**.  
+They appear as **washes, glows, overlaps, and transitions**.
 
-* Prompts can be Serif (warm, reflective)
-* UI chrome stays Sans
-* Allow **one** italic usage per screen (for gentle emphasis)
+| Tone         | Emotional Role     | Hex     |
+| ------------ | ------------------ | ------- |
+| Teal / Cyan  | Breath, clarity    | #4EC3D6 |
+| Sage Green   | Grounding, calm    | #6F846F |
+| Soft Gold    | Awareness, insight | #F4C85B |
+| Rose Pink    | Emotional openness | #F28BB8 |
+| Indigo Blue  | Depth, stillness   | #6F78B8 |
+| Muted Orange | Gentle activation  | #F26C4F |
 
----
-
-## 6) “Do / Don’t” so we don’t break Yohaku
-
-✅ Do
-
-* Add **ambient tints** (background washes)
-* Use **slow loops** (breath, light drift)
-* Use color to create **emotional temperature**
-* Keep CTAs calm
-
-❌ Don’t
-
-* Add bright gradients, neon, saturated primaries
-* Use busy Lottie animations everywhere
-* Animate lists/cards on scroll aggressively
-* Turn motion into reward mechanics
+**Opacity range**
+- Background washes: 4–10%
+- Focus glows: 8–14%
+- Overlaps: 6–12%
 
 ---
 
-## 7) Suggested “Ikiglow Signature Look”
+## 4. Color Usage Modes (Choose One per Screen)
 
-If you want a distinct identity:
+### 4.1 Wash Mode (Most Common)
+- A single large background wash.
+- Sets emotional temperature.
+- No borders, no outlines.
 
-* Default wash = **Sage Wash**
-* Signature motion = **Breath Pulse**
-* Accent color = **Moss**
-* Secondary wash rotated per category:
+**Use for**
+- Journaling
+- Reading
+- Arrival screens
 
-  * Purpose → Sand + Clay hint
-  * Mindset → Sky Wash + River hint
-  * Balance → Sage Wash + Moss
+---
+
+### 4.2 Overlap Mode (Logo-Inspired)
+- Two or three translucent color fields overlapping.
+- The center remains neutral / empty.
+
+**Use for**
+- Breathing exercises
+- Transitions between phases
+- Reflection completions
+
+---
+
+### 4.3 Accent Mode (Rare)
+- A dot, thin underline, or halo.
+- Only one accent color per screen.
+
+**Use for**
+- Directional guidance
+- Primary action focus
+- Cursor / active state
+
+---
+
+## 5. Purpose-Driven Flows
+
+### 5.1 Arrival / Entry
+
+**Goal:** Slow the user down.
+
+- Background: `paper.0`
+- Optional wash: Teal (very faint)
+- Motion: slow fade-in (300–400ms)
+
+No CTA pressure.  
+No icons.  
+No metrics.
+
+---
+
+### 5.2 Breathing Micro-App
+
+**Color becomes the instruction.**
+
+| Phase  | Color Behavior        |
+| ------ | --------------------- |
+| Inhale | Teal glow expands     |
+| Hold   | Indigo wash stills    |
+| Exhale | Rose → Sage dissolves |
+
+- No numbers required.
+- No text beyond “Inhale / Hold / Exhale” (optional).
+- Motion loops slowly (4–6s).
+
+---
+
+### 5.3 Journaling
+
+**Goal:** Psychological safety.
+
+- Default: neutral paper
+- Emotional depth increases → subtle rose or sage wash appears
+- Cursor focus → soft halo (not border)
+
+No character limits.  
+No progress bars.  
+No validation.
+
+---
+
+### 5.4 Guidance & Disclaimers
+
+**Replace verbosity with tone.**
+
+- Use Soft Gold wash (6–8%)
+- Minimal copy
+- Optional outline icon (neutral ink)
+
+Feels like a margin note, not a warning.
+
+---
+
+### 5.5 Errors & System Feedback
+
+**Principle:** Loss of harmony, not failure.
+
+| Situation              | Visual Treatment     |
+| ---------------------- | -------------------- |
+| Action didn’t complete | Soft rose wash       |
+| Network issue          | Indigo wash          |
+| Retry suggestion       | Gentle orange accent |
+
+No red banners.  
+No exclamation icons.  
+Language is calm and non-judgmental.
+
+---
+
+## 6. Iconography (Functional Whisper)
+
+### Rules
+- Outline only
+- Single stroke weight
+- Neutral ink color
+- Rounded geometry
+- No metaphorical pressure
+
+### Allowed Meanings
+- Continue → arrow
+- Pause → dots
+- Reflect → circle
+- Time → open ring
+- Breathe → expanding ring
+
+Icons **never carry emotional meaning** — color does.
+
+---
+
+## 7. Illustrations (Editorial, Not UI)
+
+### When Allowed
+- Article entry or exit
+- Phase transitions
+- Resting moments
+
+### Style
+- Abstract
+- Translucent
+- Overlapping shapes
+- No characters
+- Empty center
+
+Max **one illustration per context**.
+
+---
+
+## 8. Motion System (Emotional Physics)
+
+| Property    | Rule                                   |
+| ----------- | -------------------------------------- |
+| Duration    | 220–420ms                              |
+| Easing      | ease-out / cubic-bezier(0.2,0.8,0.2,1) |
+| Loops       | Slow, breathing-paced                  |
+| Transitions | Fade + micro drift                     |
+
+Motion should **lower pulse**, not excite.
+
+---
+
+## 9. Night Space (Dark Mode as Emotional State)
+
+### Philosophy: Not a Theme Toggle
+
+Most apps ask: *"Do users expect dark mode?"*
+
+Ikiglow asks: **"When does darkness serve reflection better than light?"**
+
+---
+
+### When Night Space Makes Sense
+
+#### 🌙 Night & Low-Stimulation Contexts
+- Late evening reflection
+- Pre-sleep journaling
+- Breathing before bed
+- Emotional decompression
+
+Light backgrounds can feel **intrusive**, not calming.
+
+#### 🧠 Deep Emotional States
+- Grief, anxiety, overwhelm
+- Introspection after heavy prompts
+
+Darkness can feel:
+- Containing
+- Private
+- Less exposed
+
+#### 🫁 Breathing & Stillness Micro-Apps
+Dark backgrounds:
+- Reduce visual noise
+- Make glow-based motion feel more natural
+- Allow color to *emit* rather than *sit on paper*
+
+---
+
+### Night Space Foundations (Never Pure Black)
+
+| Element    | Day Space   | Night Space         |
+| ---------- | ----------- | ------------------- |
+| Background | paper.0     | ink.dark.0 #121212  |
+| Surface    | paper.1     | ink.dark.1 #1A1A1A  |
+| Text       | ink.900     | text.dark #D4D1C8   |
+| Secondary  | ink.700     | text.muted #9A9792  |
+| Contrast   | Gentle      | Gentle              |
+
+**Never use pure black** (`#000000`).
+**Never use pure white** (`#FFFFFF`).
+
+---
+
+### Color Behavior in Night Space
+
+Atmospheric colors should:
+- **Glow softly** (radial / halo)
+- **Never become flat fills**
+- Feel like light *emerging* from darkness
+
+| Color  | Day Behavior | Night Behavior          |
+| ------ | ------------ | ----------------------- |
+| Teal   | Wash 4-6%    | Soft glow 10-14%        |
+| Rose   | Wash 4-6%    | Dim warmth glow 8-12%   |
+| Indigo | Wash 6-10%   | Depth field 12-16%      |
+| Gold   | Wash 5-8%    | Quiet insight glow 8-12% |
+
+---
+
+### Implementation Strategy
+
+**Phase 1 (Correct):**
+- Day Space only
+- Design dark-ready tokens quietly
+
+**Phase 2 (Intentional):**
+- Enable Night Space for:
+  - Breathing exercises
+  - Journaling sessions
+  - Reflection contexts
+
+**Phase 3 (Optional):**
+- Remember preferred space *per activity*, not globally
+- Context-aware suggestions: *"Would you like to switch to a quieter space?"*
+
+---
+
+### Purpose-Driven Night Flows
+
+#### 🌙 Night Journaling
+- Dark paper background (`ink.dark.0`)
+- Rose or sage wash at very low opacity (4-6%)
+- Cursor halo instead of underline
+- No visible borders
+
+Feels like writing in a quiet room.
+
+#### 🫁 Breathing (Night)
+- Indigo background (`#6F78B8` at 8%)
+- Breath ring glows softly
+- Teal/rose pulses slower than day mode
+- Enhanced glow effects (10-14% opacity)
+
+This is where Night Space becomes **objectively better UX**.
+
+#### 😔 Emotional Processing
+If a user indicates overwhelm or anxiety:
+- Gentle suggestion to switch to Night Space
+- Not automatic
+- Empathetic, not algorithmic
+
+---
+
+### What Night Space Is NOT
+
+❌ A generic "dark mode" toggle
+❌ A system preference mirror
+❌ A productivity feature
+❌ An inverted color scheme
+
+✅ An emotional state
+✅ A contextual choice
+✅ A gentler container for certain moments
+
+---
+
+## 10. Accessibility & Emotional Safety
+
+- Color is never the sole indicator.
+- Contrast meets readability standards (both Day and Night Space).
+- No flashing, bouncing, or urgency cues.
+- Works well in low-light, quiet contexts.
+- Night Space enhances accessibility for light-sensitive users.
+
+---
+
+## 11. Design Checklist (Use Before Shipping)
+
+- Does this screen work without color?
+- Is color reducing words or adding noise?
+- Does emptiness feel intentional?
+- Is the user free to pause or leave?
+
+If any answer is **no**, remove something.
+
+---
+
+## Closing Ethos
+
+Ikiglow does not tell users what to feel.  
+It creates the conditions where feeling becomes safe.
+
+**Color is presence.  
+Space is permission.  
+Meaning emerges in the overlap.**
 

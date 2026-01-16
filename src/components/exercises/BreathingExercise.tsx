@@ -4,11 +4,41 @@ import { useState, useEffect } from "react";
 
 type Phase = "inhale" | "hold" | "exhale" | "rest";
 
-const phases: { phase: Phase; duration: number; instruction: string }[] = [
-  { phase: "inhale", duration: 4, instruction: "Breathe in" },
-  { phase: "hold", duration: 4, instruction: "Hold" },
-  { phase: "exhale", duration: 6, instruction: "Breathe out" },
-  { phase: "rest", duration: 2, instruction: "Rest" },
+const phases: {
+  phase: Phase;
+  duration: number;
+  instruction: string;
+  color: string;
+  glowColor: string;
+}[] = [
+  {
+    phase: "inhale",
+    duration: 4,
+    instruction: "Breathe in",
+    color: "rgba(78, 195, 214, 0.12)", // Teal glow expands
+    glowColor: "rgba(78, 195, 214, 0.20)"
+  },
+  {
+    phase: "hold",
+    duration: 4,
+    instruction: "Hold",
+    color: "rgba(111, 120, 184, 0.10)", // Indigo wash stills
+    glowColor: "rgba(111, 120, 184, 0.14)"
+  },
+  {
+    phase: "exhale",
+    duration: 6,
+    instruction: "Breathe out",
+    color: "rgba(242, 139, 184, 0.10)", // Rose → Sage dissolves
+    glowColor: "rgba(111, 132, 111, 0.12)"
+  },
+  {
+    phase: "rest",
+    duration: 2,
+    instruction: "Rest",
+    color: "rgba(111, 132, 111, 0.06)", // Sage calm
+    glowColor: "rgba(111, 132, 111, 0.08)"
+  },
 ];
 
 export function BreathingExercise() {
@@ -46,44 +76,58 @@ export function BreathingExercise() {
     setSecondsLeft(phases[0].duration);
   };
 
-  // Yohaku+ Breath Pulse - signature animation
+  // Color-as-instruction: Phase determines color and scale
   const getCircleStyles = () => {
     if (!isActive) {
-      return "scale-75 opacity-60";
+      return {
+        scale: "scale-75",
+        opacity: "opacity-60"
+      };
     }
     switch (currentPhase.phase) {
       case "inhale":
-        return "scale-100 opacity-90";
+        return { scale: "scale-100", opacity: "opacity-100" };
       case "hold":
-        return "scale-100 opacity-80";
+        return { scale: "scale-100", opacity: "opacity-90" };
       case "exhale":
-        return "scale-[0.6] opacity-50";
+        return { scale: "scale-[0.65]", opacity: "opacity-80" };
       case "rest":
-        return "scale-[0.6] opacity-40";
+        return { scale: "scale-[0.65]", opacity: "opacity-70" };
       default:
-        return "scale-75 opacity-60";
+        return { scale: "scale-75", opacity: "opacity-60" };
     }
   };
 
+  const styles = getCircleStyles();
+
   return (
     <div className="flex flex-col items-center space-y-8 sm:space-y-16 px-4">
-      {/* Breathing circle - Yohaku+ Breath Pulse */}
+      {/* Breathing circle - Color is the instruction */}
       <div className="relative flex h-56 w-56 items-center justify-center sm:h-64 sm:w-64 md:h-80 md:w-80">
-        {/* Outer ambient ring */}
+        {/* Outer glow ring - color changes per phase */}
         <div
-          className={`absolute inset-0 rounded-full bg-[#6F846F]/10 transition-all duration-[1200ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] ${isActive ? getCircleStyles() : "animate-breath-pulse"
+          className={`absolute inset-0 rounded-full transition-all duration-[1200ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] ${styles.scale} ${styles.opacity
             }`}
+          style={{
+            backgroundColor: isActive ? currentPhase.color : "rgba(111, 132, 111, 0.08)",
+            boxShadow: isActive ? `0 0 48px ${currentPhase.glowColor}` : "0 0 32px rgba(111, 132, 111, 0.12)"
+          }}
         />
-        {/* Inner circle with Moss accent */}
+        {/* Inner circle with dynamic color wash */}
         <div
-          className={`absolute inset-6 sm:inset-8 rounded-full border-2 border-[#6F846F] bg-[#EEF3EF] transition-all duration-[1200ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] ${getCircleStyles()
-            }`}
+          className={`absolute inset-6 sm:inset-8 rounded-full border transition-all duration-[1200ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] ${styles.scale
+            } ${styles.opacity}`}
+          style={{
+            backgroundColor: isActive ? currentPhase.color : "rgba(111, 132, 111, 0.04)",
+            borderColor: isActive ? currentPhase.glowColor : "rgba(111, 132, 111, 0.20)",
+            borderWidth: "1px"
+          }}
         />
         <div className="relative z-10 text-center">
-          <p className="text-4xl sm:text-5xl font-light tracking-wide text-foreground">
-            {secondsLeft}
-          </p>
-          <p className="mt-2 sm:mt-4 text-base sm:text-lg font-light tracking-wide text-muted-foreground">
+          <p
+            className="text-2xl sm:text-3xl font-light tracking-wide transition-opacity duration-[320ms]"
+            style={{ opacity: 0.6 }}
+          >
             {currentPhase.instruction}
           </p>
         </div>
@@ -94,14 +138,14 @@ export function BreathingExercise() {
         {!isActive ? (
           <button
             onClick={handleStart}
-            className="rounded-xl bg-[#6F846F] px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-light tracking-wide text-[#FAFAF8] transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:bg-[#5F7460] active:translate-y-[1px]"
+            className="rounded-xl bg-primary px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-light tracking-wide text-primary-foreground transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:opacity-90 active:translate-y-[1px]"
           >
             Begin
           </button>
         ) : (
           <button
             onClick={handleStop}
-            className="rounded-xl border border-[#E6E6E1] bg-[#FAFAF8] px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-light tracking-wide transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-[#6F846F]/40 hover:bg-[#EEF3EF] active:translate-y-[1px]"
+            className="rounded-xl border border-border bg-background px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-light tracking-wide transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-primary/40 hover:bg-accent active:translate-y-[1px]"
           >
             Stop
           </button>
