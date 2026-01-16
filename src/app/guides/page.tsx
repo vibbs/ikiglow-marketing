@@ -1,21 +1,28 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { getAllGuides } from "@/lib/mdx/mdx-utils";
 
-export const metadata: Metadata = {
-  title: "Guides - IkiGlow",
-  description: "Comprehensive guides for understanding yourself and navigating life's challenges with clarity.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.guides");
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default async function Guides() {
   const guides = await getAllGuides();
+  const t = await getTranslations("guides");
+
   return (
     <main className="min-h-screen">
       {/* Header */}
       <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8 px-4 sm:px-6 py-12 sm:py-16">
-        <h1 className="text-2xl sm:text-3xl tracking-wide">Guides</h1>
+        <h1 className="text-2xl sm:text-3xl tracking-wide">{t("title")}</h1>
         <p className="text-sm sm:text-base text-muted-foreground">
-          Comprehensive resources for understanding yourself and navigating life&apos;s challenges
+          {t("description")}
         </p>
       </div>
 

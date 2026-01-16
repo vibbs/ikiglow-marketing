@@ -1,8 +1,8 @@
 import { getRequestConfig } from "next-intl/server";
 
 export default getRequestConfig(async () => {
-  // For now, we only support English
-  // In the future, this can be expanded to detect locale from URL, cookies, or headers
+  // We only support English, so always return 'en' locale
+  // No middleware needed for single-locale setup
   const locale = "en";
 
   return {

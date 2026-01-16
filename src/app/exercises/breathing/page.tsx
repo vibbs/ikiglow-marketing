@@ -2,12 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { BreathingExercise } from "@/components/exercises/BreathingExercise";
 
 type TabType = "exercise" | "how-to-use" | "why-it-helps";
 
 export default function BreathingPage() {
   const [activeTab, setActiveTab] = useState<TabType>("exercise");
+  const t = useTranslations("exercises.breathing");
+  const tCommon = useTranslations("common");
 
   return (
     <main className="min-h-screen">
@@ -18,13 +21,13 @@ export default function BreathingPage() {
             href="/exercises"
             className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            ← Back to Exercises
+            ← {tCommon("nav.exercises")}
           </Link>
 
           <div className="space-y-4">
-            <h1 className="text-2xl sm:text-3xl tracking-wide">Breathing exercise</h1>
+            <h1 className="text-2xl sm:text-3xl tracking-wide">{t("title")}</h1>
             <p className="text-sm sm:text-base leading-relaxed">
-              When thoughts feel rushed, this can help you slow down.
+              {t("subtitle")}
             </p>
           </div>
         </div>
@@ -41,7 +44,7 @@ export default function BreathingPage() {
                 : "text-muted-foreground hover:text-foreground"
                 }`}
             >
-              Exercise
+              {t("tabs.exercise")}
               {activeTab === "exercise" && (
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
               )}
@@ -53,7 +56,7 @@ export default function BreathingPage() {
                 : "text-muted-foreground hover:text-foreground"
                 }`}
             >
-              How to Use
+              {t("tabs.howToUse")}
               {activeTab === "how-to-use" && (
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
               )}
@@ -65,7 +68,7 @@ export default function BreathingPage() {
                 : "text-muted-foreground hover:text-foreground"
                 }`}
             >
-              Why It Helps
+              {t("tabs.whyItHelps")}
               {activeTab === "why-it-helps" && (
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
               )}
@@ -85,11 +88,11 @@ export default function BreathingPage() {
 
       {activeTab === "how-to-use" && (
         <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
-          <h2 className="text-lg sm:text-xl tracking-wide">How to use</h2>
+          <h2 className="text-lg sm:text-xl tracking-wide">{t("howToUse.title")}</h2>
           <div className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed">
-            <p>Begin when you&apos;re ready.</p>
-            <p>Follow the visual rhythm - there&apos;s no need to count.</p>
-            <p>You might try a few cycles, or stay as long as feels right.</p>
+            <p>{t("howToUse.line1")}</p>
+            <p>{t("howToUse.line2")}</p>
+            <p>{t("howToUse.line3")}</p>
           </div>
         </div>
       )}
@@ -97,20 +100,11 @@ export default function BreathingPage() {
       {activeTab === "why-it-helps" && (
         <div className="panel-mist">
           <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
-            <h2 className="text-lg sm:text-xl tracking-wide">Why it helps</h2>
+            <h2 className="text-lg sm:text-xl tracking-wide">{t("whyItHelps.title")}</h2>
             <div className="space-y-3 sm:space-y-4 text-sm sm:text-base leading-relaxed">
-              <p>
-                This uses a 4-4-6-2 pattern: inhale for 4 seconds, hold for
-                4 seconds, exhale for 6 seconds, rest for 2 seconds.
-              </p>
-              <p>
-                The longer exhale activates your parasympathetic nervous system - the
-                part responsible for rest and calm.
-              </p>
-              <p>
-                When you&apos;re anxious or overwhelmed, breathing often becomes shallow
-                and rapid. Slowing it down gently signals safety to your body.
-              </p>
+              <p>{t("whyItHelps.line1")}</p>
+              <p>{t("whyItHelps.line2")}</p>
+              <p>{t("whyItHelps.line3")}</p>
             </div>
           </div>
         </div>
@@ -119,25 +113,25 @@ export default function BreathingPage() {
       {/* Next Steps - Always Visible */}
       <div className="border-t border-border">
         <div className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
-          <h3 className="text-base sm:text-lg tracking-wide">Next steps</h3>
+          <h3 className="text-base sm:text-lg tracking-wide">{t("nextSteps.title")}</h3>
           <div className="space-y-2 sm:space-y-3">
             <Link
               href="/exercises/grounding"
               className="block text-sm text-muted-foreground transition-colors hover:text-[#6F846F]"
             >
-              → Try the grounding exercise
+              {t("nextSteps.grounding")}
             </Link>
             <Link
               href="/guides/anxiety"
               className="block text-sm text-muted-foreground transition-colors hover:text-[#6F846F]"
             >
-              → Read the guide on understanding anxiety
+              {t("nextSteps.anxietyGuide")}
             </Link>
             <Link
               href="/blog/why-clarity-beats-motivation"
               className="block text-sm text-muted-foreground transition-colors hover:text-[#6F846F]"
             >
-              → Why clarity beats motivation
+              {t("nextSteps.clarityPost")}
             </Link>
           </div>
         </div>

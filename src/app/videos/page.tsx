@@ -1,19 +1,26 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Videos - IkiGlow",
-  description: "Brief moments of reflection. Short-form videos on mindset, focus, and intentional living.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.videos");
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default function Videos() {
+  const t = useTranslations("videos");
+
   return (
     <main className="min-h-screen">
       {/* Header */}
       <div className="mx-auto max-w-2xl space-y-8 px-6 py-16">
-        <h1 className="text-3xl tracking-wide">Videos</h1>
+        <h1 className="text-3xl tracking-wide">{t("title")}</h1>
         <p className="text-base text-muted-foreground">
-          Brief moments of reflection and guidance
+          {t("description")}
         </p>
       </div>
 
@@ -25,25 +32,25 @@ export default function Videos() {
               href="/videos"
               className="text-sm text-foreground transition-colors hover:text-primary"
             >
-              All
+              {t("categories.all")}
             </Link>
             <Link
               href="/videos/calm-resets"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              Calm Resets
+              {t("categories.calmResets")}
             </Link>
             <Link
               href="/videos/mindset-reframes"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              Mindset Reframes
+              {t("categories.mindsetReframes")}
             </Link>
             <Link
               href="/videos/micro-frameworks"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              Micro Frameworks
+              {t("categories.microFrameworks")}
             </Link>
           </nav>
         </div>
@@ -55,14 +62,14 @@ export default function Videos() {
         <article className="space-y-6">
           <div className="aspect-video rounded-sm border border-border bg-muted/30">
             <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
-              Video: Why clarity beats motivation
+              {t("video1.placeholder")}
             </div>
           </div>
           <div className="space-y-3">
-            <div className="text-xs text-muted-foreground">Mindset Reframes · 3:24</div>
-            <h2 className="text-xl tracking-wide">Why clarity beats motivation</h2>
+            <div className="text-xs text-muted-foreground">{t("video1.category")} · {t("video1.duration")}</div>
+            <h2 className="text-xl tracking-wide">{t("video1.title")}</h2>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              You don&apos;t need more willpower. You need a clearer path forward.
+              {t("video1.description")}
             </p>
           </div>
           {/* Transcript */}
@@ -71,13 +78,9 @@ export default function Videos() {
               View transcript
             </summary>
             <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
-              <p>Most of us wake up believing we lack willpower...</p>
-              <p>When what we actually lack is a clear path forward.</p>
-              <p>
-                Every day, your brain makes thousands of micro-decisions. By the time you
-                sit down to work on what matters, your decision-making capacity is already
-                depleted.
-              </p>
+              <p>{t("video1.transcript.line1")}</p>
+              <p>{t("video1.transcript.line2")}</p>
+              <p>{t("video1.transcript.line3")}</p>
             </div>
           </details>
         </article>
@@ -86,14 +89,14 @@ export default function Videos() {
         <article className="space-y-6 border-t border-border pt-12">
           <div className="aspect-video rounded-sm border border-border bg-muted/30">
             <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
-              Video: 2-minute calm reset
+              {t("video2.placeholder")}
             </div>
           </div>
           <div className="space-y-3">
-            <div className="text-xs text-muted-foreground">Calm Resets · 2:15</div>
-            <h2 className="text-xl tracking-wide">2-minute calm reset</h2>
+            <div className="text-xs text-muted-foreground">{t("video2.category")} · {t("video2.duration")}</div>
+            <h2 className="text-xl tracking-wide">{t("video2.title")}</h2>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              A guided practice to release tension and restore clarity.
+              {t("video2.description")}
             </p>
           </div>
           <details className="space-y-4 border-t border-border pt-6">
@@ -101,8 +104,8 @@ export default function Videos() {
               View transcript
             </summary>
             <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
-              <p>Find a comfortable position...</p>
-              <p>Notice where you&apos;re holding tension in your body.</p>
+              <p>{t("video2.transcript.line1")}</p>
+              <p>{t("video2.transcript.line2")}</p>
             </div>
           </details>
         </article>
@@ -110,8 +113,7 @@ export default function Videos() {
         {/* More coming soon */}
         <div className="border-t border-border pt-12">
           <p className="text-sm text-muted-foreground">
-            More videos coming soon. Each will include a full transcript for accessibility
-            and SEO.
+            {t("comingSoon")}
           </p>
         </div>
       </div>
