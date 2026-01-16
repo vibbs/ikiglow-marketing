@@ -136,73 +136,126 @@ Both breathing and grounding exercises follow this pattern:
 
 **Breathing Exercise:**
 - 4-phase cycle: inhale (4s) → hold (4s) → exhale (6s) → rest (2s)
-- Visual feedback via animated circle with scale/opacity transitions
+- **Color-as-instruction**: Teal glow (inhale) → Indigo wash (hold) → Rose→Sage dissolve (exhale) → Sage calm (rest)
+- Visual feedback via animated circle with scale/opacity/color transitions
 - Single interval timer managing phase transitions
+- Glows enhanced in Night Space (10-14% opacity vs 6-8% day)
 
 **Grounding Exercise:**
 - 5-step sensory awareness (5-4-3-2-1 technique)
-- Progress indicator (horizontal bars)
+- **Sage wash background** (grounding, calm)
+- Progress indicator with Sage glow on active step
 - Textarea for reflection at each step
+- Completion state uses **Gold wash** (awareness, insight)
 - State persists across steps, can navigate back/forward
 
-## Design Tokens & Styling (Yohaku+ Color System)
+## Design Tokens & Styling (Logo-Aligned Atmospheric Palette)
 
-The design system uses the "Quiet Fields" palette with HEX colors for consistency:
+The design system uses logo-derived atmospheric colors. **Color is atmospheric, not semantic** (no red=error).
+
+### Neutrals (Structural Backbone) - 80-90% of screen
 
 ```css
 /* Ink (Text) */
 --color-ink-900: #1C1C1C;     /* Primary text */
---color-ink-700: #3E3E3E;     /* Secondary text */
---color-ink-500: #7A7A7A;     /* Muted text */
+--color-ink-700: #3D3D3D;     /* Secondary text */
+--color-ink-500: #7A7A7A;     /* Metadata */
 
 /* Paper & Fields (Backgrounds) */
---color-paper: #FAFAF8;       /* Primary background */
---color-mist: #F2F4F3;        /* Cool neutral surface */
---color-sand: #F4F1EA;        /* Warm neutral surface */
-
-/* Soft Tints (Background Washes) - 15-30% of screen */
---color-sage-wash: #EEF3EF;   /* Default wash (Balance) */
---color-sky-wash: #EEF4F8;    /* Mindset category */
---color-blush-wash: #F6EEF0;  /* Warmth/Purpose category */
-
-/* Accents (<5% of screen) */
---color-moss: #6F846F;        /* Primary accent (signature) */
---color-river: #5F7C8B;       /* Secondary accent */
---color-clay: #9A6B5A;        /* Rare/Purpose accent */
-
-/* Dividers */
---color-divider: #E6E6E1;     /* Soft borders at 60-70% opacity */
-
-/* Motion */
---ease-yohaku: cubic-bezier(0.2, 0.8, 0.2, 1);
---duration-slow: 320ms;
---duration-medium: 220ms;
---duration-breath: 4200ms;    /* Signature breath pulse */
+--color-paper-0: #FAFAF8;     /* Primary background */
+--color-paper-1: #F2F1ED;     /* Secondary background */
+--color-line-0: #E6E4DD;      /* Dividers */
 ```
+
+### Atmospheric Palette (Logo-Aligned) - Use at 4-14% opacity
+
+These colors are **never used at full strength**. They appear as washes, glows, and overlaps.
+
+```css
+--color-teal: #4EC3D6;        /* Breath, clarity */
+--color-sage: #6F846F;        /* Grounding, calm */
+--color-gold: #F4C85B;        /* Awareness, insight */
+--color-rose: #F28BB8;        /* Emotional openness */
+--color-indigo: #6F78B8;      /* Depth, stillness */
+--color-orange: #F26C4F;      /* Gentle activation */
+```
+
+**Opacity ranges:**
+- Background washes: 4–10%
+- Focus glows: 8–14%
+- Overlaps: 6–12%
+- Night Space glows: 10–20%
+
+### Night Space (Dark Mode as Emotional State)
+
+Night Space is **not a theme toggle** — it's an emotional state for low-light contexts.
+
+```css
+--color-ink-dark-0: #121212;  /* Never pure black */
+--color-ink-dark-1: #1A1A1A;  /* Surface */
+--color-text-dark: #D4D1C8;   /* Soft warm gray */
+--color-text-muted-dark: #9A9792;
+```
+
+**When to use Night Space:**
+- Late evening reflection
+- Pre-sleep journaling
+- Breathing exercises in low light
+- Deep emotional processing states
 
 ### Color Usage Rules
 
-- **60-80%** = Paper / Mist / Sand
-- **15-30%** = One Wash (Sage OR Sky OR Blush) per screen
-- **<5%** = Accent (Moss/River/Clay)
-- Never use more than **1 accent** on a screen
-- Prefer **tinted containers** over colored buttons
+- **80–90%** = Neutrals (paper-0, paper-1, ink-900)
+- **10–15%** = One atmospheric wash per screen
+- **<5%** = Accent (glow or subtle border)
+- Never use more than **1 atmospheric color** per screen
+- Colors represent emotional tone, not correctness
 
-### Wash Patterns (CSS Classes)
+### Wash & Glow Patterns (CSS Classes)
 
 ```css
-/* Pattern A - Top Wash (morning light gradient) */
-.wash-top-sage    /* Sage gradient fading to Paper */
-.wash-top-sky     /* Sky gradient fading to Paper */
-.wash-top-blush   /* Blush gradient fading to Paper */
+/* Wash Mode - Background washes (4-10% opacity) */
+.wash-teal       /* Teal 6% - Breath, clarity */
+.wash-sage       /* Sage 6% - Grounding, calm */
+.wash-gold       /* Gold 6% - Awareness, insight */
+.wash-rose       /* Rose 6% - Emotional openness */
+.wash-indigo     /* Indigo 8% - Depth, stillness */
+.wash-orange     /* Orange 5% - Gentle activation */
 
-/* Pattern B - Breathing Panel (solid tint) */
-.panel-sage       /* Sage Wash background */
-.panel-sky        /* Sky Wash background */
-.panel-blush      /* Blush Wash background */
-.panel-sand       /* Sand background */
-.panel-mist       /* Mist background */
+/* Glow Mode - Focus halos (8-14% opacity) */
+.glow-teal       /* 0 0 32px rgba(teal, 0.12) */
+.glow-sage       /* 0 0 32px rgba(sage, 0.12) */
+.glow-gold       /* 0 0 32px rgba(gold, 0.10) */
+.glow-rose       /* 0 0 32px rgba(rose, 0.10) */
+.glow-indigo     /* 0 0 32px rgba(indigo, 0.14) */
+
+/* Panel Mode - Glassmorphic containers */
+.panel-teal      /* Teal 4% + blur(12px) */
+.panel-sage      /* Sage 4% + blur(12px) */
+.panel-gold      /* Gold 4% + blur(12px) */
+.panel-rose      /* Rose 4% + blur(12px) */
+.panel-indigo    /* Indigo 6% + blur(12px) */
 ```
+
+### Emotional Tone Mapping (Journaling Example)
+
+- **Clarity** → Teal wash (breath, understanding)
+- **Stress** → Indigo wash (depth, stillness)
+- **Growth** → Gold wash (awareness, insight)
+- **Gratitude** → Rose wash (emotional openness)
+- **Purpose** → Sage wash (grounding, calm)
+- **Relationships** → Orange wash (gentle activation)
+
+### Motion System
+
+```css
+--ease-yohaku: cubic-bezier(0.2, 0.8, 0.2, 1);
+--duration-slow: 320ms;
+--duration-medium: 220ms;
+--duration-breath: 4200ms;
+```
+
+**Rule:** Motion should **lower pulse**, not raise attention.
 
 ### Animation Classes
 
@@ -220,11 +273,14 @@ When creating new components:
 - Use `font-light` for almost all text
 - Use `tracking-wide` (letter-spacing) for headings
 - Default spacing: `space-y-8` or larger for section separation
-- Borders: Use `border-[#E6E6E1]/60` with `rounded-xl`
-- Buttons: `rounded-xl` with Moss accent `bg-[#6F846F]`
-- Hover states: `hover:border-[#6F846F]/40` or `hover:bg-[#EEF3EF]`
+- Borders: Use `border-border` (mapped to line.0) with `rounded-xl`
+- Buttons: `rounded-xl` with `bg-primary` (Sage) or atmospheric wash
+- Hover states: `hover:border-primary/40` or `hover:bg-accent`
 - Transitions: `duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)]`
 - Active states: `active:translate-y-[1px]` for subtle press feedback
+- **Use CSS variables** (`bg-primary`, `text-foreground`) instead of hardcoded colors
+- Choose **one atmospheric wash per screen** to set emotional tone
+- **Color-as-instruction**: In exercises, let color guide the user (e.g., Teal glow = inhale)
 
 ## shadcn/ui Configuration
 
