@@ -24,15 +24,11 @@ export function PositiveAffirmationsExercise({
     "gratitude",
   ];
 
-  // Get affirmations for current category
-  const affirmationsCount = 5; // Each category has 5 affirmations
-  const affirmations = [
-    t(`affirmations.${selectedCategory}.0`),
-    t(`affirmations.${selectedCategory}.1`),
-    t(`affirmations.${selectedCategory}.2`),
-    t(`affirmations.${selectedCategory}.3`),
-    t(`affirmations.${selectedCategory}.4`),
-  ];
+  // Get affirmations for current category using t.raw()
+  const affirmations = t.raw(
+    `affirmations.${selectedCategory}`
+  ) as string[];
+  const affirmationsCount = affirmations.length;
   const currentAffirmation = affirmations[currentIndex];
 
   const handleNext = () => {

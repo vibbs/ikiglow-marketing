@@ -15,18 +15,11 @@ export function ProgressiveMuscleRelaxationExercise({
   const [currentStep, setCurrentStep] = useState(-1); // -1 = not started
   const [isComplete, setIsComplete] = useState(false);
 
-  // Get all body parts from translations
-  const bodyParts = [
-    { name: t("bodyParts.0.name"), instruction: t("bodyParts.0.instruction") },
-    { name: t("bodyParts.1.name"), instruction: t("bodyParts.1.instruction") },
-    { name: t("bodyParts.2.name"), instruction: t("bodyParts.2.instruction") },
-    { name: t("bodyParts.3.name"), instruction: t("bodyParts.3.instruction") },
-    { name: t("bodyParts.4.name"), instruction: t("bodyParts.4.instruction") },
-    { name: t("bodyParts.5.name"), instruction: t("bodyParts.5.instruction") },
-    { name: t("bodyParts.6.name"), instruction: t("bodyParts.6.instruction") },
-    { name: t("bodyParts.7.name"), instruction: t("bodyParts.7.instruction") },
-    { name: t("bodyParts.8.name"), instruction: t("bodyParts.8.instruction") },
-  ];
+  // Use t.raw() to get array of body parts
+  const bodyParts = t.raw("bodyParts") as Array<{
+    name: string;
+    instruction: string;
+  }>;
   const bodyPartsCount = bodyParts.length;
 
   const handleStart = () => {

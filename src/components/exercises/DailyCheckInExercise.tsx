@@ -14,23 +14,9 @@ export function DailyCheckInExercise({ i18nKey }: DailyCheckInExerciseProps) {
   const [action, setAction] = useState("");
   const [isSaved, setIsSaved] = useState(false);
 
-  const moodLabels = [
-    t("prompts.moodScale.0"),
-    t("prompts.moodScale.1"),
-    t("prompts.moodScale.2"),
-    t("prompts.moodScale.3"),
-    t("prompts.moodScale.4"),
-  ];
-
-  const intentionOptions = [
-    t("prompts.intentionOptions.0"),
-    t("prompts.intentionOptions.1"),
-    t("prompts.intentionOptions.2"),
-    t("prompts.intentionOptions.3"),
-    t("prompts.intentionOptions.4"),
-    t("prompts.intentionOptions.5"),
-    t("prompts.intentionOptions.6"),
-  ];
+  // Use t.raw() to get arrays from translations
+  const moodLabels = t.raw("prompts.moodScale") as string[];
+  const intentionOptions = t.raw("prompts.intentionOptions") as string[];
 
   const handleSave = () => {
     if (intention && action.trim()) {
@@ -121,22 +107,19 @@ export function DailyCheckInExercise({ i18nKey }: DailyCheckInExerciseProps) {
           {t("prompts.intention")}
         </label>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-          {intentionOptions.map((option) => {
-            const translatedOption = t(`prompts.intentionOptions.${intentionOptions.indexOf(option)}`);
-            return (
-              <button
-                key={option}
-                onClick={() => setIntention(translatedOption)}
-                className={`rounded-xl border px-4 py-2.5 text-sm font-light tracking-wide transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-primary/40 active:translate-y-[1px] ${
-                  intention === translatedOption
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border bg-background hover:bg-accent"
-                }`}
-              >
-                {translatedOption}
-              </button>
-            );
-          })}
+          {intentionOptions.map((option, index) => (
+            <button
+              key={index}
+              onClick={() => setIntention(option)}
+              className={`rounded-xl border px-4 py-2.5 text-sm font-light tracking-wide transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:border-primary/40 active:translate-y-[1px] ${
+                intention === option
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-background hover:bg-accent"
+              }`}
+            >
+              {option}
+            </button>
+          ))}
         </div>
       </div>
 
