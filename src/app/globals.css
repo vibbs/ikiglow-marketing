@@ -563,6 +563,39 @@ textarea:focus {
   letter-spacing: 0.01em;
 }
 
+/* Slider styling - Sage theme */
+.slider-sage::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #6F846F;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.slider-sage::-webkit-slider-thumb:hover {
+  background: #5a6b5a;
+  box-shadow: 0 0 12px rgba(111, 132, 111, 0.3);
+}
+
+.slider-sage::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: #6F846F;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.slider-sage::-moz-range-thumb:hover {
+  background: #5a6b5a;
+  box-shadow: 0 0 12px rgba(111, 132, 111, 0.3);
+}
+
 /* Touch-friendly tap targets */
 @media (max-width: 768px) {
 

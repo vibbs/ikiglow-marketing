@@ -65,12 +65,6 @@ export function ProgressiveMuscleRelaxationExercise({
   if (currentStep === -1) {
     return (
       <div className="flex flex-col items-center space-y-8 sm:space-y-12 px-4">
-        <div className="max-w-2xl space-y-6 text-center">
-          <p className="text-lg sm:text-xl font-light leading-relaxed text-muted-foreground">
-            {t("tabs.exercise")}
-          </p>
-        </div>
-
         <button
           onClick={handleStart}
           className="rounded-xl bg-primary px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-light tracking-wide text-primary-foreground transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:opacity-90 active:translate-y-[1px]"

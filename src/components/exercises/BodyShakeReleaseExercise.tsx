@@ -121,27 +121,26 @@ export function BodyShakeReleaseExercise({
       </div>
 
       {/* Instruction Text */}
-      {isActive && (
-        <div className="max-w-lg text-center animate-ink-flow">
-          <p className="text-lg sm:text-xl font-light leading-relaxed">
-            {t(`instructions.${instructionKeys[currentInstruction]}`)}
-          </p>
-        </div>
-      )}
-
-      {/* Initial Instructions */}
-      {!isActive && !isComplete && (
-        <div className="max-w-lg space-y-3 text-center">
-          {instructionKeys.map((key) => (
-            <p
-              key={key}
-              className="text-sm leading-relaxed text-muted-foreground"
-            >
-              • {t(`instructions.${key}`)}
+      <div className="max-w-lg text-center">
+        {isActive ? (
+          <div className="animate-ink-flow">
+            <p className="text-lg sm:text-xl font-light leading-relaxed">
+              {t(`instructions.${instructionKeys[currentInstruction]}`)}
             </p>
-          ))}
-        </div>
-      )}
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {instructionKeys.map((key) => (
+              <p
+                key={key}
+                className="text-sm leading-relaxed text-muted-foreground"
+              >
+                • {t(`instructions.${key}`)}
+              </p>
+            ))}
+          </div>
+        )}
+      </div>
 
       {/* Controls */}
       <div className="flex gap-4">

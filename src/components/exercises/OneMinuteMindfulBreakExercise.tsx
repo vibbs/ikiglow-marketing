@@ -15,6 +15,7 @@ export function OneMinuteMindfulBreakExercise({
   const [isActive, setIsActive] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(60);
   const [isComplete, setIsComplete] = useState(false);
+  const [breathPhase, setBreathPhase] = useState<"in" | "out">("in");
 
   useEffect(() => {
     if (!isActive || secondsLeft <= 0) return;
@@ -30,19 +31,29 @@ export function OneMinuteMindfulBreakExercise({
       });
     }, 1000);
 
-    return () => clearInterval(interval);
+    // Alternate breath phase every 4 seconds
+    const breathInterval = setInterval(() => {
+      setBreathPhase((prev) => (prev === "in" ? "out" : "in"));
+    }, 4000);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(breathInterval);
+    };
   }, [isActive, secondsLeft]);
 
   const handleStart = () => {
     setIsActive(true);
     setSecondsLeft(60);
     setIsComplete(false);
+    setBreathPhase("in");
   };
 
   const handleStop = () => {
     setIsActive(false);
     setSecondsLeft(60);
     setIsComplete(false);
+    setBreathPhase("in");
   };
 
   if (isComplete) {
@@ -107,7 +118,7 @@ export function OneMinuteMindfulBreakExercise({
                 {secondsLeft}
               </p>
               <p className="text-lg sm:text-xl font-light tracking-wide text-muted-foreground">
-                {t("timer.active")}
+                {t(`timer.breath.${breathPhase}`)}
               </p>
             </>
           ) : (
@@ -119,13 +130,19 @@ export function OneMinuteMindfulBreakExercise({
       </div>
 
       {/* Instruction Text */}
-      {!isActive && (
-        <div className="max-w-lg text-center space-y-4 animate-ink-flow">
+      <div className="max-w-lg text-center space-y-4">
+        {isActive ? (
+          <div className="animate-ink-flow">
+            <p className="text-sm sm:text-base leading-relaxed text-muted-foreground">
+              {t("instruction")}
+            </p>
+          </div>
+        ) : (
           <p className="text-sm sm:text-base leading-relaxed text-muted-foreground">
             {t("instruction")}
           </p>
-        </div>
-      )}
+        )}
+      </div>
 
       {/* Controls */}
       <div className="flex gap-4">

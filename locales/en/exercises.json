@@ -241,7 +241,11 @@
       "timer": {
         "ready": "Begin",
         "active": "Breathe",
-        "complete": "Complete"
+        "complete": "Complete",
+        "breath": {
+          "in": "Breathe in",
+          "out": "Breathe out"
+        }
       },
       "completion": {
         "title": "You paused. You returned.",
@@ -308,6 +312,7 @@
       "controls": {
         "selectScene": "Choose your scene",
         "begin": "Begin",
+        "previous": "Previous",
         "next": "Continue",
         "finish": "Finish"
       },
@@ -586,7 +591,7 @@
         "title": "You checked in.",
         "subtitle": "You named how you feel and what you need.",
         "saved": "Your intention",
-        "practiceAgain": "Check in again tomorrow"
+        "practiceAgain": "Check in again"
       },
       "how": {
         "title": "How to use",

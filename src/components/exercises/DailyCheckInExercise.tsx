@@ -90,9 +90,9 @@ export function DailyCheckInExercise({ i18nKey }: DailyCheckInExerciseProps) {
             max="4"
             value={mood}
             onChange={(e) => setMood(parseInt(e.target.value))}
-            className="w-full h-2 rounded-full appearance-none cursor-pointer"
+            className="w-full h-2 rounded-full appearance-none cursor-pointer slider-sage"
             style={{
-              background: `linear-gradient(to right, #6F846F 0%, #6F846F ${
+              background: `linear-gradient(to right, rgba(111, 132, 111, 0.6) 0%, rgba(111, 132, 111, 0.6) ${
                 (mood / 4) * 100
               }%, #E6E4DD ${(mood / 4) * 100}%, #E6E4DD 100%)`,
             }}
