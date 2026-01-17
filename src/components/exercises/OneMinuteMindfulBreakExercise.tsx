@@ -17,6 +17,7 @@ export function OneMinuteMindfulBreakExercise({
   const [isComplete, setIsComplete] = useState(false);
   const [breathPhase, setBreathPhase] = useState<"in" | "out">("in");
 
+  // Countdown timer effect
   useEffect(() => {
     if (!isActive || secondsLeft <= 0) return;
 
@@ -31,16 +32,19 @@ export function OneMinuteMindfulBreakExercise({
       });
     }, 1000);
 
-    // Alternate breath phase every 4 seconds
+    return () => clearInterval(interval);
+  }, [isActive, secondsLeft]);
+
+  // Breath phase alternation effect (separate from countdown)
+  useEffect(() => {
+    if (!isActive) return;
+
     const breathInterval = setInterval(() => {
       setBreathPhase((prev) => (prev === "in" ? "out" : "in"));
     }, 4000);
 
-    return () => {
-      clearInterval(interval);
-      clearInterval(breathInterval);
-    };
-  }, [isActive, secondsLeft]);
+    return () => clearInterval(breathInterval);
+  }, [isActive]);
 
   const handleStart = () => {
     setIsActive(true);
@@ -83,9 +87,7 @@ export function OneMinuteMindfulBreakExercise({
       {/* Timer Circle */}
       <div className="relative flex h-64 w-64 sm:h-80 sm:w-80 md:h-96 md:w-96 items-center justify-center">
         <div
-          className={`absolute inset-0 rounded-full transition-all ease-[cubic-bezier(0.2,0.8,0.2,1)] ${
-            isActive ? "scale-100 opacity-100" : "scale-75 opacity-60"
-          }`}
+          className={`absolute inset-0 rounded-full transition-all ease-[cubic-bezier(0.2,0.8,0.2,1)]`}
           style={{
             backgroundColor: isActive
               ? "rgba(111, 132, 111, 0.08)"
@@ -93,13 +95,17 @@ export function OneMinuteMindfulBreakExercise({
             boxShadow: isActive
               ? "0 0 48px rgba(111, 132, 111, 0.14)"
               : "0 0 32px rgba(111, 132, 111, 0.08)",
-            transitionDuration: "0.8s",
+            transform: isActive
+              ? breathPhase === "in"
+                ? "scale(1.05)"
+                : "scale(0.95)"
+              : "scale(0.75)",
+            opacity: isActive ? 1 : 0.6,
+            transitionDuration: "4s",
           }}
         />
         <div
-          className={`absolute inset-8 sm:inset-10 rounded-full border transition-all ease-[cubic-bezier(0.2,0.8,0.2,1)] ${
-            isActive ? "scale-100 opacity-90" : "scale-75 opacity-60"
-          }`}
+          className={`absolute inset-8 sm:inset-10 rounded-full border transition-all ease-[cubic-bezier(0.2,0.8,0.2,1)]`}
           style={{
             backgroundColor: isActive
               ? "rgba(111, 132, 111, 0.04)"
@@ -108,7 +114,13 @@ export function OneMinuteMindfulBreakExercise({
               ? "rgba(111, 132, 111, 0.20)"
               : "rgba(111, 132, 111, 0.12)",
             borderWidth: "1px",
-            transitionDuration: "0.8s",
+            transform: isActive
+              ? breathPhase === "in"
+                ? "scale(1.05)"
+                : "scale(0.95)"
+              : "scale(0.75)",
+            opacity: isActive ? 0.9 : 0.6,
+            transitionDuration: "4s",
           }}
         />
         <div className="relative z-10 text-center space-y-2">
@@ -117,7 +129,10 @@ export function OneMinuteMindfulBreakExercise({
               <p className="text-5xl sm:text-6xl md:text-7xl font-light tracking-wide">
                 {secondsLeft}
               </p>
-              <p className="text-lg sm:text-xl font-light tracking-wide text-muted-foreground">
+              <p
+                key={breathPhase}
+                className="text-lg sm:text-xl font-light tracking-wide text-muted-foreground animate-ink-flow"
+              >
                 {t(`timer.breath.${breathPhase}`)}
               </p>
             </>
