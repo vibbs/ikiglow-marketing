@@ -63,10 +63,6 @@
         "title": "Guided Visualization - IkiGlow",
         "description": "A mental journey to a peaceful scene for relaxation and calm."
       },
-      "thought-reframing": {
-        "title": "Thought Reframing - IkiGlow",
-        "description": "Turn harsh self-talk into something kinder and more balanced."
-      },
       "self-compassion-break": {
         "title": "Self-Compassion Break - IkiGlow",
         "description": "Three steps to respond to difficulty with care instead of criticism."
@@ -78,10 +74,6 @@
       "body-shake-release": {
         "title": "Body Shake and Release - IkiGlow",
         "description": "Move your body to release stuck energy and reset your nervous system."
-      },
-      "daily-check-in": {
-        "title": "Daily Check-In - IkiGlow",
-        "description": "Pause to notice how you are and what you need, morning or evening."
       },
       "progressive-muscle-relaxation": {
         "title": "Progressive Muscle Relaxation - IkiGlow",
@@ -95,6 +87,16 @@
     "journaling": {
       "title": "Journaling Prompts - IkiGlow",
       "description": "Thoughtful prompts across 6 categories to help you explore what matters."
+    },
+    "items": {
+      "daily-check-in": {
+        "title": "Daily Check-In - IkiGlow",
+        "description": "Pause to notice how you are and what you need, morning or evening."
+      },
+      "thought-reframing": {
+        "title": "Thought Reframing - IkiGlow",
+        "description": "Turn harsh self-talk into something kinder and more balanced."
+      }
     }
   },
   "guides": {

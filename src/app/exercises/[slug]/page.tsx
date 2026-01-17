@@ -6,7 +6,6 @@ import { Eye, Type, Volume2 } from "lucide-react";
 import { BodyShakeReleaseExercise } from "@/components/exercises/BodyShakeReleaseExercise";
 import { BoxBreathingExercise } from "@/components/exercises/BoxBreathingExercise";
 import { CoherentBreathingExercise } from "@/components/exercises/CoherentBreathingExercise";
-import { DailyCheckInExercise } from "@/components/exercises/DailyCheckInExercise";
 import { ExerciseShell } from "@/components/exercises/ExerciseShell";
 import { FiveFourThreeTwoOneExercise } from "@/components/exercises/FiveFourThreeTwoOneExercise";
 import { FourSevenEightExercise } from "@/components/exercises/FourSevenEightExercise";
@@ -15,7 +14,6 @@ import { OneMinuteMindfulBreakExercise } from "@/components/exercises/OneMinuteM
 import { PositiveAffirmationsExercise } from "@/components/exercises/PositiveAffirmationsExercise";
 import { ProgressiveMuscleRelaxationExercise } from "@/components/exercises/ProgressiveMuscleRelaxationExercise";
 import { SelfCompassionBreakExercise } from "@/components/exercises/SelfCompassionBreakExercise";
-import { ThoughtReframingExercise } from "@/components/exercises/ThoughtReframingExercise";
 import {
   exerciseCategories,
   exerciseRegistry,
@@ -84,12 +82,8 @@ function getExerciseComponent(slug: string) {
       return OneMinuteMindfulBreakExercise;
     case "positive-affirmations":
       return PositiveAffirmationsExercise;
-    case "thought-reframing":
-      return ThoughtReframingExercise;
     case "self-compassion-break":
       return SelfCompassionBreakExercise;
-    case "daily-check-in":
-      return DailyCheckInExercise;
     case "body-shake-release":
       return BodyShakeReleaseExercise;
     case "progressive-muscle-relaxation":

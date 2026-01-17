@@ -3,13 +3,13 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-type ThoughtReframingExerciseProps = {
+type ThoughtReframingReflectionProps = {
   i18nKey: string;
 };
 
-export function ThoughtReframingExercise({
+export function ThoughtReframingReflection({
   i18nKey,
-}: ThoughtReframingExerciseProps) {
+}: ThoughtReframingReflectionProps) {
   const t = useTranslations(i18nKey);
   const tCommon = useTranslations("common.buttons");
   const [currentStep, setCurrentStep] = useState(1); // 1, 2, or 3

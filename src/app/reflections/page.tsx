@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import { reflectionRegistry } from "@/reflections/registry";
 
 export async function generateMetadata(): Promise<Metadata> {
     const t = await getTranslations("metadata.reflections");
@@ -13,6 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function Reflections() {
     const t = useTranslations("reflections.listing");
+    const tItems = useTranslations("reflections.items");
 
     const mindsetItems = t.raw("philosophy.mindsetItems") as string[];
     const characteristicsItems = t.raw("philosophy.characteristicsItems") as string[];
@@ -43,6 +45,22 @@ export default function Reflections() {
                         {t("journalingPrompts.description")}
                     </p>
                 </Link>
+
+                {reflectionRegistry.map((reflection) => (
+                    <Link
+                        key={reflection.slug}
+                        href={`/reflections/${reflection.slug}`}
+                        className="block space-y-3 sm:space-y-4 rounded-sm border border-border p-5 sm:p-6 transition-colors hover:border-primary/40"
+                    >
+                        <h3 className="text-lg sm:text-xl tracking-wide">
+                            {tItems(`${reflection.slug}.title`)}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                            {tItems(`${reflection.slug}.summary`)}
+                        </p>
+                    </Link>
+                ))}
+
 
                 <div className="space-y-3 sm:space-y-4">
                     <h2 className="text-sm sm:text-base tracking-wide text-muted-foreground">

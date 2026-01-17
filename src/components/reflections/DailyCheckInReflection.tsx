@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-type DailyCheckInExerciseProps = {
+type DailyCheckInReflectionProps = {
   i18nKey: string;
 };
 
-export function DailyCheckInExercise({ i18nKey }: DailyCheckInExerciseProps) {
+export function DailyCheckInReflection({ i18nKey }: DailyCheckInReflectionProps) {
   const t = useTranslations(i18nKey);
   const [mood, setMood] = useState(2); // 0-4 scale (Struggling to Great)
   const [intention, setIntention] = useState("");

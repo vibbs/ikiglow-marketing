@@ -14,7 +14,8 @@
       "Bash(for exercise in \"one-minute-mindful-break\" \"positive-affirmations\" \"daily-check-in\" \"body-shake-release\" \"thought-reframing\" \"self-compassion-break\")",
       "Bash(do echo \"Testing: $exercise\")",
       "Bash(echo:*)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(npx tsc:*)"
     ],
     "deny": [],
     "ask": []

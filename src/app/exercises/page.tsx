@@ -26,12 +26,12 @@ export default function Exercises() {
   } as const;
 
   const quickPickSlots = [
-    { key: "calmIn2", slug: "box-breathing" },
-    { key: "groundInPresent", slug: "five-four-three-two-one" },
-    { key: "sleepWindDown", slug: "four-seven-eight" },
-    { key: "resetFocus", slug: "coherent-breathing" },
-    { key: "confidenceBoost" },
-  ] as const;
+    { key: "calmIn2" as const, slug: "box-breathing" as const },
+    { key: "groundInPresent" as const, slug: "five-four-three-two-one" as const },
+    { key: "sleepWindDown" as const, slug: "four-seven-eight" as const },
+    { key: "resetFocus" as const, slug: "coherent-breathing" as const },
+    { key: "confidenceBoost" as const, slug: undefined },
+  ];
 
   return (
     <main className="min-h-screen">

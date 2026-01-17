@@ -125,16 +125,6 @@ export const exerciseRegistry: ExerciseItem[] = [
     panelClassName: "panel-rose",
   },
   {
-    slug: "thought-reframing",
-    categories: ["mindset"],
-    durationRange: "threeToFive",
-    formats: ["text"],
-    tags: ["mindset", "perspective"],
-    i18nKey: "exercises.items.thought-reframing",
-    headerClassName: "wash-gold",
-    panelClassName: "panel-gold",
-  },
-  {
     slug: "self-compassion-break",
     categories: ["mindset"],
     durationRange: "twoToThree",
@@ -143,16 +133,6 @@ export const exerciseRegistry: ExerciseItem[] = [
     i18nKey: "exercises.items.self-compassion-break",
     headerClassName: "wash-rose",
     panelClassName: "panel-rose",
-  },
-  {
-    slug: "daily-check-in",
-    categories: ["focus"],
-    durationRange: "twoToThree",
-    formats: ["text"],
-    tags: ["awareness", "intention"],
-    i18nKey: "exercises.items.daily-check-in",
-    headerClassName: "wash-teal",
-    panelClassName: "panel-teal",
   },
   {
     slug: "body-shake-release",
