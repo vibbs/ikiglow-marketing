@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Eye, Type, Volume2 } from "lucide-react";
-import { exerciseCategories, getExerciseBySlug } from "@/exercises/registry";
+import { exerciseCategories, exerciseRegistry, getExerciseBySlug } from "@/exercises/registry";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.exercises");
@@ -17,6 +17,7 @@ export default function Exercises() {
   const t = useTranslations("exercises.hub");
   const tMeta = useTranslations("exercises.meta");
   const tCategories = useTranslations("exercises.categories");
+  const tItems = useTranslations("exercises.items");
 
   const formatIcons = {
     visual: Eye,
@@ -116,6 +117,47 @@ export default function Exercises() {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {tCategories(`${category.slug}.description`)}
               </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl space-y-4 sm:space-y-6 px-4 sm:px-6 pb-12 sm:pb-16">
+        <h2 className="text-lg sm:text-xl tracking-wide">
+          All Exercises
+        </h2>
+        <div className="space-y-3 sm:space-y-4">
+          {exerciseRegistry.map((exercise) => (
+            <Link
+              key={exercise.slug}
+              href={`/exercises/${exercise.slug}`}
+              className="block space-y-3 sm:space-y-4 rounded-xl border border-border p-5 sm:p-6 transition-colors hover:border-primary/40"
+            >
+              <div className="space-y-2">
+                <h3 className="text-lg sm:text-xl tracking-wide">
+                  {tItems(`${exercise.slug}.title`)}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {tItems(`${exercise.slug}.summary`)}
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                <span className="rounded-full border border-border px-3 py-1">
+                  {tMeta(`durations.${exercise.durationRange}`)}
+                </span>
+                {exercise.formats.map((format) => {
+                  const Icon = formatIcons[format];
+                  return (
+                    <span
+                      key={format}
+                      className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1"
+                    >
+                      <Icon className="h-3.5 w-3.5" aria-hidden="true" />
+                      {tMeta(`formats.${format}`)}
+                    </span>
+                  );
+                })}
+              </div>
             </Link>
           ))}
         </div>

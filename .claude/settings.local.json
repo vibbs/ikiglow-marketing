@@ -9,7 +9,12 @@
       "Bash(npm install:*)",
       "Bash(npm run build:*)",
       "Bash(curl:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(do echo -n \"$exercise: \" curl -s \"http://localhost:3000/exercises/$exercise\")",
+      "Bash(for exercise in \"one-minute-mindful-break\" \"positive-affirmations\" \"daily-check-in\" \"body-shake-release\" \"thought-reframing\" \"self-compassion-break\")",
+      "Bash(do echo \"Testing: $exercise\")",
+      "Bash(echo:*)",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

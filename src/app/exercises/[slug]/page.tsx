@@ -216,7 +216,7 @@ export default async function ExerciseSlugPage({ params }: PageProps) {
           : undefined
       }
     >
-      <ExerciseComponent />
+      <ExerciseComponent i18nKey={exercise.i18nKey} />
     </ExerciseShell>
   );
 }

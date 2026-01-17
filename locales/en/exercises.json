@@ -356,7 +356,7 @@
       },
       "controls": {
         "clear": "Clear",
-        "save": "Save reflection"
+        "save": "Complete reflection"
       },
       "completion": {
         "title": "You shifted your perspective.",
@@ -563,13 +563,7 @@
       },
       "prompts": {
         "mood": "How are you feeling right now?",
-        "moodScale": [
-          "Struggling",
-          "Low",
-          "Neutral",
-          "Good",
-          "Great"
-        ],
+        "moodScale": ["Struggling", "Low", "Neutral", "Good", "Great"],
         "intention": "What do you want to focus on today?",
         "intentionOptions": [
           "Presence",
