@@ -126,13 +126,10 @@ export function OneMinuteMindfulBreakExercise({
         <div className="relative z-10 text-center space-y-2">
           {isActive ? (
             <>
-              <p className="text-5xl sm:text-6xl md:text-7xl font-light tracking-wide">
+              <p className="text-5xl sm:text-6xl md:text-7xl font-light tracking-wide text-center">
                 {secondsLeft}
               </p>
-              <p
-                key={breathPhase}
-                className="text-lg sm:text-xl font-light tracking-wide text-muted-foreground animate-ink-flow"
-              >
+              <p className="text-lg sm:text-xl font-light tracking-wide text-muted-foreground animate-breath-text">
                 {t(`timer.breath.${breathPhase}`)}
               </p>
             </>

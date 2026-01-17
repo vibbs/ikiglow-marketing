@@ -328,6 +328,33 @@
   animation-delay: 320ms;
 }
 
+/* Breath text fade - Gentle fade in/out for breathing cues */
+@keyframes breath-text-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+}
+
+.animate-breath-text {
+  animation: breath-text-fade 4s var(--ease-yohaku, cubic-bezier(0.2, 0.8, 0.2, 1)) infinite;
+}
+
 /* C) Ambient Wash Drift - Extremely subtle background movement */
 @keyframes wash-drift {
 
