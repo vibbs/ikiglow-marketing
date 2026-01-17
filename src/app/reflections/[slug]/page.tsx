@@ -68,6 +68,8 @@ export default async function ReflectionSlugPage({ params }: PageProps) {
       i18nKey={reflection.i18nKey}
       headerClassName={reflection.headerClassName}
       panelClassName={reflection.panelClassName}
+      backHref="/reflections"
+      backLabel="Reflect"
     >
       <ReflectionComponent i18nKey={reflection.i18nKey} />
     </ExerciseShell>

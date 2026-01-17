@@ -11,6 +11,7 @@ type ExerciseShellProps = {
   headerClassName?: string;
   panelClassName?: string;
   backHref?: string;
+  backLabel?: string;
   showVariations?: boolean;
   nextExercise?: {
     href: string;
@@ -24,6 +25,7 @@ export function ExerciseShell({
   headerClassName,
   panelClassName,
   backHref = "/exercises",
+  backLabel,
   showVariations = false,
   nextExercise,
   children,
@@ -54,7 +56,7 @@ export function ExerciseShell({
             href={backHref}
             className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            ← {tCommon("nav.exercises")}
+            ← {backLabel || tCommon("nav.exercises")}
           </Link>
 
           <div className="space-y-4">
