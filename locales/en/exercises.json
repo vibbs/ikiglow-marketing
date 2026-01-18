@@ -62,6 +62,11 @@
   "shell": {
     "tryNext": "Try next"
   },
+  "preStart": {
+    "breath": "Take one gentle breath to arrive.",
+    "pause": "Notice where you are.",
+    "affirmation": "You don't need to be hard on yourself."
+  },
   "items": {
     "box-breathing": {
       "title": "Box breathing",
@@ -72,6 +77,9 @@
         "how": "How to Use",
         "why": "Why It Helps",
         "variations": "Variations"
+      },
+      "preStart": {
+        "breath": "Take one gentle breath to arrive."
       },
       "phases": {
         "inhale": "Breathe in",
@@ -108,6 +116,9 @@
         "why": "Why It Helps",
         "variations": "Variations"
       },
+      "preStart": {
+        "breath": "There's nowhere else to be."
+      },
       "phases": {
         "inhale": "Breathe in",
         "hold": "Hold",
@@ -142,6 +153,9 @@
         "how": "How to Use",
         "why": "Why It Helps",
         "variations": "Variations"
+      },
+      "preStart": {
+        "breath": "Bring your attention here."
       },
       "phases": {
         "inhale": "Breathe in",
@@ -236,6 +250,9 @@
         "exercise": "Exercise",
         "how": "How to Use",
         "why": "Why It Helps"
+      },
+      "preStart": {
+        "breath": "Bring your attention here."
       },
       "instruction": "Close your eyes if comfortable. Feel your breath move in and out. Notice your body where it touches the chair or floor. Let thoughts pass without holding them. You have this minute.",
       "timer": {
@@ -347,6 +364,9 @@
         "how": "How to Use",
         "why": "Why It Helps"
       },
+      "preStart": {
+        "affirmation": "You don't need to be hard on yourself."
+      },
       "steps": {
         "step1": {
           "title": "Acknowledge the difficulty",
@@ -364,7 +384,9 @@
           "instruction": "Choose a phrase that feels supportive: 'May I be patient with myself.' 'May I give myself the compassion I need.'"
         }
       },
+      "instruction": "A gentle practice for responding to difficulty with kindness.",
       "controls": {
+        "begin": "Begin",
         "previous": "Previous",
         "next": "Continue",
         "finish": "Finish"
@@ -473,6 +495,9 @@
         "how": "How to Use",
         "why": "Why It Helps"
       },
+      "preStart": {
+        "breath": "Let the body release first."
+      },
       "instructions": {
         "start": "Stand with your feet hip-width apart. Take a breath.",
         "hands": "Shake out your hands and wrists.",
@@ -517,6 +542,9 @@
         "exercise": "Exercise",
         "how": "How to Use",
         "why": "Why It Helps"
+      },
+      "preStart": {
+        "pause": "There's nowhere else to be."
       },
       "bodyParts": [
         {

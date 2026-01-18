@@ -41,6 +41,8 @@ export type ExerciseDurationRange =
   | "threeToFive"
   | "tenPlus";
 
+export type PreStartMode = "breath" | "pause" | "affirmation" | "none";
+
 export type ExerciseItem = {
   slug: string;
   categories: ExerciseCategorySlug[];
@@ -52,6 +54,7 @@ export type ExerciseItem = {
   headerClassName: string;
   panelClassName: string;
   nextSlug?: string;
+  preStartMode?: PreStartMode;
 };
 
 export const exerciseRegistry: ExerciseItem[] = [
@@ -66,6 +69,7 @@ export const exerciseRegistry: ExerciseItem[] = [
     headerClassName: "wash-teal",
     panelClassName: "panel-teal",
     nextSlug: "five-four-three-two-one",
+    preStartMode: "breath",
   },
   {
     slug: "four-seven-eight",
@@ -78,6 +82,7 @@ export const exerciseRegistry: ExerciseItem[] = [
     headerClassName: "wash-indigo",
     panelClassName: "panel-indigo",
     nextSlug: "coherent-breathing",
+    preStartMode: "breath",
   },
   {
     slug: "coherent-breathing",
@@ -90,6 +95,7 @@ export const exerciseRegistry: ExerciseItem[] = [
     headerClassName: "wash-teal",
     panelClassName: "panel-teal",
     nextSlug: "box-breathing",
+    preStartMode: "breath",
   },
   {
     slug: "five-four-three-two-one",
@@ -112,6 +118,7 @@ export const exerciseRegistry: ExerciseItem[] = [
     i18nKey: "exercises.items.one-minute-mindful-break",
     headerClassName: "wash-sage",
     panelClassName: "panel-sage",
+    preStartMode: "breath",
   },
   {
     slug: "positive-affirmations",
@@ -133,6 +140,7 @@ export const exerciseRegistry: ExerciseItem[] = [
     i18nKey: "exercises.items.self-compassion-break",
     headerClassName: "wash-rose",
     panelClassName: "panel-rose",
+    preStartMode: "affirmation",
   },
   {
     slug: "body-shake-release",
@@ -143,6 +151,7 @@ export const exerciseRegistry: ExerciseItem[] = [
     i18nKey: "exercises.items.body-shake-release",
     headerClassName: "wash-orange",
     panelClassName: "panel-orange",
+    preStartMode: "breath",
   },
   {
     slug: "progressive-muscle-relaxation",
@@ -153,6 +162,7 @@ export const exerciseRegistry: ExerciseItem[] = [
     i18nKey: "exercises.items.progressive-muscle-relaxation",
     headerClassName: "wash-indigo",
     panelClassName: "panel-indigo",
+    preStartMode: "pause",
   },
   {
     slug: "guided-visualization",

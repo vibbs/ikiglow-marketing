@@ -20,6 +20,7 @@ export function CoherentBreathingExercise() {
     <TimedBreathingExercise
       phases={phases}
       i18nKey="exercises.items.coherent-breathing"
+      preStartMode="breath"
     />
   );
 }

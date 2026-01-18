@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { PreStartLayer } from "./PreStartLayer";
+import type { PreStartMode } from "@/exercises/registry";
 
 export type BreathingPhase = "inhale" | "hold" | "exhale" | "rest";
 
@@ -20,15 +22,18 @@ const defaultIdleColors = {
 };
 
 type TimedBreathingExerciseProps = {
-  phases: BreathingPhaseConfig[];
+  phases: readonly BreathingPhaseConfig[];
   i18nKey: string;
+  preStartMode?: PreStartMode;
 };
 
 export function TimedBreathingExercise({
   phases,
   i18nKey,
+  preStartMode = "breath",
 }: TimedBreathingExerciseProps) {
   const t = useTranslations(i18nKey);
+  const [isPreparing, setIsPreparing] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [currentPhaseIndex, setCurrentPhaseIndex] = useState(0);
   const [secondsLeft, setSecondsLeft] = useState(phases[0].duration);
@@ -54,11 +59,21 @@ export function TimedBreathingExercise({
   }, [currentPhaseIndex, isActive, phases]);
 
   const handleStart = () => {
+    if (preStartMode === "none") {
+      setIsActive(true);
+    } else {
+      setIsPreparing(true);
+    }
+  };
+
+  const handlePreStartComplete = () => {
+    setIsPreparing(false);
     setIsActive(true);
   };
 
   const handleStop = () => {
     setIsActive(false);
+    setIsPreparing(false);
     setCurrentPhaseIndex(0);
     setSecondsLeft(phases[0].duration);
   };
@@ -81,6 +96,18 @@ export function TimedBreathingExercise({
   const styles = isActive
     ? getCircleStyles(currentPhase.phase)
     : { scale: "scale-75", opacity: "opacity-60" };
+
+  // Show pre-start layer when preparing
+  if (isPreparing) {
+    return (
+      <PreStartLayer
+        mode={preStartMode}
+        onComplete={handlePreStartComplete}
+        i18nKey={i18nKey}
+        colors={defaultIdleColors}
+      />
+    );
+  }
 
   return (
     <div className="flex flex-col items-center space-y-8 sm:space-y-16 px-4">

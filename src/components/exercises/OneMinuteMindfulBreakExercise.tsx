@@ -2,9 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { PreStartLayer } from "./PreStartLayer";
 
 type OneMinuteMindfulBreakExerciseProps = {
   i18nKey: string;
+};
+
+const preStartColors = {
+  ring: "rgba(111, 132, 111, 0.08)",
+  inner: "rgba(111, 132, 111, 0.04)",
+  border: "rgba(111, 132, 111, 0.20)",
+  glow: "0 0 32px rgba(111, 132, 111, 0.12)",
 };
 
 export function OneMinuteMindfulBreakExercise({
@@ -12,6 +20,7 @@ export function OneMinuteMindfulBreakExercise({
 }: OneMinuteMindfulBreakExerciseProps) {
   const t = useTranslations(i18nKey);
   const tCommon = useTranslations("common.buttons");
+  const [isPreparing, setIsPreparing] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(60);
   const [isComplete, setIsComplete] = useState(false);
@@ -47,6 +56,11 @@ export function OneMinuteMindfulBreakExercise({
   }, [isActive]);
 
   const handleStart = () => {
+    setIsPreparing(true);
+  };
+
+  const handlePreStartComplete = () => {
+    setIsPreparing(false);
     setIsActive(true);
     setSecondsLeft(60);
     setIsComplete(false);
@@ -55,10 +69,22 @@ export function OneMinuteMindfulBreakExercise({
 
   const handleStop = () => {
     setIsActive(false);
+    setIsPreparing(false);
     setSecondsLeft(60);
     setIsComplete(false);
     setBreathPhase("in");
   };
+
+  if (isPreparing) {
+    return (
+      <PreStartLayer
+        mode="breath"
+        onComplete={handlePreStartComplete}
+        i18nKey={i18nKey}
+        colors={preStartColors}
+      />
+    );
+  }
 
   if (isComplete) {
     return (

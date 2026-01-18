@@ -26,6 +26,7 @@ export function FourSevenEightExercise() {
     <TimedBreathingExercise
       phases={phases}
       i18nKey="exercises.items.four-seven-eight"
+      preStartMode="breath"
     />
   );
 }

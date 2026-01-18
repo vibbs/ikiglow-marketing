@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { PreStartLayer } from "./PreStartLayer";
 
 type SelfCompassionBreakExerciseProps = {
   i18nKey: string;
@@ -14,6 +15,8 @@ export function SelfCompassionBreakExercise({
 }: SelfCompassionBreakExerciseProps) {
   const t = useTranslations(i18nKey);
   const tCommon = useTranslations("common.buttons");
+  const [isPreparing, setIsPreparing] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
 
@@ -32,10 +35,43 @@ export function SelfCompassionBreakExercise({
     }
   };
 
+  const handleStart = () => {
+    setIsPreparing(true);
+  };
+
+  const handlePreStartComplete = () => {
+    setIsPreparing(false);
+    setHasStarted(true);
+  };
+
   const handleReset = () => {
     setCurrentStep(0);
     setIsComplete(false);
+    setHasStarted(false);
+    setIsPreparing(false);
   };
+
+  if (isPreparing) {
+    return <PreStartLayer mode="affirmation" onComplete={handlePreStartComplete} i18nKey={i18nKey} />;
+  }
+
+  if (!hasStarted) {
+    return (
+      <div className="flex flex-col items-center space-y-8 sm:space-y-16 px-4">
+        <div className="max-w-lg text-center space-y-4">
+          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
+            {t("instruction") || "A gentle practice for responding to difficulty with kindness."}
+          </p>
+        </div>
+        <button
+          onClick={handleStart}
+          className="rounded-xl bg-primary px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-light tracking-wide text-primary-foreground transition-all duration-[220ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:opacity-90 active:translate-y-[1px]"
+        >
+          {t("controls.begin") || "Begin"}
+        </button>
+      </div>
+    );
+  }
 
   if (isComplete) {
     return (

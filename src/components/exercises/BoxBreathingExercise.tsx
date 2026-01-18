@@ -32,6 +32,7 @@ export function BoxBreathingExercise() {
     <TimedBreathingExercise
       phases={phases}
       i18nKey="exercises.items.box-breathing"
+      preStartMode="breath"
     />
   );
 }

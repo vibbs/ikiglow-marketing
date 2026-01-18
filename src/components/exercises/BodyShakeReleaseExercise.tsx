@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { PreStartLayer } from "./PreStartLayer";
 
 type BodyShakeReleaseExerciseProps = {
   i18nKey: string;
@@ -9,11 +10,19 @@ type BodyShakeReleaseExerciseProps = {
 
 const instructionKeys = ["start", "hands", "arms", "body", "release"] as const;
 
+const preStartColors = {
+  ring: "rgba(242, 108, 79, 0.08)",
+  inner: "rgba(242, 108, 79, 0.04)",
+  border: "rgba(242, 108, 79, 0.20)",
+  glow: "0 0 32px rgba(242, 108, 79, 0.12)",
+};
+
 export function BodyShakeReleaseExercise({
   i18nKey,
 }: BodyShakeReleaseExerciseProps) {
   const t = useTranslations(i18nKey);
   const tCommon = useTranslations("common.buttons");
+  const [isPreparing, setIsPreparing] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(60);
   const [currentInstruction, setCurrentInstruction] = useState(0);
@@ -47,6 +56,11 @@ export function BodyShakeReleaseExercise({
   }, [isActive]);
 
   const handleStart = () => {
+    setIsPreparing(true);
+  };
+
+  const handlePreStartComplete = () => {
+    setIsPreparing(false);
     setIsActive(true);
     setSecondsLeft(60);
     setCurrentInstruction(0);
@@ -55,10 +69,22 @@ export function BodyShakeReleaseExercise({
 
   const handleStop = () => {
     setIsActive(false);
+    setIsPreparing(false);
     setSecondsLeft(60);
     setCurrentInstruction(0);
     setIsComplete(false);
   };
+
+  if (isPreparing) {
+    return (
+      <PreStartLayer
+        mode="breath"
+        onComplete={handlePreStartComplete}
+        i18nKey={i18nKey}
+        colors={preStartColors}
+      />
+    );
+  }
 
   if (isComplete) {
     return (
