@@ -15,7 +15,8 @@
       "Bash(do echo \"Testing: $exercise\")",
       "Bash(echo:*)",
       "Bash(done)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(npx eslint:*)"
     ],
     "deny": [],
     "ask": []

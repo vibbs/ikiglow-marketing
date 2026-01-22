@@ -1,31 +1,35 @@
 {
-  "title": "Weekly reflections",
-  "description": "One insight, one framework, one reflection. Delivered weekly.",
+  "title": "Stay connected",
+  "description": "Weekly reflections are coming soon. Be the first to know when we launch.",
   "whatToExpect": {
-    "title": "What to expect",
-    "intro": "Every Sunday morning, you'll receive a calm email with:",
-    "item1": "• One psychological insight, explained plainly",
-    "item2": "• One practical framework you can use immediately",
-    "item3": "• One reflection prompt for the week ahead",
+    "title": "What you'll receive",
+    "intro": "When we launch, you'll get a calm Sunday email with:",
+    "item1": "One psychological insight, explained plainly",
+    "item2": "One practical framework you can use immediately",
+    "item3": "One reflection prompt for the week ahead",
     "outro": "No sales pitches. No urgency. No overwhelm. Just clarity."
   },
   "form": {
+    "nameLabel": "First name",
+    "namePlaceholder": "Your name (optional)",
     "emailLabel": "Email address",
     "emailPlaceholder": "your@email.com",
-    "submitButton": "Subscribe",
-    "disclaimer": "Unsubscribe anytime. No spam. Your email stays private."
-  },
-  "recentEditions": {
-    "title": "Recent editions",
-    "edition1": {
-      "date": "January 5, 2026",
-      "title": "Why clarity beats motivation",
-      "excerpt": "You don't need more willpower. You need fewer decisions..."
+    "submitButton": "Notify me",
+    "submitting": "Joining...",
+    "disclaimer": "We'll only email you when we launch. No spam. Unsubscribe anytime.",
+    "success": {
+      "title": "You're on the list",
+      "message": "We'll reach out when weekly reflections begin. Thank you for your patience.",
+      "privacyTitle": "Your privacy matters",
+      "privacyMessage": "We'll only use your email to send weekly reflections when we launch. No marketing, no third parties, no spam. You can unsubscribe anytime.",
+      "exploreTitle": "In the meantime, explore what's here",
+      "exploreBlog": "Read the blog",
+      "exploreExercises": "Try an exercise",
+      "exploreGuides": "Browse guides"
     },
-    "edition2": {
-      "date": "December 29, 2025",
-      "title": "The problem with productivity",
-      "excerpt": "Being busy is not the same as moving forward..."
+    "error": {
+      "generic": "Something went wrong. Please try again.",
+      "alreadySubscribed": "You're already on the list!"
     }
   }
 }
