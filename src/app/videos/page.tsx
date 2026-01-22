@@ -16,15 +16,22 @@ export default function Videos() {
 
   return (
     <main className="min-h-screen">
-      {/* Header */}
-      <div className="mx-auto max-w-2xl space-y-8 px-6 py-16">
+      {/* Coming Soon Message */}
+      <div className="mx-auto max-w-2xl flex flex-col items-center justify-center min-h-[60vh] space-y-6 px-6 py-16 text-center">
+        <h1 className="text-3xl tracking-wide">Video Guides</h1>
+        <p className="text-base text-muted-foreground">
+          Coming soon
+        </p>
+      </div>
+
+      {/* Original content commented out */}
+      {/* <div className="mx-auto max-w-2xl space-y-8 px-6 py-16">
         <h1 className="text-3xl tracking-wide">{t("title")}</h1>
         <p className="text-base text-muted-foreground">
           {t("description")}
         </p>
       </div>
 
-      {/* Categories */}
       <div className="border-t border-border bg-muted/30">
         <div className="mx-auto max-w-2xl px-6 py-8">
           <nav className="flex flex-wrap gap-4">
@@ -56,9 +63,7 @@ export default function Videos() {
         </div>
       </div>
 
-      {/* Video Grid */}
       <div className="mx-auto max-w-2xl space-y-12 px-6 py-16">
-        {/* Video 1 - Placeholder */}
         <article className="space-y-6">
           <div className="aspect-video rounded-sm border border-border bg-muted/30">
             <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
@@ -72,7 +77,6 @@ export default function Videos() {
               {t("video1.description")}
             </p>
           </div>
-          {/* Transcript */}
           <details className="space-y-4 border-t border-border pt-6">
             <summary className="cursor-pointer text-sm text-muted-foreground transition-colors hover:text-foreground">
               View transcript
@@ -85,7 +89,6 @@ export default function Videos() {
           </details>
         </article>
 
-        {/* Video 2 - Placeholder */}
         <article className="space-y-6 border-t border-border pt-12">
           <div className="aspect-video rounded-sm border border-border bg-muted/30">
             <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
@@ -110,13 +113,12 @@ export default function Videos() {
           </details>
         </article>
 
-        {/* More coming soon */}
         <div className="border-t border-border pt-12">
           <p className="text-sm text-muted-foreground">
             {t("comingSoon")}
           </p>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }

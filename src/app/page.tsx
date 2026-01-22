@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   const t = useTranslations("home");
@@ -138,12 +139,11 @@ export default function Home() {
       </section>
 
       {/* Video Section - Sky Wash for Mindset category */}
-      <section className="panel-sky">
+      {/* <section className="panel-sky">
         <div className="mx-auto max-w-2xl space-y-8 sm:space-y-12 px-4 sm:px-6 py-12 sm:py-16">
           <h2 className="text-xl sm:text-2xl tracking-wide">{t("videos.title")}</h2>
           <div className="space-y-4 sm:space-y-6">
             <div className="aspect-video rounded-xl border border-border/60 bg-background">
-              {/* Video embed placeholder - muted by default */}
               <div className="flex h-full items-center justify-center text-xs sm:text-sm text-muted-foreground px-4 text-center">
                 {t("videos.placeholder")}
               </div>
@@ -156,10 +156,14 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+      <Separator className="my-12 md:my-16" />
+
 
       {/* Newsletter CTA - Gentle, tinted container style */}
-      <section className="mx-auto max-w-2xl space-y-6 sm:space-y-8 px-4 sm:px-6 py-12 sm:py-16">
+      <section className="mx-auto max-w-2xl space-y-4 sm:space-y-6 px-4 sm:px-6 py-12 sm:py-16">
         <div className="space-y-4 sm:space-y-6 rounded-xl panel-sand p-6 sm:p-8">
           <h2 className="text-lg sm:text-xl tracking-wide">{t("newsletter.title")}</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
