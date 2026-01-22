@@ -24,7 +24,7 @@ export default function CMSDashboard() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {/* Blog */}
             <Link
-              href="/protected/cms/blog"
+              href="/cms/blog"
               className="group space-y-4 rounded-sm border border-border p-8 transition-colors hover:border-primary/40"
             >
               <FileText className="h-8 w-8 text-primary" />
@@ -38,7 +38,7 @@ export default function CMSDashboard() {
 
             {/* Guides */}
             <Link
-              href="/protected/cms/guides"
+              href="/cms/guides"
               className="group space-y-4 rounded-sm border border-border p-8 transition-colors hover:border-primary/40"
             >
               <BookOpen className="h-8 w-8 text-primary" />
@@ -52,7 +52,7 @@ export default function CMSDashboard() {
 
             {/* About */}
             <Link
-              href="/protected/cms/about"
+              href="/cms/about"
               className="group space-y-4 rounded-sm border border-border p-8 transition-colors hover:border-primary/40"
             >
               <Info className="h-8 w-8 text-primary" />

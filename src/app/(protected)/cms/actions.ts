@@ -8,6 +8,16 @@ import {
 } from "@/lib/mdx/mdx-utils";
 import type { ContentType } from "@/types/content";
 
+/**
+ * Defense-in-depth: Ensure CMS actions cannot be invoked in production.
+ * The middleware already blocks these routes, but this provides an extra layer.
+ */
+function assertDevelopment() {
+  if (process.env.NODE_ENV === "production") {
+    throw new Error("CMS actions are not available in production");
+  }
+}
+
 interface SaveContentParams {
   type: ContentType;
   slug: string;
@@ -21,6 +31,8 @@ interface DeleteContentParams {
 }
 
 export async function saveContent(params: SaveContentParams) {
+  assertDevelopment();
+
   try {
     const { type, slug, frontmatter, content } = params;
 
@@ -59,6 +71,8 @@ export async function saveContent(params: SaveContentParams) {
 }
 
 export async function removeContent(params: DeleteContentParams) {
+  assertDevelopment();
+
   try {
     const { type, slug } = params;
 

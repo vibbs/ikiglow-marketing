@@ -6,7 +6,7 @@ import Link from "next/link";
 import { MDXEditor } from "@/components/cms/MDXEditor";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import { saveContent } from "@/app/protected/cms/actions";
+import { saveContent } from "@/app/(protected)/cms/actions";
 import matter from "gray-matter";
 
 const GUIDE_TEMPLATE = `---
@@ -61,7 +61,7 @@ export default function NewGuide() {
 
       if (result.success) {
         alert("Guide created successfully!");
-        router.push(`/protected/cms/guides/${fm.slug}/edit`);
+        router.push(`/cms/guides/${fm.slug}/edit`);
       } else {
         alert(`Failed to save: ${result.error}`);
       }
@@ -80,7 +80,7 @@ export default function NewGuide() {
           {/* Header */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Link href="/protected/cms/guides">
+              <Link href="/cms/guides">
                 <Button variant="outline" size="sm">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back

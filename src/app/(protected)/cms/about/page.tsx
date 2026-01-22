@@ -5,7 +5,7 @@ import Link from "next/link";
 import { MDXEditor } from "@/components/cms/MDXEditor";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import { saveContent } from "@/app/protected/cms/actions";
+import { saveContent } from "@/app/(protected)/cms/actions";
 import matter from "gray-matter";
 
 export default function EditAboutPage() {
@@ -85,7 +85,7 @@ export default function EditAboutPage() {
           <div className="flex items-center justify-between">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
-                <Link href="/protected/cms">
+                <Link href="/cms">
                   <Button variant="outline" size="sm">
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Back

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { MDXEditor } from "@/components/cms/MDXEditor";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import { saveContent } from "@/app/protected/cms/actions";
+import { saveContent } from "@/app/(protected)/cms/actions";
 import matter from "gray-matter";
 import { isValidCategory } from "@/types/content";
 
@@ -78,7 +78,7 @@ export default function NewBlogPost() {
 
       if (result.success) {
         alert("Post created successfully!");
-        router.push(`/protected/cms/blog/${fm.slug}/edit`);
+        router.push(`/cms/blog/${fm.slug}/edit`);
       } else {
         alert(`Failed to save: ${result.error}`);
       }
@@ -97,7 +97,7 @@ export default function NewBlogPost() {
           {/* Header */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Link href="/protected/cms/blog">
+              <Link href="/cms/blog">
                 <Button variant="outline" size="sm">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back
