@@ -23,16 +23,51 @@ const kalam = Kalam({
 });
 
 export const metadata: Metadata = {
-  title: "IkiGlow - A Calm Companion for Personal Growth",
-  description: "A space for reflection, focus, and intentional action. Discover your purpose through gentle guidance and practical tools.",
-  keywords: ["ikigai", "personal growth", "mindfulness", "self-awareness", "mental wellness", "reflection"],
+  metadataBase: new URL("https://www.ikiglow.com"),
+  title: {
+    default: "IkiGlow - A Calm Companion for Personal Growth",
+    template: "%s - IkiGlow",
+  },
+  description:
+    "A space for reflection, focus, and intentional action. Discover your purpose through gentle guidance and practical tools.",
+  keywords: [
+    "ikigai",
+    "personal growth",
+    "mindfulness",
+    "self-awareness",
+    "mental wellness",
+    "reflection",
+    "breathing exercises",
+    "grounding techniques",
+    "journaling prompts",
+  ],
   authors: [{ name: "IkiGlow" }],
+  creator: "IkiGlow",
+  publisher: "IkiGlow",
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "IkiGlow",
     title: "IkiGlow - A Calm Companion for Personal Growth",
-    description: "A space for reflection, focus, and intentional action.",
+    description:
+      "A space for reflection, focus, and intentional action. Discover your purpose through gentle guidance and practical tools.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IkiGlow - A Calm Companion for Personal Growth",
+    description:
+      "A space for reflection, focus, and intentional action. Discover your purpose through gentle guidance and practical tools.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
